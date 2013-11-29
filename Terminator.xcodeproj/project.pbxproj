@@ -11,15 +11,59 @@
 		8C083C67181DB30600250DB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C083C66181DB30600250DB4 /* main.m */; };
 		8C083C6B181DB30600250DB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C083C6A181DB30600250DB4 /* AppDelegate.m */; };
 		8C083C6D181DB30600250DB4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C083C6C181DB30600250DB4 /* Images.xcassets */; };
+		8CF169DC1848EE4600AFBC56 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF169DA1848EE4600AFBC56 /* MainVC.m */; };
+		8CF16A0A1848F19400AFBC56 /* libCereal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF169CB1848EC4B00AFBC56 /* libCereal.a */; };
+		8CF16A0B1848F19400AFBC56 /* libCoreMeta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF169FC1848F0DF00AFBC56 /* libCoreMeta.a */; };
+		8CF16A0D1848F1C700AFBC56 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF16A0C1848F1C700AFBC56 /* libxml2.dylib */; };
 		BAC28053E63925CBB874E684 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC2829DF04FC8429EDD42D0 /* MobileCoreServices.framework */; };
 		BAC283457BB2F222FAF685A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC28527FDC86EF733AA7E8E /* UIKit.framework */; };
 		BAC283D1E86854AB90C47FCE /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC2879942B50CA8E1363A13 /* AssetsLibrary.framework */; };
 		BAC28771297F9B18CB5A083D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC287FE96CE8A7E5D3C70AD /* QuartzCore.framework */; };
+		BAC287C7766C434800D36DB3 /* ContainerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28D9FE10D5A736D596CF0 /* ContainerConfiguration.m */; };
 		BAC2886A9880058413172E11 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC288970F3AB9FE1EE19979 /* ImageIO.framework */; };
+		BAC288B7C4801698D28E78B5 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC281CB1850C164A2E88BE4 /* MainVC.xib */; };
 		BAC28A09377A2C03EC0956DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC28AE629E00426B3AAFEDB /* CoreGraphics.framework */; };
 		BAC28E69388029E87016656A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC2847CCA8811EF87EBC2A6 /* Foundation.framework */; };
 		BAC28EA38792B30A4ADFCD36 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC28EB1CE0F41BDD0FBF852 /* CoreImage.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CF169CA1848EC4B00AFBC56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CF169C61848EC4B00AFBC56 /* Cereal.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C6B4CF81747CB080023ADCF;
+			remoteInfo = Cereal;
+		};
+		8CF169FB1848F0DF00AFBC56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C14303615B4A04500A9C1B9;
+			remoteInfo = CoreMeta;
+		};
+		8CF169FD1848F0DF00AFBC56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C14304615B4A04500A9C1B9;
+			remoteInfo = CoreMetaTests;
+		};
+		8CF169FF1848F12600AFBC56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C14303515B4A04500A9C1B9;
+			remoteInfo = CoreMeta;
+		};
+		8CF16A011848F12600AFBC56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CF169C61848EC4B00AFBC56 /* Cereal.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C6B4CF71747CB080023ADCF;
+			remoteInfo = Cereal;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8C083C57181DB30600250DB4 /* Terminator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Terminator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +74,12 @@
 		8C083C69181DB30600250DB4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8C083C6A181DB30600250DB4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8C083C6C181DB30600250DB4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8CF169C61848EC4B00AFBC56 /* Cereal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cereal.xcodeproj; path = Cereal/Cereal.xcodeproj; sourceTree = "<group>"; };
+		8CF169D91848EE4600AFBC56 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainVC.h; path = Terminator/Controllers/MainVC.h; sourceTree = SOURCE_ROOT; };
+		8CF169DA1848EE4600AFBC56 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainVC.m; path = Terminator/Controllers/MainVC.m; sourceTree = SOURCE_ROOT; };
+		8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreMeta.xcodeproj; path = CoreMeta/CoreMeta/CoreMeta.xcodeproj; sourceTree = "<group>"; };
+		8CF16A0C1848F1C700AFBC56 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		BAC281CB1850C164A2E88BE4 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainVC.xib; path = Terminator/Views/MainVC.xib; sourceTree = SOURCE_ROOT; };
 		BAC2829DF04FC8429EDD42D0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = "<group>"; };
 		BAC2847CCA8811EF87EBC2A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = "<group>"; };
 		BAC28527FDC86EF733AA7E8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = "<group>"; };
@@ -38,6 +88,8 @@
 		BAC288970F3AB9FE1EE19979 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = "<group>"; };
 		BAC288E85B8DADA2C1542EB1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Library/Frameworks/XCTest.framework; sourceTree = "<group>"; };
 		BAC28AE629E00426B3AAFEDB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<group>"; };
+		BAC28D9FE10D5A736D596CF0 /* ContainerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContainerConfiguration.m; path = Terminator/Services/ContainerConfiguration.m; sourceTree = SOURCE_ROOT; };
+		BAC28E991D21F22FFA4CD7B4 /* ContainerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContainerConfiguration.h; path = Terminator/Services/ContainerConfiguration.h; sourceTree = SOURCE_ROOT; };
 		BAC28EB1CE0F41BDD0FBF852 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,6 +98,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF16A0D1848F1C700AFBC56 /* libxml2.dylib in Frameworks */,
+				8CF16A0A1848F19400AFBC56 /* libCereal.a in Frameworks */,
+				8CF16A0B1848F19400AFBC56 /* libCoreMeta.a in Frameworks */,
 				BAC28A09377A2C03EC0956DA /* CoreGraphics.framework in Frameworks */,
 				BAC28E69388029E87016656A /* Foundation.framework in Frameworks */,
 				BAC283457BB2F222FAF685A2 /* UIKit.framework in Frameworks */,
@@ -80,6 +135,7 @@
 		8C083C59181DB30600250DB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CF169D51848EC6200AFBC56 /* Submodules */,
 				BAC28473199FF275D1C9F357 /* Apple */,
 			);
 			name = Frameworks;
@@ -88,11 +144,11 @@
 		8C083C60181DB30600250DB4 /* Terminator */ = {
 			isa = PBXGroup;
 			children = (
+				8CF169D61848EC7700AFBC56 /* Resources */,
 				8C083C89181DB31F00250DB4 /* Controllers */,
-				8C083C6C181DB30600250DB4 /* Images.xcassets */,
-				8C083C61181DB30600250DB4 /* Supporting Files */,
 				BAC2829F060D81A93755AEF2 /* Models */,
 				BAC28E7DFD35CB31E7F998F4 /* Services */,
+				BAC28D13359F046162054153 /* Views */,
 			);
 			name = Terminator;
 			path = terminator;
@@ -114,8 +170,45 @@
 			children = (
 				8C083C69181DB30600250DB4 /* AppDelegate.h */,
 				8C083C6A181DB30600250DB4 /* AppDelegate.m */,
+				8CF169D91848EE4600AFBC56 /* MainVC.h */,
+				8CF169DA1848EE4600AFBC56 /* MainVC.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8CF169C71848EC4B00AFBC56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CF169CB1848EC4B00AFBC56 /* libCereal.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CF169D51848EC6200AFBC56 /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+				8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */,
+				8CF169C61848EC4B00AFBC56 /* Cereal.xcodeproj */,
+			);
+			name = Submodules;
+			sourceTree = "<group>";
+		};
+		8CF169D61848EC7700AFBC56 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8C083C6C181DB30600250DB4 /* Images.xcassets */,
+				8C083C61181DB30600250DB4 /* Supporting Files */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8CF169F71848F0DF00AFBC56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CF169FC1848F0DF00AFBC56 /* libCoreMeta.a */,
+				8CF169FE1848F0DF00AFBC56 /* CoreMetaTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		BAC2829F060D81A93755AEF2 /* Models */ = {
@@ -128,6 +221,7 @@
 		BAC28473199FF275D1C9F357 /* Apple */ = {
 			isa = PBXGroup;
 			children = (
+				8CF16A0C1848F1C700AFBC56 /* libxml2.dylib */,
 				BAC28AE629E00426B3AAFEDB /* CoreGraphics.framework */,
 				BAC2847CCA8811EF87EBC2A6 /* Foundation.framework */,
 				BAC288E85B8DADA2C1542EB1 /* XCTest.framework */,
@@ -141,9 +235,19 @@
 			name = Apple;
 			sourceTree = "<group>";
 		};
+		BAC28D13359F046162054153 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BAC281CB1850C164A2E88BE4 /* MainVC.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BAC28E7DFD35CB31E7F998F4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BAC28D9FE10D5A736D596CF0 /* ContainerConfiguration.m */,
+				BAC28E991D21F22FFA4CD7B4 /* ContainerConfiguration.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -162,6 +266,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				8CF16A001848F12600AFBC56 /* PBXTargetDependency */,
+				8CF16A021848F12600AFBC56 /* PBXTargetDependency */,
 			);
 			name = Terminator;
 			productName = terminator;
@@ -187,12 +293,46 @@
 			mainGroup = 8C083C4E181DB30600250DB4;
 			productRefGroup = 8C083C58181DB30600250DB4 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8CF169C71848EC4B00AFBC56 /* Products */;
+					ProjectRef = 8CF169C61848EC4B00AFBC56 /* Cereal.xcodeproj */;
+				},
+				{
+					ProductGroup = 8CF169F71848F0DF00AFBC56 /* Products */;
+					ProjectRef = 8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8C083C56181DB30600250DB4 /* Terminator */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8CF169CB1848EC4B00AFBC56 /* libCereal.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCereal.a;
+			remoteRef = 8CF169CA1848EC4B00AFBC56 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8CF169FC1848F0DF00AFBC56 /* libCoreMeta.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCoreMeta.a;
+			remoteRef = 8CF169FB1848F0DF00AFBC56 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8CF169FE1848F0DF00AFBC56 /* CoreMetaTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CoreMetaTests.octest;
+			remoteRef = 8CF169FD1848F0DF00AFBC56 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8C083C55181DB30600250DB4 /* Resources */ = {
@@ -201,6 +341,7 @@
 			files = (
 				8C083C65181DB30600250DB4 /* InfoPlist.strings in Resources */,
 				8C083C6D181DB30600250DB4 /* Images.xcassets in Resources */,
+				BAC288B7C4801698D28E78B5 /* MainVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,11 +353,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C083C6B181DB30600250DB4 /* AppDelegate.m in Sources */,
+				8CF169DC1848EE4600AFBC56 /* MainVC.m in Sources */,
 				8C083C67181DB30600250DB4 /* main.m in Sources */,
+				BAC287C7766C434800D36DB3 /* ContainerConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8CF16A001848F12600AFBC56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CoreMeta;
+			targetProxy = 8CF169FF1848F12600AFBC56 /* PBXContainerItemProxy */;
+		};
+		8CF16A021848F12600AFBC56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cereal;
+			targetProxy = 8CF16A011848F12600AFBC56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8C083C63181DB30600250DB4 /* InfoPlist.strings */ = {
@@ -233,7 +389,7 @@
 		8C083C81181DB30600250DB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -272,7 +428,7 @@
 		8C083C82181DB30600250DB4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -311,7 +467,10 @@
 				GCC_PREFIX_HEADER = "terminator/terminator-Prefix.pch";
 				INFOPLIST_FILE = "terminator/terminator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/** \"${PROJECT_DIR}/CoreMeta/CoreMeta\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -325,7 +484,10 @@
 				GCC_PREFIX_HEADER = "terminator/terminator-Prefix.pch";
 				INFOPLIST_FILE = "terminator/terminator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/** \"${PROJECT_DIR}/CoreMeta/CoreMeta\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
