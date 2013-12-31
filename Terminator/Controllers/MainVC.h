@@ -10,4 +10,7 @@
 
 @interface MainVC : UIViewController
 
+@property (strong) IBOutlet UIImageView* imageView;
+@property (strong) IBOutlet UIView* overlay;
+
 @end

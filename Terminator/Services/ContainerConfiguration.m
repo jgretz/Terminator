@@ -6,11 +6,10 @@
 
 #import "ContainerConfiguration.h"
 
-
 @implementation ContainerConfiguration
 
 +(void) configure {
-
+    
 }
 
 @end

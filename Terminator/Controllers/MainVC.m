@@ -8,7 +8,7 @@
 
 #import "MainVC.h"
 
-@interface MainVC ()
+@interface MainVC()
 
 @end
 
@@ -17,8 +17,6 @@
 -(void) viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor blueColor];
 }
-
 
 @end
