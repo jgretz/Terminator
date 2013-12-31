@@ -16,6 +16,7 @@
 		8C76B86A18735B60001E6DDE /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B86418735B60001E6DDE /* icon57.png */; };
 		8C76B86B18735B60001E6DDE /* icon57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B86518735B60001E6DDE /* icon57@2x.png */; };
 		8C76B86C18735B60001E6DDE /* Icon80.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B86618735B60001E6DDE /* Icon80.png */; };
+		8C76B86F18735C37001E6DDE /* SquareCam.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B86E18735C37001E6DDE /* SquareCam.m */; };
 		8CF169DC1848EE4600AFBC56 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF169DA1848EE4600AFBC56 /* MainVC.m */; };
 		8CF16A0A1848F19400AFBC56 /* libCereal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF169CB1848EC4B00AFBC56 /* libCereal.a */; };
 		8CF16A0B1848F19400AFBC56 /* libCoreMeta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF169FC1848F0DF00AFBC56 /* libCoreMeta.a */; };
@@ -86,6 +87,8 @@
 		8C76B86418735B60001E6DDE /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
 		8C76B86518735B60001E6DDE /* icon57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon57@2x.png"; sourceTree = "<group>"; };
 		8C76B86618735B60001E6DDE /* Icon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon80.png; sourceTree = "<group>"; };
+		8C76B86D18735C37001E6DDE /* SquareCam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SquareCam.h; path = Terminator/Services/SquareCam.h; sourceTree = SOURCE_ROOT; };
+		8C76B86E18735C37001E6DDE /* SquareCam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SquareCam.m; path = Terminator/Services/SquareCam.m; sourceTree = SOURCE_ROOT; };
 		8CF169C61848EC4B00AFBC56 /* Cereal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cereal.xcodeproj; path = Cereal/Cereal.xcodeproj; sourceTree = "<group>"; };
 		8CF169D91848EE4600AFBC56 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainVC.h; path = Terminator/Controllers/MainVC.h; sourceTree = SOURCE_ROOT; };
 		8CF169DA1848EE4600AFBC56 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainVC.m; path = Terminator/Controllers/MainVC.m; sourceTree = SOURCE_ROOT; };
@@ -288,6 +291,8 @@
 			children = (
 				BAC28E991D21F22FFA4CD7B4 /* ContainerConfiguration.h */,
 				BAC28D9FE10D5A736D596CF0 /* ContainerConfiguration.m */,
+				8C76B86D18735C37001E6DDE /* SquareCam.h */,
+				8C76B86E18735C37001E6DDE /* SquareCam.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C76B86F18735C37001E6DDE /* SquareCam.m in Sources */,
 				8C083C6B181DB30600250DB4 /* AppDelegate.m in Sources */,
 				8CF169DC1848EE4600AFBC56 /* MainVC.m in Sources */,
 				8C083C67181DB30600250DB4 /* main.m in Sources */,
