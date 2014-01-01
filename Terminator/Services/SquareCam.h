@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface SquareCam : NSObject
 
+@property (strong) UIImage* mostRecentImage;
+
+-(void) startCapturing;
+-(void) stopCapturing;
+
+-(void) useCamera: (AVCaptureDevicePosition) devicePosition;
 @end

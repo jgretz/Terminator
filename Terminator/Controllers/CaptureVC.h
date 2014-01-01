@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainVC : UIViewController
+@interface CaptureVC : UIViewController
 
-@property (strong) IBOutlet UIImageView* imageView;
-@property (strong) IBOutlet UIView* overlay;
+@property (strong) IBOutlet UIImageView* currentView;
 
 @end

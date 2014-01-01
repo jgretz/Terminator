@@ -8,7 +8,10 @@
 
 #import "AppDelegate.h"
 #import "ContainerConfiguration.h"
-#import "MainVC.h"
+#import "TerminatorVC.h"
+#import "KnowledgeBaseVC.h"
+#import "CaptureVC.h"
+#import "Terminator.h"
 
 @implementation AppDelegate
 
@@ -18,17 +21,21 @@
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
 
-    self.window.rootViewController = [MainVC object];
+    UITabBarController* tbc = [[UITabBarController alloc] init];
+    tbc.viewControllers = @[ [TerminatorVC object], [KnowledgeBaseVC object], [CaptureVC object] ];
+    
+    self.window.rootViewController = tbc;
 
     [self.window makeKeyAndVisible];
     return YES;
 }
 
--(void) applicationWillResignActive: (UIApplication*) application {
+-(void) applicationDidBecomeActive: (UIApplication*) application {
+    [[Terminator object] startup];
 }
 
--(void) applicationDidBecomeActive: (UIApplication*) application {
-    
+-(void) applicationWillResignActive: (UIApplication*) application {
+    [[Terminator object] standdown];
 }
 
 @end
