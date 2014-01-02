@@ -32,6 +32,7 @@
 
         FaceCapture* faceCapture = [FaceCapture object];
         faceCapture.faceImage = [UIImage imageWithCGImage: passThrough];
+        faceCapture.faceImage = [UIImage imageWithCGImage: passThrough];
 
 
 

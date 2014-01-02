@@ -4,3 +4,6 @@
 [submodule "Cereal"]
 	path = Cereal
 	url = https://github.com/jgretz/Cereal.git
+[submodule "FaceRecognition"]
+	path = FaceRecognition
+	url = https://github.com/mjp/FaceRecognition.git
