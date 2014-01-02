@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8C083C65181DB30600250DB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C083C63181DB30600250DB4 /* InfoPlist.strings */; };
 		8C083C67181DB30600250DB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C083C66181DB30600250DB4 /* main.m */; };
-		8C083C6B181DB30600250DB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C083C6A181DB30600250DB4 /* AppDelegate.m */; };
+		8C083C6B181DB30600250DB4 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C083C6A181DB30600250DB4 /* AppDelegate.mm */; };
 		8C233FC918762F1000BBD67F /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C233FC818762F1000BBD67F /* opencv2.framework */; };
 		8C233FD218762F1C00BBD67F /* CustomFaceRecognizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C233FCC18762F1C00BBD67F /* CustomFaceRecognizer.mm */; };
 		8C233FD318762F1C00BBD67F /* FaceDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C233FCE18762F1C00BBD67F /* FaceDetector.mm */; };
@@ -28,19 +28,19 @@
 		8C76B86F18735C37001E6DDE /* SquareCam.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B86E18735C37001E6DDE /* SquareCam.m */; };
 		8C76B87318735CD1001E6DDE /* KnowledgeBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87118735CD1001E6DDE /* KnowledgeBaseVC.m */; };
 		8C76B87818735CF4001E6DDE /* TerminatorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87618735CF4001E6DDE /* TerminatorVC.m */; };
-		8C76B88018736077001E6DDE /* Terminator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87F18736077001E6DDE /* Terminator.m */; };
+		8C76B88018736077001E6DDE /* Terminator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87F18736077001E6DDE /* Terminator.mm */; };
 		8C9FB9FF187602B20040FDBE /* libCereal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9FB9FD187602A70040FDBE /* libCereal.a */; };
 		8CF169DC1848EE4600AFBC56 /* CaptureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF169DA1848EE4600AFBC56 /* CaptureVC.m */; };
 		8CF16A0B1848F19400AFBC56 /* libCoreMeta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF169FC1848F0DF00AFBC56 /* libCoreMeta.a */; };
 		8CF16A0D1848F1C700AFBC56 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF16A0C1848F1C700AFBC56 /* libxml2.dylib */; };
 		8CF16A1818496D2E00AFBC56 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF16A1718496D2E00AFBC56 /* CoreMedia.framework */; };
 		BAC28053E63925CBB874E684 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC2829DF04FC8429EDD42D0 /* MobileCoreServices.framework */; };
-		BAC282D48DE6BCF1D05E5E66 /* FaceDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC2845BB1D44C83CE1C2C44 /* FaceDetection.m */; };
+		BAC282D48DE6BCF1D05E5E66 /* FaceDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = BAC2845BB1D44C83CE1C2C44 /* FaceDetection.mm */; };
 		BAC283457BB2F222FAF685A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC28527FDC86EF733AA7E8E /* UIKit.framework */; };
 		BAC283D1E86854AB90C47FCE /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC2879942B50CA8E1363A13 /* AssetsLibrary.framework */; };
 		BAC28551F0CBBAB9011F7C8F /* ImageCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC289C49CEC692E628A6EFC /* ImageCapture.m */; };
 		BAC28771297F9B18CB5A083D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC287FE96CE8A7E5D3C70AD /* QuartzCore.framework */; };
-		BAC287C7766C434800D36DB3 /* ContainerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28D9FE10D5A736D596CF0 /* ContainerConfiguration.m */; };
+		BAC287C7766C434800D36DB3 /* ContainerConfiguration.mm in Sources */ = {isa = PBXBuildFile; fileRef = BAC28D9FE10D5A736D596CF0 /* ContainerConfiguration.mm */; };
 		BAC2880E3CF84DEC4DBEF87E /* KnowledgeBaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC28FDCCDCA5B1114659BA4 /* KnowledgeBaseVC.xib */; };
 		BAC2886A9880058413172E11 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC288970F3AB9FE1EE19979 /* ImageIO.framework */; };
 		BAC28893EF0E440ACC15DAF2 /* FaceCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC2827B330879D80615E4F9 /* FaceCapture.m */; };
@@ -53,7 +53,7 @@
 		BAC28E69388029E87016656A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC2847CCA8811EF87EBC2A6 /* Foundation.framework */; };
 		BAC28E79F5DC13F1076E0A2B /* TerminatorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC282A87F9254FEC1E7945C /* TerminatorVC.xib */; };
 		BAC28EA38792B30A4ADFCD36 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC28EB1CE0F41BDD0FBF852 /* CoreImage.framework */; };
-		BAC28F0409C168A180CED646 /* FaceIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28C885DD2F476E04C30CC /* FaceIdentifier.m */; };
+		BAC28F0409C168A180CED646 /* FaceIdentifier.mm in Sources */ = {isa = PBXBuildFile; fileRef = BAC28C885DD2F476E04C30CC /* FaceIdentifier.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,7 +101,7 @@
 		8C083C66181DB30600250DB4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C083C68181DB30600250DB4 /* terminator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "terminator-Prefix.pch"; sourceTree = "<group>"; };
 		8C083C69181DB30600250DB4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		8C083C6A181DB30600250DB4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8C083C6A181DB30600250DB4 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		8C233FC818762F1000BBD67F /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = FaceRecognition2/Frameworks/opencv2.framework; sourceTree = "<group>"; };
 		8C233FCB18762F1C00BBD67F /* CustomFaceRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFaceRecognizer.h; sourceTree = "<group>"; };
 		8C233FCC18762F1C00BBD67F /* CustomFaceRecognizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CustomFaceRecognizer.mm; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		8C76B87518735CF4001E6DDE /* TerminatorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TerminatorVC.h; path = Terminator/Controllers/TerminatorVC.h; sourceTree = SOURCE_ROOT; };
 		8C76B87618735CF4001E6DDE /* TerminatorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TerminatorVC.m; path = Terminator/Controllers/TerminatorVC.m; sourceTree = SOURCE_ROOT; };
 		8C76B87E18736077001E6DDE /* Terminator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Terminator.h; path = Terminator/Services/Terminator.h; sourceTree = SOURCE_ROOT; };
-		8C76B87F18736077001E6DDE /* Terminator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Terminator.m; path = Terminator/Services/Terminator.m; sourceTree = SOURCE_ROOT; };
+		8C76B87F18736077001E6DDE /* Terminator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Terminator.mm; path = Terminator/Services/Terminator.mm; sourceTree = SOURCE_ROOT; };
 		8C9FB9F8187602A70040FDBE /* Cereal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cereal.xcodeproj; path = Cereal/Cereal.xcodeproj; sourceTree = "<group>"; };
 		8CF169D91848EE4600AFBC56 /* CaptureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaptureVC.h; path = Terminator/Controllers/CaptureVC.h; sourceTree = SOURCE_ROOT; };
 		8CF169DA1848EE4600AFBC56 /* CaptureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaptureVC.m; path = Terminator/Controllers/CaptureVC.m; sourceTree = SOURCE_ROOT; };
@@ -140,7 +140,7 @@
 		BAC2829DF04FC8429EDD42D0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = "<group>"; };
 		BAC282A87F9254FEC1E7945C /* TerminatorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TerminatorVC.xib; path = Terminator/Views/TerminatorVC.xib; sourceTree = SOURCE_ROOT; };
 		BAC284442A02975A6CBDCB7B /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+OpenCV.h"; path = "Terminator/Categories/UIImage+OpenCV.h"; sourceTree = SOURCE_ROOT; };
-		BAC2845BB1D44C83CE1C2C44 /* FaceDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FaceDetection.m; path = Terminator/Services/FaceDetection.m; sourceTree = SOURCE_ROOT; };
+		BAC2845BB1D44C83CE1C2C44 /* FaceDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FaceDetection.mm; path = Terminator/Services/FaceDetection.mm; sourceTree = SOURCE_ROOT; };
 		BAC2847CCA8811EF87EBC2A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = "<group>"; };
 		BAC28527FDC86EF733AA7E8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = "<group>"; };
 		BAC28529D763D455CE0BE1EB /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Terminator/Constants.m; sourceTree = SOURCE_ROOT; };
@@ -154,9 +154,9 @@
 		BAC289C49CEC692E628A6EFC /* ImageCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageCapture.m; path = Terminator/Models/ImageCapture.m; sourceTree = SOURCE_ROOT; };
 		BAC28AD7236628BD9E5060A5 /* FaceCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaceCapture.h; path = Terminator/Models/FaceCapture.h; sourceTree = SOURCE_ROOT; };
 		BAC28AE629E00426B3AAFEDB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<group>"; };
-		BAC28C885DD2F476E04C30CC /* FaceIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FaceIdentifier.m; path = Terminator/Repositories/FaceIdentifier.m; sourceTree = SOURCE_ROOT; };
+		BAC28C885DD2F476E04C30CC /* FaceIdentifier.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FaceIdentifier.mm; path = Terminator/Repositories/FaceIdentifier.mm; sourceTree = SOURCE_ROOT; };
 		BAC28CCDD561EDE24A673627 /* ImageCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageCapture.h; path = Terminator/Models/ImageCapture.h; sourceTree = SOURCE_ROOT; };
-		BAC28D9FE10D5A736D596CF0 /* ContainerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContainerConfiguration.m; path = Terminator/Services/ContainerConfiguration.m; sourceTree = SOURCE_ROOT; };
+		BAC28D9FE10D5A736D596CF0 /* ContainerConfiguration.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ContainerConfiguration.mm; path = Terminator/Services/ContainerConfiguration.mm; sourceTree = SOURCE_ROOT; };
 		BAC28E17160097F51D2373AC /* CameraRoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraRoll.h; path = Terminator/Repositories/CameraRoll.h; sourceTree = SOURCE_ROOT; };
 		BAC28E991D21F22FFA4CD7B4 /* ContainerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContainerConfiguration.h; path = Terminator/Services/ContainerConfiguration.h; sourceTree = SOURCE_ROOT; };
 		BAC28EB1CE0F41BDD0FBF852 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				8C083C69181DB30600250DB4 /* AppDelegate.h */,
-				8C083C6A181DB30600250DB4 /* AppDelegate.m */,
+				8C083C6A181DB30600250DB4 /* AppDelegate.mm */,
 				8CF169D91848EE4600AFBC56 /* CaptureVC.h */,
 				8CF169DA1848EE4600AFBC56 /* CaptureVC.m */,
 				8C76B87018735CD1001E6DDE /* KnowledgeBaseVC.h */,
@@ -372,7 +372,7 @@
 				BAC28E17160097F51D2373AC /* CameraRoll.h */,
 				BAC28882C90389FAD50CC5F0 /* CameraRoll.m */,
 				BAC28FF9D42720B74FC45A6A /* FaceIdentifier.h */,
-				BAC28C885DD2F476E04C30CC /* FaceIdentifier.m */,
+				BAC28C885DD2F476E04C30CC /* FaceIdentifier.mm */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -422,13 +422,13 @@
 			isa = PBXGroup;
 			children = (
 				BAC28E991D21F22FFA4CD7B4 /* ContainerConfiguration.h */,
-				BAC28D9FE10D5A736D596CF0 /* ContainerConfiguration.m */,
+				BAC28D9FE10D5A736D596CF0 /* ContainerConfiguration.mm */,
 				8C76B86D18735C37001E6DDE /* SquareCam.h */,
 				8C76B86E18735C37001E6DDE /* SquareCam.m */,
 				8C76B87E18736077001E6DDE /* Terminator.h */,
-				8C76B87F18736077001E6DDE /* Terminator.m */,
+				8C76B87F18736077001E6DDE /* Terminator.mm */,
 				BAC281042B3324EF75B63E9C /* FaceDetection.h */,
-				BAC2845BB1D44C83CE1C2C44 /* FaceDetection.m */,
+				BAC2845BB1D44C83CE1C2C44 /* FaceDetection.mm */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -548,17 +548,17 @@
 				8C233FD318762F1C00BBD67F /* FaceDetector.mm in Sources */,
 				8C76B87818735CF4001E6DDE /* TerminatorVC.m in Sources */,
 				8C76B86F18735C37001E6DDE /* SquareCam.m in Sources */,
-				8C083C6B181DB30600250DB4 /* AppDelegate.m in Sources */,
+				8C083C6B181DB30600250DB4 /* AppDelegate.mm in Sources */,
 				8CF169DC1848EE4600AFBC56 /* CaptureVC.m in Sources */,
-				8C76B88018736077001E6DDE /* Terminator.m in Sources */,
+				8C76B88018736077001E6DDE /* Terminator.mm in Sources */,
 				8C083C67181DB30600250DB4 /* main.m in Sources */,
 				8C76B87318735CD1001E6DDE /* KnowledgeBaseVC.m in Sources */,
-				BAC287C7766C434800D36DB3 /* ContainerConfiguration.m in Sources */,
+				BAC287C7766C434800D36DB3 /* ContainerConfiguration.mm in Sources */,
 				BAC28551F0CBBAB9011F7C8F /* ImageCapture.m in Sources */,
 				BAC28893EF0E440ACC15DAF2 /* FaceCapture.m in Sources */,
 				BAC28A67B1F3A6DF5D28D53D /* CameraRoll.m in Sources */,
-				BAC282D48DE6BCF1D05E5E66 /* FaceDetection.m in Sources */,
-				BAC28F0409C168A180CED646 /* FaceIdentifier.m in Sources */,
+				BAC282D48DE6BCF1D05E5E66 /* FaceDetection.mm in Sources */,
+				BAC28F0409C168A180CED646 /* FaceIdentifier.mm in Sources */,
 				BAC28DDF2799719EBF21F1EF /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,13 +6,13 @@
 
 #import "FaceIdentifier.h"
 #import "FaceCapture.h"
-//#import "CustomFaceRecognizer.h"
+#import "CustomFaceRecognizer.h"
 
 @interface FaceIdentifier()
 
 @property (strong) NSMutableArray* facesToSearch;
 
-//@property (strong) CustomFaceRecognizer* faceRecognizer;
+@property (strong) CustomFaceRecognizer* faceRecognizer;
 
 @end
 
@@ -31,7 +31,7 @@ const double searchInterval = 1;
 }
 
 -(void) setupFaceRecognizer {
-//    self.faceRecognizer = [[CustomFaceRecognizer alloc] initWithFisherFaceRecognizer];
+    self.faceRecognizer = [[CustomFaceRecognizer alloc] initWithFisherFaceRecognizer];
 }
 
 #pragma mark - Search
