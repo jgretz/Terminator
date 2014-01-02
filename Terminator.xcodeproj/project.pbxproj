@@ -10,12 +10,15 @@
 		8C083C65181DB30600250DB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C083C63181DB30600250DB4 /* InfoPlist.strings */; };
 		8C083C67181DB30600250DB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C083C66181DB30600250DB4 /* main.m */; };
 		8C083C6B181DB30600250DB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C083C6A181DB30600250DB4 /* AppDelegate.m */; };
+		8C233FC918762F1000BBD67F /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C233FC818762F1000BBD67F /* opencv2.framework */; };
+		8C233FD218762F1C00BBD67F /* CustomFaceRecognizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C233FCC18762F1C00BBD67F /* CustomFaceRecognizer.mm */; };
+		8C233FD318762F1C00BBD67F /* FaceDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C233FCE18762F1C00BBD67F /* FaceDetector.mm */; };
+		8C233FD418762F1C00BBD67F /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8C233FCF18762F1C00BBD67F /* haarcascade_frontalface_alt2.xml */; };
+		8C233FD518762F1C00BBD67F /* OpenCVData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C233FD118762F1C00BBD67F /* OpenCVData.mm */; };
 		8C46894918761A9600220605 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C46894818761A9600220605 /* libsqlite3.dylib */; };
 		8C46894D18761AA300220605 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C46894C18761AA300220605 /* Accelerate.framework */; };
 		8C46894F18761ABB00220605 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C46894E18761ABB00220605 /* CoreVideo.framework */; };
 		8C468959187622DF00220605 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C468958187622DF00220605 /* Default-568h@2x.png */; };
-		8C4689C11876246C00220605 /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8C4689971876246C00220605 /* haarcascade_frontalface_alt2.xml */; };
-		8C4E143C18762560005ADD17 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4E143B18762560005ADD17 /* opencv2.framework */; };
 		8C76B86718735B60001E6DDE /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B86118735B60001E6DDE /* icon120.png */; };
 		8C76B86818735B60001E6DDE /* Icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B86218735B60001E6DDE /* Icon29.png */; };
 		8C76B86918735B60001E6DDE /* Icon29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B86318735B60001E6DDE /* Icon29@2x.png */; };
@@ -27,9 +30,6 @@
 		8C76B87818735CF4001E6DDE /* TerminatorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87618735CF4001E6DDE /* TerminatorVC.m */; };
 		8C76B88018736077001E6DDE /* Terminator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87F18736077001E6DDE /* Terminator.m */; };
 		8C9FB9FF187602B20040FDBE /* libCereal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9FB9FD187602A70040FDBE /* libCereal.a */; };
-		8CA993A31876298700110CB6 /* FaceDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C4689801876246C00220605 /* FaceDetector.mm */; };
-		8CA993A41876298700110CB6 /* CustomFaceRecognizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C4689821876246C00220605 /* CustomFaceRecognizer.mm */; };
-		8CA993A51876298700110CB6 /* OpenCVData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C4689961876246C00220605 /* OpenCVData.mm */; };
 		8CF169DC1848EE4600AFBC56 /* CaptureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF169DA1848EE4600AFBC56 /* CaptureVC.m */; };
 		8CF16A0B1848F19400AFBC56 /* libCoreMeta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF169FC1848F0DF00AFBC56 /* libCoreMeta.a */; };
 		8CF16A0D1848F1C700AFBC56 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF16A0C1848F1C700AFBC56 /* libxml2.dylib */; };
@@ -102,26 +102,18 @@
 		8C083C68181DB30600250DB4 /* terminator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "terminator-Prefix.pch"; sourceTree = "<group>"; };
 		8C083C69181DB30600250DB4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8C083C6A181DB30600250DB4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8C233FC818762F1000BBD67F /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = FaceRecognition2/Frameworks/opencv2.framework; sourceTree = "<group>"; };
+		8C233FCB18762F1C00BBD67F /* CustomFaceRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFaceRecognizer.h; sourceTree = "<group>"; };
+		8C233FCC18762F1C00BBD67F /* CustomFaceRecognizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CustomFaceRecognizer.mm; sourceTree = "<group>"; };
+		8C233FCD18762F1C00BBD67F /* FaceDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceDetector.h; sourceTree = "<group>"; };
+		8C233FCE18762F1C00BBD67F /* FaceDetector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FaceDetector.mm; sourceTree = "<group>"; };
+		8C233FCF18762F1C00BBD67F /* haarcascade_frontalface_alt2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt2.xml; sourceTree = "<group>"; };
+		8C233FD018762F1C00BBD67F /* OpenCVData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVData.h; sourceTree = "<group>"; };
+		8C233FD118762F1C00BBD67F /* OpenCVData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVData.mm; sourceTree = "<group>"; };
 		8C46894818761A9600220605 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		8C46894C18761AA300220605 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		8C46894E18761ABB00220605 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		8C468958187622DF00220605 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
-		8C46897F1876246C00220605 /* FaceDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceDetector.h; sourceTree = "<group>"; };
-		8C4689801876246C00220605 /* FaceDetector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FaceDetector.mm; sourceTree = "<group>"; };
-		8C4689811876246C00220605 /* CustomFaceRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFaceRecognizer.h; sourceTree = "<group>"; };
-		8C4689821876246C00220605 /* CustomFaceRecognizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CustomFaceRecognizer.mm; sourceTree = "<group>"; };
-		8C4689831876246C00220605 /* RecognizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecognizeViewController.h; sourceTree = "<group>"; };
-		8C4689841876246C00220605 /* RecognizeViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RecognizeViewController.mm; sourceTree = "<group>"; };
-		8C4689851876246C00220605 /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
-		8C4689861876246C00220605 /* PeopleViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PeopleViewController.mm; sourceTree = "<group>"; };
-		8C4689871876246C00220605 /* NewPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPersonViewController.h; sourceTree = "<group>"; };
-		8C4689881876246C00220605 /* NewPersonViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NewPersonViewController.mm; sourceTree = "<group>"; };
-		8C4689891876246C00220605 /* CaptureImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureImagesViewController.h; sourceTree = "<group>"; };
-		8C46898A1876246C00220605 /* CaptureImagesViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CaptureImagesViewController.mm; sourceTree = "<group>"; };
-		8C4689951876246C00220605 /* OpenCVData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVData.h; sourceTree = "<group>"; };
-		8C4689961876246C00220605 /* OpenCVData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVData.mm; sourceTree = "<group>"; };
-		8C4689971876246C00220605 /* haarcascade_frontalface_alt2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt2.xml; sourceTree = "<group>"; };
-		8C4E143B18762560005ADD17 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = FaceRecognition/opencv2.framework; sourceTree = "<group>"; };
 		8C76B86118735B60001E6DDE /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
 		8C76B86218735B60001E6DDE /* Icon29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon29.png; sourceTree = "<group>"; };
 		8C76B86318735B60001E6DDE /* Icon29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon29@2x.png"; sourceTree = "<group>"; };
@@ -178,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C233FC918762F1000BBD67F /* opencv2.framework in Frameworks */,
 				8C46894918761A9600220605 /* libsqlite3.dylib in Frameworks */,
 				8C46894F18761ABB00220605 /* CoreVideo.framework in Frameworks */,
 				BAC283D1E86854AB90C47FCE /* AssetsLibrary.framework in Frameworks */,
@@ -194,7 +187,6 @@
 				BAC2886A9880058413172E11 /* ImageIO.framework in Frameworks */,
 				BAC28EA38792B30A4ADFCD36 /* CoreImage.framework in Frameworks */,
 				BAC28E31A8A69F47F5308161 /* AVFoundation.framework in Frameworks */,
-				8C4E143C18762560005ADD17 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				8C4689981876246C00220605 /* FaceRecognition */,
-				8C46895218761AEF00220605 /* Other */,
 				8CF169D51848EC6200AFBC56 /* Submodules */,
 				BAC28473199FF275D1C9F357 /* Apple */,
 			);
@@ -270,40 +261,35 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		8C46895218761AEF00220605 /* Other */ = {
+		8C233FCA18762F1C00BBD67F /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				8C4E143B18762560005ADD17 /* opencv2.framework */,
+				8C233FCB18762F1C00BBD67F /* CustomFaceRecognizer.h */,
+				8C233FCC18762F1C00BBD67F /* CustomFaceRecognizer.mm */,
+				8C233FCD18762F1C00BBD67F /* FaceDetector.h */,
+				8C233FCE18762F1C00BBD67F /* FaceDetector.mm */,
+				8C233FD018762F1C00BBD67F /* OpenCVData.h */,
+				8C233FD118762F1C00BBD67F /* OpenCVData.mm */,
+				8C233FCF18762F1C00BBD67F /* haarcascade_frontalface_alt2.xml */,
 			);
-			name = Other;
-			sourceTree = "<group>";
+			name = Files;
+			path = FaceRecognition2/Files;
+			sourceTree = SOURCE_ROOT;
 		};
-		8C46898B1876246C00220605 /* View Controllers */ = {
+		8C46895218761AEF00220605 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8C4689831876246C00220605 /* RecognizeViewController.h */,
-				8C4689841876246C00220605 /* RecognizeViewController.mm */,
-				8C4689851876246C00220605 /* PeopleViewController.h */,
-				8C4689861876246C00220605 /* PeopleViewController.mm */,
-				8C4689871876246C00220605 /* NewPersonViewController.h */,
-				8C4689881876246C00220605 /* NewPersonViewController.mm */,
-				8C4689891876246C00220605 /* CaptureImagesViewController.h */,
-				8C46898A1876246C00220605 /* CaptureImagesViewController.mm */,
+				8C233FC818762F1000BBD67F /* opencv2.framework */,
 			);
-			name = "View Controllers";
+			name = Frameworks;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		8C4689981876246C00220605 /* FaceRecognition */ = {
 			isa = PBXGroup;
 			children = (
-				8C46898B1876246C00220605 /* View Controllers */,
-				8C46897F1876246C00220605 /* FaceDetector.h */,
-				8C4689801876246C00220605 /* FaceDetector.mm */,
-				8C4689811876246C00220605 /* CustomFaceRecognizer.h */,
-				8C4689821876246C00220605 /* CustomFaceRecognizer.mm */,
-				8C4689951876246C00220605 /* OpenCVData.h */,
-				8C4689961876246C00220605 /* OpenCVData.mm */,
-				8C4689971876246C00220605 /* haarcascade_frontalface_alt2.xml */,
+				8C233FCA18762F1C00BBD67F /* Files */,
+				8C46895218761AEF00220605 /* Frameworks */,
 			);
 			name = FaceRecognition;
 			path = FaceRecognition/FaceRecognition;
@@ -537,10 +523,10 @@
 				8C083C65181DB30600250DB4 /* InfoPlist.strings in Resources */,
 				8C468959187622DF00220605 /* Default-568h@2x.png in Resources */,
 				8C76B86B18735B60001E6DDE /* icon57@2x.png in Resources */,
-				8C4689C11876246C00220605 /* haarcascade_frontalface_alt2.xml in Resources */,
 				8C76B86818735B60001E6DDE /* Icon29.png in Resources */,
 				8C76B86918735B60001E6DDE /* Icon29@2x.png in Resources */,
 				BAC288B7C4801698D28E78B5 /* CaptureVC.xib in Resources */,
+				8C233FD418762F1C00BBD67F /* haarcascade_frontalface_alt2.xml in Resources */,
 				8C76B86A18735B60001E6DDE /* icon57.png in Resources */,
 				8C76B86C18735B60001E6DDE /* Icon80.png in Resources */,
 				8C76B86718735B60001E6DDE /* icon120.png in Resources */,
@@ -556,10 +542,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CA993A41876298700110CB6 /* CustomFaceRecognizer.mm in Sources */,
-				8CA993A31876298700110CB6 /* FaceDetector.mm in Sources */,
-				8CA993A51876298700110CB6 /* OpenCVData.mm in Sources */,
 				BAC28A121D4037E585CEDF7C /* UIImage+OpenCV.mm in Sources */,
+				8C233FD218762F1C00BBD67F /* CustomFaceRecognizer.mm in Sources */,
+				8C233FD518762F1C00BBD67F /* OpenCVData.mm in Sources */,
+				8C233FD318762F1C00BBD67F /* FaceDetector.mm in Sources */,
 				8C76B87818735CF4001E6DDE /* TerminatorVC.m in Sources */,
 				8C76B86F18735C37001E6DDE /* SquareCam.m in Sources */,
 				8C083C6B181DB30600250DB4 /* AppDelegate.m in Sources */,
@@ -682,7 +668,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
-					"/Users/jgretz/Development/Talks/Building\\ Skynet\\ in\\ an\\ Hour/Terminator/FaceRecognition",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "terminator/terminator-Prefix.pch";
@@ -692,7 +677,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/** \"${PROJECT_DIR}/CoreMeta/CoreMeta\"/** \"${PROJECT_DIR}/Cereal\"/** \"${PROJECT_DIR}/FaceRecognition\"/**";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -703,7 +688,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
-					"/Users/jgretz/Development/Talks/Building\\ Skynet\\ in\\ an\\ Hour/Terminator/FaceRecognition",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "terminator/terminator-Prefix.pch";
@@ -713,7 +697,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/** \"${PROJECT_DIR}/CoreMeta/CoreMeta\"/** \"${PROJECT_DIR}/Cereal\"/** \"${PROJECT_DIR}/FaceRecognition\"/**";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
