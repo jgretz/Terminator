@@ -10,6 +10,7 @@
 #import "CameraRoll.h"
 #import "FaceDetector.h"
 #import "FaceLibrary.h"
+#import "JsonCerealizer.h"
 
 @implementation ContainerConfiguration
 
@@ -21,6 +22,8 @@
 
     [Terminator registerClass];
     [FaceDetector registerClass];
+
+    [JsonCerealizer registerClass];
 }
 
 @end

@@ -8,6 +8,7 @@
 #import "FaceCapture.h"
 #import "ReKognitionSDK.h"
 #import "Constants.h"
+#import "ReKognition.h"
 
 
 @interface FaceLibrary()
@@ -42,7 +43,6 @@ const double searchInterval = 1;
 
 #pragma mark - Search
 -(void) performSearch {
-
     NSArray* searchItems = nil;
     @synchronized (self) {
         searchItems = [NSArray arrayWithArray: self.facesToSearch];
@@ -51,9 +51,16 @@ const double searchInterval = 1;
 
     int index = 0;
     [self performBlockInBackground: ^{
+        if (index >= searchItems.count) {
+            [self performBlockInMainThread: ^{
+                [self performSelector: @selector(performSearch) withObject: nil afterDelay: searchInterval];
+            }];
+            return;
+        }
+
         FaceCapture* faceCapture = searchItems[index];
 
-        NSString* json = [ReKognitionSDK RKFaceSearch: faceCapture.faceImage scale: 1 nameSpace: [Constants ReKognitionNameSpace] userID: nil];
+        NSArray* results = [[ReKognition object] searchForImage: faceCapture.faceImage];
     }];
 
 }

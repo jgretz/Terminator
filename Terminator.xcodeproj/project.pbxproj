@@ -20,19 +20,17 @@
 		8C76B87318735CD1001E6DDE /* KnowledgeBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87118735CD1001E6DDE /* KnowledgeBaseVC.m */; };
 		8C76B87818735CF4001E6DDE /* TerminatorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87618735CF4001E6DDE /* TerminatorVC.m */; };
 		8C76B88018736077001E6DDE /* Terminator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87F18736077001E6DDE /* Terminator.m */; };
+		8C9FB9FF187602B20040FDBE /* libCereal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9FB9FD187602A70040FDBE /* libCereal.a */; };
 		8CF169DC1848EE4600AFBC56 /* CaptureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF169DA1848EE4600AFBC56 /* CaptureVC.m */; };
 		8CF16A0B1848F19400AFBC56 /* libCoreMeta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF169FC1848F0DF00AFBC56 /* libCoreMeta.a */; };
 		8CF16A0D1848F1C700AFBC56 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF16A0C1848F1C700AFBC56 /* libxml2.dylib */; };
 		8CF16A1818496D2E00AFBC56 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF16A1718496D2E00AFBC56 /* CoreMedia.framework */; };
 		BAC28053E63925CBB874E684 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC2829DF04FC8429EDD42D0 /* MobileCoreServices.framework */; };
-		BAC2806F8DF6133E54F4EC81 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC285B3B6EEC9EB2A6DE783 /* Base64.m */; };
 		BAC282D48DE6BCF1D05E5E66 /* FaceDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC2845BB1D44C83CE1C2C44 /* FaceDetector.m */; };
 		BAC283457BB2F222FAF685A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC28527FDC86EF733AA7E8E /* UIKit.framework */; };
-		BAC283C99A3629545563D70B /* UIImageResize+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28F5C2BCF78EBC2E17AC6 /* UIImageResize+Rotate.m */; };
 		BAC283D1E86854AB90C47FCE /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC2879942B50CA8E1363A13 /* AssetsLibrary.framework */; };
 		BAC28551F0CBBAB9011F7C8F /* ImageCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC289C49CEC692E628A6EFC /* ImageCapture.m */; };
 		BAC28771297F9B18CB5A083D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC287FE96CE8A7E5D3C70AD /* QuartzCore.framework */; };
-		BAC287B53899EFCCE8BEFC38 /* RekognitionSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC281F3620C3AA3BD42E676 /* RekognitionSDK.m */; };
 		BAC287C7766C434800D36DB3 /* ContainerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28D9FE10D5A736D596CF0 /* ContainerConfiguration.m */; };
 		BAC2880E3CF84DEC4DBEF87E /* KnowledgeBaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC28FDCCDCA5B1114659BA4 /* KnowledgeBaseVC.xib */; };
 		BAC2886A9880058413172E11 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC288970F3AB9FE1EE19979 /* ImageIO.framework */; };
@@ -40,7 +38,6 @@
 		BAC288B7C4801698D28E78B5 /* CaptureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC281CB1850C164A2E88BE4 /* CaptureVC.xib */; };
 		BAC28A09377A2C03EC0956DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC28AE629E00426B3AAFEDB /* CoreGraphics.framework */; };
 		BAC28A67B1F3A6DF5D28D53D /* CameraRoll.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28882C90389FAD50CC5F0 /* CameraRoll.m */; };
-		BAC28C663B083AA2DC62F823 /* NSDictionary+HTTPBody.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC288B639F146617E40DB53 /* NSDictionary+HTTPBody.m */; };
 		BAC28DDF2799719EBF21F1EF /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28529D763D455CE0BE1EB /* Constants.m */; };
 		BAC28E31A8A69F47F5308161 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC28FC707253467176BEC1B /* AVFoundation.framework */; };
 		BAC28E69388029E87016656A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC2847CCA8811EF87EBC2A6 /* Foundation.framework */; };
@@ -50,6 +47,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8C9FB9FC187602A70040FDBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C9FB9F8187602A70040FDBE /* Cereal.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C6B4CF81747CB080023ADCF;
+			remoteInfo = Cereal;
+		};
+		8C9FBA00187602FF0040FDBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C9FB9F8187602A70040FDBE /* Cereal.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C6B4CF71747CB080023ADCF;
+			remoteInfo = Cereal;
+		};
 		8CF169FB1848F0DF00AFBC56 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */;
@@ -95,32 +106,26 @@
 		8C76B87618735CF4001E6DDE /* TerminatorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TerminatorVC.m; path = Terminator/Controllers/TerminatorVC.m; sourceTree = SOURCE_ROOT; };
 		8C76B87E18736077001E6DDE /* Terminator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Terminator.h; path = Terminator/Services/Terminator.h; sourceTree = SOURCE_ROOT; };
 		8C76B87F18736077001E6DDE /* Terminator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Terminator.m; path = Terminator/Services/Terminator.m; sourceTree = SOURCE_ROOT; };
+		8C9FB9F8187602A70040FDBE /* Cereal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cereal.xcodeproj; path = Cereal/Cereal.xcodeproj; sourceTree = "<group>"; };
 		8CF169D91848EE4600AFBC56 /* CaptureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaptureVC.h; path = Terminator/Controllers/CaptureVC.h; sourceTree = SOURCE_ROOT; };
 		8CF169DA1848EE4600AFBC56 /* CaptureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaptureVC.m; path = Terminator/Controllers/CaptureVC.m; sourceTree = SOURCE_ROOT; };
 		8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreMeta.xcodeproj; path = CoreMeta/CoreMeta/CoreMeta.xcodeproj; sourceTree = "<group>"; };
 		8CF16A0C1848F1C700AFBC56 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		8CF16A1718496D2E00AFBC56 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		BAC2803C6AD410C3A2185E86 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
-		BAC280F75054C8AAE23D2C4D /* UIImageResize+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageResize+Rotate.h"; sourceTree = "<group>"; };
 		BAC281042B3324EF75B63E9C /* FaceDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaceDetector.h; path = Terminator/Services/FaceDetector.h; sourceTree = SOURCE_ROOT; };
 		BAC281CB1850C164A2E88BE4 /* CaptureVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CaptureVC.xib; path = Terminator/Views/CaptureVC.xib; sourceTree = SOURCE_ROOT; };
-		BAC281F3620C3AA3BD42E676 /* RekognitionSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RekognitionSDK.m; sourceTree = "<group>"; };
 		BAC2827B330879D80615E4F9 /* FaceCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FaceCapture.m; path = Terminator/Models/FaceCapture.m; sourceTree = SOURCE_ROOT; };
 		BAC2829DF04FC8429EDD42D0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = "<group>"; };
 		BAC282A87F9254FEC1E7945C /* TerminatorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TerminatorVC.xib; path = Terminator/Views/TerminatorVC.xib; sourceTree = SOURCE_ROOT; };
-		BAC28376176F8BF1E679BD5F /* NSDictionary+HTTPBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+HTTPBody.h"; sourceTree = "<group>"; };
 		BAC2845BB1D44C83CE1C2C44 /* FaceDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FaceDetector.m; path = Terminator/Services/FaceDetector.m; sourceTree = SOURCE_ROOT; };
 		BAC2847CCA8811EF87EBC2A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = "<group>"; };
 		BAC28527FDC86EF733AA7E8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = "<group>"; };
 		BAC28529D763D455CE0BE1EB /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Terminator/Constants.m; sourceTree = SOURCE_ROOT; };
-		BAC285B3B6EEC9EB2A6DE783 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		BAC286597355AA6226B3008E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Terminator/Constants.h; sourceTree = SOURCE_ROOT; };
-		BAC287302A2F0A7B69DC7353 /* ReKognitionSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReKognitionSDK.h; sourceTree = "<group>"; };
 		BAC2879942B50CA8E1363A13 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = "<group>"; };
 		BAC287FE96CE8A7E5D3C70AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = "<group>"; };
 		BAC28882C90389FAD50CC5F0 /* CameraRoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraRoll.m; path = Terminator/Repositories/CameraRoll.m; sourceTree = SOURCE_ROOT; };
 		BAC288970F3AB9FE1EE19979 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = "<group>"; };
-		BAC288B639F146617E40DB53 /* NSDictionary+HTTPBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+HTTPBody.m"; sourceTree = "<group>"; };
 		BAC288E85B8DADA2C1542EB1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Library/Frameworks/XCTest.framework; sourceTree = "<group>"; };
 		BAC289C49CEC692E628A6EFC /* ImageCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageCapture.m; path = Terminator/Models/ImageCapture.m; sourceTree = SOURCE_ROOT; };
 		BAC28AD7236628BD9E5060A5 /* FaceCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaceCapture.h; path = Terminator/Models/FaceCapture.h; sourceTree = SOURCE_ROOT; };
@@ -131,7 +136,6 @@
 		BAC28E17160097F51D2373AC /* CameraRoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraRoll.h; path = Terminator/Repositories/CameraRoll.h; sourceTree = SOURCE_ROOT; };
 		BAC28E991D21F22FFA4CD7B4 /* ContainerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContainerConfiguration.h; path = Terminator/Services/ContainerConfiguration.h; sourceTree = SOURCE_ROOT; };
 		BAC28EB1CE0F41BDD0FBF852 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = "<group>"; };
-		BAC28F5C2BCF78EBC2E17AC6 /* UIImageResize+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageResize+Rotate.m"; sourceTree = "<group>"; };
 		BAC28FC707253467176BEC1B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = "<group>"; };
 		BAC28FDCCDCA5B1114659BA4 /* KnowledgeBaseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = KnowledgeBaseVC.xib; path = Terminator/Views/KnowledgeBaseVC.xib; sourceTree = SOURCE_ROOT; };
 		BAC28FF9D42720B74FC45A6A /* FaceLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaceLibrary.h; path = Terminator/Repositories/FaceLibrary.h; sourceTree = SOURCE_ROOT; };
@@ -142,9 +146,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF16A0B1848F19400AFBC56 /* libCoreMeta.a in Frameworks */,
+				8C9FB9FF187602B20040FDBE /* libCereal.a in Frameworks */,
 				8CF16A1818496D2E00AFBC56 /* CoreMedia.framework in Frameworks */,
 				8CF16A0D1848F1C700AFBC56 /* libxml2.dylib in Frameworks */,
-				8CF16A0B1848F19400AFBC56 /* libCoreMeta.a in Frameworks */,
 				BAC28A09377A2C03EC0956DA /* CoreGraphics.framework in Frameworks */,
 				BAC28E69388029E87016656A /* Foundation.framework in Frameworks */,
 				BAC283457BB2F222FAF685A2 /* UIKit.framework in Frameworks */,
@@ -182,7 +187,6 @@
 			children = (
 				8CF169D51848EC6200AFBC56 /* Submodules */,
 				BAC28473199FF275D1C9F357 /* Apple */,
-				BAC28C64612DF35FA66393E3 /* ReKognitionSDK */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -250,9 +254,18 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		8C9FB9F9187602A70040FDBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C9FB9FD187602A70040FDBE /* libCereal.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8CF169D51848EC6200AFBC56 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				8C9FB9F8187602A70040FDBE /* Cereal.xcodeproj */,
 				8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */,
 			);
 			name = Submodules;
@@ -276,19 +289,6 @@
 				8CF169FE1848F0DF00AFBC56 /* CoreMetaTests.octest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		BAC281098775B471D4D313BF /* supporting_files */ = {
-			isa = PBXGroup;
-			children = (
-				BAC2803C6AD410C3A2185E86 /* Base64.h */,
-				BAC285B3B6EEC9EB2A6DE783 /* Base64.m */,
-				BAC280F75054C8AAE23D2C4D /* UIImageResize+Rotate.h */,
-				BAC28F5C2BCF78EBC2E17AC6 /* UIImageResize+Rotate.m */,
-				BAC28376176F8BF1E679BD5F /* NSDictionary+HTTPBody.h */,
-				BAC288B639F146617E40DB53 /* NSDictionary+HTTPBody.m */,
-			);
-			path = supporting_files;
 			sourceTree = "<group>";
 		};
 		BAC2829F060D81A93755AEF2 /* Models */ = {
@@ -339,16 +339,6 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		BAC28C64612DF35FA66393E3 /* ReKognitionSDK */ = {
-			isa = PBXGroup;
-			children = (
-				BAC287302A2F0A7B69DC7353 /* ReKognitionSDK.h */,
-				BAC281F3620C3AA3BD42E676 /* RekognitionSDK.m */,
-				BAC281098775B471D4D313BF /* supporting_files */,
-			);
-			path = ReKognitionSDK;
-			sourceTree = "<group>";
-		};
 		BAC28D13359F046162054153 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +378,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8C9FBA01187602FF0040FDBE /* PBXTargetDependency */,
 				8CF16A001848F12600AFBC56 /* PBXTargetDependency */,
 			);
 			name = Terminator;
@@ -416,6 +407,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 8C9FB9F9187602A70040FDBE /* Products */;
+					ProjectRef = 8C9FB9F8187602A70040FDBE /* Cereal.xcodeproj */;
+				},
+				{
 					ProductGroup = 8CF169F71848F0DF00AFBC56 /* Products */;
 					ProjectRef = 8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */;
 				},
@@ -428,6 +423,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		8C9FB9FD187602A70040FDBE /* libCereal.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCereal.a;
+			remoteRef = 8C9FB9FC187602A70040FDBE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		8CF169FC1848F0DF00AFBC56 /* libCoreMeta.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -482,10 +484,6 @@
 				BAC28A67B1F3A6DF5D28D53D /* CameraRoll.m in Sources */,
 				BAC282D48DE6BCF1D05E5E66 /* FaceDetector.m in Sources */,
 				BAC28F0409C168A180CED646 /* FaceLibrary.m in Sources */,
-				BAC287B53899EFCCE8BEFC38 /* RekognitionSDK.m in Sources */,
-				BAC2806F8DF6133E54F4EC81 /* Base64.m in Sources */,
-				BAC283C99A3629545563D70B /* UIImageResize+Rotate.m in Sources */,
-				BAC28C663B083AA2DC62F823 /* NSDictionary+HTTPBody.m in Sources */,
 				BAC28DDF2799719EBF21F1EF /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +491,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8C9FBA01187602FF0040FDBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cereal;
+			targetProxy = 8C9FBA00187602FF0040FDBE /* PBXContainerItemProxy */;
+		};
 		8CF16A001848F12600AFBC56 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CoreMeta;
@@ -592,10 +595,13 @@
 				GCC_PREFIX_HEADER = "terminator/terminator-Prefix.pch";
 				INFOPLIST_FILE = "terminator/terminator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lxml2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/** \"${PROJECT_DIR}/CoreMeta/CoreMeta\"/**";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/** \"${PROJECT_DIR}/CoreMeta/CoreMeta\"/** \"${PROJECT_DIR}/Cereal\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -608,10 +614,13 @@
 				GCC_PREFIX_HEADER = "terminator/terminator-Prefix.pch";
 				INFOPLIST_FILE = "terminator/terminator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lxml2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/** \"${PROJECT_DIR}/CoreMeta/CoreMeta\"/**";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/** \"${PROJECT_DIR}/CoreMeta/CoreMeta\"/** \"${PROJECT_DIR}/Cereal\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

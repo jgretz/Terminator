@@ -27,8 +27,13 @@
         CIImage* workingImage = [[capture.image imageByCroppingToRect: face.bounds] imageByApplyingTransform: CGAffineTransformMakeRotation((CGFloat) (-90 * M_PI/ 180))];
 
         // save
+        CIContext* context = [CIContext contextWithOptions: nil];
+        CGImageRef passThrough = [context createCGImage: workingImage fromRect: workingImage.extent];
+
         FaceCapture* faceCapture = [FaceCapture object];
-        faceCapture.faceImage = [UIImage imageWithCIImage: workingImage];
+        faceCapture.faceImage = [UIImage imageWithCGImage: passThrough];
+
+
 
         [[FaceLibrary object] addFaceToLibrary: faceCapture];
     }
