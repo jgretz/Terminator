@@ -8,15 +8,14 @@
 
 #import "Terminator.h"
 #import "SquareCam.h"
-#import "FaceDetector.h"
+#import "FaceDetection.h"
 #import "CameraRoll.h"
 #import "ImageCapture.h"
-#import "FaceLibrary.h"
 
 @interface Terminator()
 
 @property (strong) SquareCam* squareCam;
-@property (strong) FaceDetector* faceDetector;
+@property (strong) FaceDetection* faceDetection;
 
 @end
 
@@ -26,10 +25,6 @@ const double ageFilter = 1;
 const double faceDetectionInterval = .5;
 
 -(void) startup {
-    [[FaceLibrary object] registerForNewFaceNotification: ^(FaceCapture* capture) {
-
-    }];
-
     [self.squareCam startCapturing];
     [self.squareCam useCameraPosition: AVCaptureDevicePositionFront];
 
@@ -47,7 +42,7 @@ const double faceDetectionInterval = .5;
         if ([[NSDate date] timeIntervalSinceDate: capture.captured] > ageFilter)
             continue;
 
-        [self.faceDetector detectFaces: capture];
+        [self.faceDetection detectFaces: capture];
     };
 
     [self performSelector: @selector(detectFaces) withObject: nil afterDelay: faceDetectionInterval];

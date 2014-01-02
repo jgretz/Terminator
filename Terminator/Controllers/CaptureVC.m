@@ -10,7 +10,7 @@
 #import "CameraRoll.h"
 #import "ImageCapture.h"
 #import "FaceCapture.h"
-#import "FaceLibrary.h"
+#import "FaceIdentifier.h"
 
 @interface CaptureVC()
 

@@ -6,10 +6,8 @@
 
 #import <Foundation/Foundation.h>
 
-@class ImageCapture;
+@interface UIImage(OpenCV)
 
-@interface FaceDetector : NSObject
-
--(void) detectFaces: (ImageCapture*) image;
+-(cv::Mat) CVMat;
 
 @end

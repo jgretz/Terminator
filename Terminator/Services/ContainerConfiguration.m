@@ -8,8 +8,8 @@
 #import "Terminator.h"
 #import "SquareCam.h"
 #import "CameraRoll.h"
-#import "FaceDetector.h"
-#import "FaceLibrary.h"
+#import "FaceDetection.h"
+#import "FaceIdentifier.h"
 #import "JsonCerealizer.h"
 
 @implementation ContainerConfiguration
@@ -18,10 +18,10 @@
     [CameraRoll registerClassAndCache: YES];
     [SquareCam registerClassAndCache: YES];
 
-    [FaceLibrary registerClassAndCache: YES];
+    [FaceIdentifier registerClassAndCache: YES];
 
     [Terminator registerClass];
-    [FaceDetector registerClass];
+    [FaceDetection registerClass];
 
     [JsonCerealizer registerClass];
 }

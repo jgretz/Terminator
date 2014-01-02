@@ -2,16 +2,16 @@
 // Created by Joshua Gretz on 1/2/14.
 // Copyright (c) 2014 gretz. All rights reserved.
 
-#import "FaceDetector.h"
+#import "FaceDetection.h"
 #import "ImageCapture.h"
 #import "FaceCapture.h"
-#import "FaceLibrary.h"
+#import "FaceIdentifier.h"
 
-@interface FaceDetector()
+@interface FaceDetection()
 
 @end
 
-@implementation FaceDetector
+@implementation FaceDetection
 
 -(void) detectFaces: (ImageCapture*) capture {
     NSDictionary* options = @{ CIDetectorAccuracy : CIDetectorAccuracyLow };
@@ -32,11 +32,8 @@
 
         FaceCapture* faceCapture = [FaceCapture object];
         faceCapture.faceImage = [UIImage imageWithCGImage: passThrough];
-        faceCapture.faceImage = [UIImage imageWithCGImage: passThrough];
 
-
-
-        [[FaceLibrary object] addFaceToLibrary: faceCapture];
+        [[FaceIdentifier object] identifyFace: faceCapture];
     }
 
     return;
