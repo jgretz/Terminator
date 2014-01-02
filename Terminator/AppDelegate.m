@@ -23,7 +23,8 @@
 
     UITabBarController* tbc = [[UITabBarController alloc] init];
     tbc.viewControllers = @[ [TerminatorVC object], [KnowledgeBaseVC object], [CaptureVC object] ];
-    
+    tbc.selectedIndex = 2;
+
     self.window.rootViewController = tbc;
 
     [self.window makeKeyAndVisible];
@@ -35,7 +36,7 @@
 }
 
 -(void) applicationWillResignActive: (UIApplication*) application {
-    [[Terminator object] standdown];
+    [[Terminator object] shutdown];
 }
 
 @end

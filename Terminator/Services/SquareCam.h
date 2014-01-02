@@ -11,10 +11,9 @@
 
 @interface SquareCam : NSObject
 
-@property (strong) UIImage* mostRecentImage;
-
 -(void) startCapturing;
 -(void) stopCapturing;
 
--(void) useCamera: (AVCaptureDevicePosition) devicePosition;
+-(void) useCameraPosition: (AVCaptureDevicePosition) devicePosition;
+
 @end

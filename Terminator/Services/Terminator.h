@@ -11,6 +11,6 @@
 @interface Terminator : NSObject
 
 -(void) startup;
--(void) standdown;
+-(void) shutdown;
 
 @end

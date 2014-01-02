@@ -7,14 +7,20 @@
 #import "ContainerConfiguration.h"
 #import "Terminator.h"
 #import "SquareCam.h"
-#import "LightSensor.h"
+#import "CameraRoll.h"
+#import "FaceDetector.h"
+#import "FaceLibrary.h"
 
 @implementation ContainerConfiguration
 
 +(void) configure {
-    [Terminator registerClassAndCache: YES];
+    [CameraRoll registerClassAndCache: YES];
     [SquareCam registerClassAndCache: YES];
-    [LightSensor registerClassAndCache: YES];
+
+    [FaceLibrary registerClassAndCache: YES];
+
+    [Terminator registerClass];
+    [FaceDetector registerClass];
 }
 
 @end

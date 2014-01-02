@@ -7,7 +7,10 @@
 //
 
 #import "CaptureVC.h"
-#import "SquareCam.h"
+#import "CameraRoll.h"
+#import "ImageCapture.h"
+#import "FaceCapture.h"
+#import "FaceLibrary.h"
 
 @interface CaptureVC()
 
@@ -25,15 +28,11 @@
 -(void) viewDidLoad {
     [super viewDidLoad];
 
-    SquareCam* camera = [SquareCam object];
-    [camera useCamera:  AVCaptureDevicePositionFront];
-    [camera addObserver: self forKeyPath: OBJECT_KEYPATH(camera, mostRecentImage) options: NSKeyValueObservingOptionNew context: nil];
-}
-
--(void) observeValueForKeyPath: (NSString*) keyPath ofObject: (id) object change: (NSDictionary*) change context: (void*) context {
-    [self performBlockInMainThread: ^{
-        self.currentView.image = [[SquareCam object] mostRecentImage];
-    }];
+//    [[FaceLibrary object] registerForNewFaceNotification: ^(FaceCapture* capture) {
+//        [self performBlockInMainThread: ^{
+//            self.currentView.image = capture.faceImage;
+//        }];
+//    }];
 }
 
 @end
