@@ -21,6 +21,9 @@
 		8C6CBF7C187741F900F276EA /* OpenCVData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C6CBF76187741F900F276EA /* OpenCVData.mm */; };
 		8C6CBF7D187741F900F276EA /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6CBF78187741F900F276EA /* opencv2.framework */; };
 		8C6CBF811877432F00F276EA /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6CBF801877432F00F276EA /* WindowsAzureMobileServices.framework */; };
+		8C6CBF8A187764D700F276EA /* RMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6CBF89187764D700F276EA /* RMCore.framework */; };
+		8C6CBF8F1877656700F276EA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6CBF8E1877656700F276EA /* CoreMotion.framework */; };
+		8C6CBF921877657100F276EA /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6CBF911877657100F276EA /* ExternalAccessory.framework */; };
 		8C6F9C31187715A100B8DCDB /* IdentifyFacesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C6F9C30187715A100B8DCDB /* IdentifyFacesVC.xib */; };
 		8C76B86718735B60001E6DDE /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B86118735B60001E6DDE /* icon120.png */; };
 		8C76B86818735B60001E6DDE /* Icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B86218735B60001E6DDE /* Icon29.png */; };
@@ -45,6 +48,7 @@
 		BAC2823507D881C3B978C8C0 /* FaceDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28B3DFA6FC1724B14845B /* FaceDetection.m */; };
 		BAC283457BB2F222FAF685A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC28527FDC86EF733AA7E8E /* UIKit.framework */; };
 		BAC283D1E86854AB90C47FCE /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC2879942B50CA8E1363A13 /* AssetsLibrary.framework */; };
+		BAC284A6E9617E5BEB31613B /* Body.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC282FFB3C42658FCBFCC6F /* Body.m */; };
 		BAC28551F0CBBAB9011F7C8F /* ImageCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC289C49CEC692E628A6EFC /* ImageCapture.m */; };
 		BAC2858EAE827CDD43B335B2 /* Memory.mm in Sources */ = {isa = PBXBuildFile; fileRef = BAC289BBC7E3B62EC490182A /* Memory.mm */; };
 		BAC28771297F9B18CB5A083D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC287FE96CE8A7E5D3C70AD /* QuartzCore.framework */; };
@@ -129,6 +133,9 @@
 		8C6CBF76187741F900F276EA /* OpenCVData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVData.mm; sourceTree = "<group>"; };
 		8C6CBF78187741F900F276EA /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		8C6CBF801877432F00F276EA /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WindowsAzureMobileServices.framework; path = "azuresdk-iOS-v1.1.1/WindowsAzureMobileServices.framework"; sourceTree = "<group>"; };
+		8C6CBF89187764D700F276EA /* RMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RMCore.framework; sourceTree = "<group>"; };
+		8C6CBF8E1877656700F276EA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		8C6CBF911877657100F276EA /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		8C6F9C30187715A100B8DCDB /* IdentifyFacesVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IdentifyFacesVC.xib; path = Terminator/Views/IdentifyFacesVC.xib; sourceTree = SOURCE_ROOT; };
 		8C76B86118735B60001E6DDE /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
 		8C76B86218735B60001E6DDE /* Icon29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon29.png; sourceTree = "<group>"; };
@@ -149,6 +156,7 @@
 		8CF16A0C1848F1C700AFBC56 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		8CF16A1718496D2E00AFBC56 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		BAC280C29C7D53DACB1889DA /* NamelessMasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NamelessMasses.m; path = Terminator/Repositories/NamelessMasses.m; sourceTree = SOURCE_ROOT; };
+		BAC2817E99CE15EE67C65F35 /* Body.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Body.h; path = Terminator/Services/Body.h; sourceTree = SOURCE_ROOT; };
 		BAC2819AA9A2AAAB4F6325AB /* FaceDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaceDetection.h; path = Terminator/Services/Support/FaceDetection.h; sourceTree = SOURCE_ROOT; };
 		BAC281AD77DE2B10B9E11746 /* Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Memory.h; path = Terminator/Services/Memory.h; sourceTree = SOURCE_ROOT; };
 		BAC281CB1850C164A2E88BE4 /* NamelessMassesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NamelessMassesVC.xib; path = Terminator/Views/NamelessMassesVC.xib; sourceTree = SOURCE_ROOT; };
@@ -157,6 +165,7 @@
 		BAC2829DF04FC8429EDD42D0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = "<group>"; };
 		BAC282A87F9254FEC1E7945C /* TerminatorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TerminatorVC.xib; path = Terminator/Views/TerminatorVC.xib; sourceTree = SOURCE_ROOT; };
 		BAC282E5C45493CA9EA8123B /* NamelessMasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NamelessMasses.h; path = Terminator/Repositories/NamelessMasses.h; sourceTree = SOURCE_ROOT; };
+		BAC282FFB3C42658FCBFCC6F /* Body.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Body.m; path = Terminator/Services/Body.m; sourceTree = SOURCE_ROOT; };
 		BAC283E8C68957259AA73371 /* OpenCVFaceRecognition.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OpenCVFaceRecognition.mm; path = Terminator/Services/Support/OpenCVFaceRecognition.mm; sourceTree = SOURCE_ROOT; };
 		BAC283EE16CA517BC71DA379 /* FaceMatchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaceMatchResult.h; path = Terminator/Models/FaceMatchResult.h; sourceTree = SOURCE_ROOT; };
 		BAC284442A02975A6CBDCB7B /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+OpenCV.h"; path = "Terminator/Categories/UIImage+OpenCV.h"; sourceTree = SOURCE_ROOT; };
@@ -204,23 +213,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C6CBF921877657100F276EA /* ExternalAccessory.framework in Frameworks */,
+				8C6CBF8F1877656700F276EA /* CoreMotion.framework in Frameworks */,
+				8C6CBF8A187764D700F276EA /* RMCore.framework in Frameworks */,
 				8C6CBF7D187741F900F276EA /* opencv2.framework in Frameworks */,
 				8C46894918761A9600220605 /* libsqlite3.dylib in Frameworks */,
 				8C46894F18761ABB00220605 /* CoreVideo.framework in Frameworks */,
 				BAC283D1E86854AB90C47FCE /* AssetsLibrary.framework in Frameworks */,
 				8CF16A1818496D2E00AFBC56 /* CoreMedia.framework in Frameworks */,
 				8C46894D18761AA300220605 /* Accelerate.framework in Frameworks */,
+				BAC28053E63925CBB874E684 /* MobileCoreServices.framework in Frameworks */,
+				BAC28EA38792B30A4ADFCD36 /* CoreImage.framework in Frameworks */,
+				BAC2886A9880058413172E11 /* ImageIO.framework in Frameworks */,
+				BAC28771297F9B18CB5A083D /* QuartzCore.framework in Frameworks */,
+				8C6CBF811877432F00F276EA /* WindowsAzureMobileServices.framework in Frameworks */,
 				8CF16A0B1848F19400AFBC56 /* libCoreMeta.a in Frameworks */,
 				8C9FB9FF187602B20040FDBE /* libCereal.a in Frameworks */,
 				8CF16A0D1848F1C700AFBC56 /* libxml2.dylib in Frameworks */,
 				BAC28A09377A2C03EC0956DA /* CoreGraphics.framework in Frameworks */,
 				BAC28E69388029E87016656A /* Foundation.framework in Frameworks */,
 				BAC283457BB2F222FAF685A2 /* UIKit.framework in Frameworks */,
-				8C6CBF811877432F00F276EA /* WindowsAzureMobileServices.framework in Frameworks */,
-				BAC28771297F9B18CB5A083D /* QuartzCore.framework in Frameworks */,
-				BAC28053E63925CBB874E684 /* MobileCoreServices.framework in Frameworks */,
-				BAC2886A9880058413172E11 /* ImageIO.framework in Frameworks */,
-				BAC28EA38792B30A4ADFCD36 /* CoreImage.framework in Frameworks */,
 				BAC28E31A8A69F47F5308161 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +260,9 @@
 		8C083C59181DB30600250DB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C6CBF911877657100F276EA /* ExternalAccessory.framework */,
+				8C6CBF8E1877656700F276EA /* CoreMotion.framework */,
+				8C6CBF88187764D700F276EA /* Romo */,
 				8C6CBF7F1877432700F276EA /* Azure */,
 				8C6CBF6E187741F900F276EA /* FaceRecognition */,
 				8CF169D51848EC6200AFBC56 /* Submodules */,
@@ -336,6 +351,14 @@
 				8C6CBF801877432F00F276EA /* WindowsAzureMobileServices.framework */,
 			);
 			name = Azure;
+			sourceTree = "<group>";
+		};
+		8C6CBF88187764D700F276EA /* Romo */ = {
+			isa = PBXGroup;
+			children = (
+				8C6CBF89187764D700F276EA /* RMCore.framework */,
+			);
+			path = Romo;
 			sourceTree = "<group>";
 		};
 		8C76B85F18735B60001E6DDE /* Images */ = {
@@ -499,6 +522,8 @@
 				BAC28C2A099FAEF2A400EC79 /* Eyes.m */,
 				BAC288E1C3A9FD5DE6E1A397 /* Eyes.h */,
 				BAC28BD8547FA4DD9226013F /* Support */,
+				BAC282FFB3C42658FCBFCC6F /* Body.m */,
+				BAC2817E99CE15EE67C65F35 /* Body.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -641,6 +666,7 @@
 				8C6CBF7C187741F900F276EA /* OpenCVData.mm in Sources */,
 				BAC281B41BD7D2B3D3CDC1A3 /* OpenCVFaceRecognition.mm in Sources */,
 				BAC28A759E27A10DFEF68FF2 /* AzureInterface.m in Sources */,
+				BAC284A6E9617E5BEB31613B /* Body.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,6 +777,7 @@
 					"$(PROJECT_DIR)/**",
 					"/Users/jgretz/Development/Talks/Building\\ Skynet\\ in\\ an\\ Hour/Terminator/FaceRecognition/Frameworks",
 					"/Users/jgretz/Development/Talks/Building\\ Skynet\\ in\\ an\\ Hour/Terminator/azuresdk-iOS-v1.1.1",
+					"/Users/jgretz/Development/Talks/Building\\ Skynet\\ in\\ an\\ Hour/Terminator/Romo",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "terminator/terminator-Prefix.pch";
@@ -773,6 +800,7 @@
 					"$(PROJECT_DIR)/**",
 					"/Users/jgretz/Development/Talks/Building\\ Skynet\\ in\\ an\\ Hour/Terminator/FaceRecognition/Frameworks",
 					"/Users/jgretz/Development/Talks/Building\\ Skynet\\ in\\ an\\ Hour/Terminator/azuresdk-iOS-v1.1.1",
+					"/Users/jgretz/Development/Talks/Building\\ Skynet\\ in\\ an\\ Hour/Terminator/Romo",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "terminator/terminator-Prefix.pch";

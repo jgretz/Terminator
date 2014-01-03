@@ -11,12 +11,14 @@
 #import "Brain.h"
 #import "Eyes.h"
 #import "Person.h"
+#import "Body.h"
 
 @interface Terminator()
 
 @property (strong) Memory* memory;
 @property (strong) Brain* brain;
 @property (strong) Eyes* eyes;
+@property (strong) Body* body;
 
 @end
 
@@ -26,12 +28,16 @@
     [self.memory startup];
     [self.brain startup];
     [self.eyes startup];
+
+    [self.body startup];
 }
 
 -(void) shutdown {
     [self.eyes shutdown];
     [self.brain shutdown];
     [self.memory shutdown];
+
+    [self.body shutdown];
 }
 
 -(void) rememberPersonNamed: (NSString*) name withImages: (NSArray*) images {
