@@ -12,6 +12,8 @@
 #import "FaceMatchResult.h"
 #import "OpenCVFaceRecognition.h"
 #import "NamelessMasses.h"
+#import "KnownPeople.h"
+#import "Person.h"
 
 @interface Brain()
 
@@ -87,6 +89,9 @@ const double searchForPeopleInterval = 1;
                 [[NamelessMasses object] addFace: faceCapture];
                 continue;
             }
+
+            Person* person = [[KnownPeople object] getPerson: result.personID.intValue];
+            NSLog(@"Person Found - %@", person.name);
         }
 
         [self performBlockInMainThread: ^{

@@ -13,6 +13,7 @@
 
 -(void) train;
 
+-(int) creatNewPersonNamed: (NSString*) name;
 -(void) learnFace: (UIImage*) image forPerson: (Person*) person;
 
 -(FaceMatchResult*) searchForFace: (UIImage*) image;

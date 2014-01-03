@@ -41,6 +41,31 @@
 }
 
 #pragma mark - Train
+-(void) addPersonNamed: (NSString*) name withImages: (NSArray*) images {
+    Person* person = [Person object];
+    person.id = [self.openCVFaceRecognition creatNewPersonNamed: name];
+    person.name = name;
+
+    [self.knownPeople addPerson: person];
+
+    [self addImages: images toPerson: person];
+}
+
+-(void) addImages: (NSArray*) images toPerson: (Person*) person {
+    for (UIImage* image in images) {
+        [self.openCVFaceRecognition learnFace: image forPerson: person];
+
+        PersonImage* personImage = [PersonImage object];
+        personImage.image = image;
+        personImage.trained = YES;
+
+        [person.images addObject: personImage];
+    }
+
+    [self.knownPeople save];
+    [self trainOpenCV];
+}
+
 -(void) trainUntrainedImages {
     for (Person* person in [[KnownPeople object] allPeople]) {
         for (PersonImage* image in person.images) {

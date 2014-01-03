@@ -10,6 +10,7 @@
 #import "Memory.h"
 #import "Brain.h"
 #import "Eyes.h"
+#import "Person.h"
 
 @interface Terminator()
 
@@ -32,5 +33,14 @@
     [self.brain shutdown];
     [self.memory shutdown];
 }
+
+-(void) rememberPersonNamed: (NSString*) name withImages: (NSArray*) images {
+    [self.memory addPersonNamed: name withImages: images];
+}
+
+-(void) rememberAdditionalImages: (NSArray*) images forPerson: (Person*) person {
+    [self.memory addImages: images toPerson: person];
+}
+
 
 @end

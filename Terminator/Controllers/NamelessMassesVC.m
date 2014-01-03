@@ -71,6 +71,7 @@ const int refreshRate = 10;
 
 #pragma mark - Edit
 -(void) displayEditOption {
+    self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemEdit target: self action: @selector(enterEditMode)];
 }
 
@@ -79,7 +80,7 @@ const int refreshRate = 10;
     self.massesTable.editing = YES;
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCancel target: self action: @selector(cancel)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemDone target: self action: @selector(next)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle: @"Next" style: UIBarButtonItemStyleDone target: self action: @selector(next)];
 }
 
 -(void) cancel {
@@ -90,13 +91,13 @@ const int refreshRate = 10;
 -(void) next {
     NSMutableArray* selected = [NSMutableArray array];
     for (NSIndexPath* path in [self.massesTable indexPathsForSelectedRows])
-        [selected addObject: self.data[path.row]];
+        [selected addObject: [(FaceCapture*) self.data[path.row] faceImage]];
 
     self.massesTable.editing = NO;
     [self displayEditOption];
 
     IdentifyFacesVC* vc = [IdentifyFacesVC object];
-    vc.facesToIdentify = selected;
+    vc.selectedImagesToIdentify = selected;
     [self.navigationController pushViewController: vc animated: YES];
 }
 

@@ -31,12 +31,19 @@
 }
 
 -(void) setupOpenCV {
-    self.faceRecognizer = [[CustomFaceRecognizer alloc] initWithFisherFaceRecognizer];
+    self.faceRecognizer = [[CustomFaceRecognizer alloc] initWithEigenFaceRecognizer];
 }
 
 #pragma mark - Train
--(void) learnFace: (UIImage*) image forPerson: (Person*) person {
+-(int) creatNewPersonNamed: (NSString*) name {
+    return [self.faceRecognizer newPersonWithName: name];
+}
 
+-(void) learnFace: (UIImage*) image forPerson: (Person*) person {
+    cv::Mat mat = image.CVMat;
+    cv::Rect rect = cvRect(0, 0, (int) image.size.width, (int) image.size.height);
+
+    [self.faceRecognizer learnFace: rect ofPersonID: person.id fromImage: mat];
 }
 
 -(void) train {
@@ -49,10 +56,9 @@
         return nil;
 
     cv::Mat mat = image.CVMat;
-
     cv::Rect rect = cvRect(0, 0, (int) image.size.width, (int) image.size.height);
-    NSDictionary* rawMatch = [self.faceRecognizer recognizeFace: rect inImage: mat];
 
+    NSDictionary* rawMatch = [self.faceRecognizer recognizeFace: rect inImage: mat];
     return [[Cerealizer object] create: [FaceMatchResult class] fromDictionary: rawMatch];
 }
 

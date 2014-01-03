@@ -16,11 +16,11 @@
 		8C233FD418762F1C00BBD67F /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8C233FCF18762F1C00BBD67F /* haarcascade_frontalface_alt2.xml */; };
 		8C233FD518762F1C00BBD67F /* OpenCVData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C233FD118762F1C00BBD67F /* OpenCVData.mm */; };
 		8C233FDC18764A9F00BBD67F /* IdentifyFacesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C233FDA18764A9F00BBD67F /* IdentifyFacesVC.m */; };
-		8C233FDD18764A9F00BBD67F /* IdentifyFacesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C233FDB18764A9F00BBD67F /* IdentifyFacesVC.xib */; };
 		8C46894918761A9600220605 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C46894818761A9600220605 /* libsqlite3.dylib */; };
 		8C46894D18761AA300220605 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C46894C18761AA300220605 /* Accelerate.framework */; };
 		8C46894F18761ABB00220605 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C46894E18761ABB00220605 /* CoreVideo.framework */; };
 		8C468959187622DF00220605 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C468958187622DF00220605 /* Default-568h@2x.png */; };
+		8C6F9C31187715A100B8DCDB /* IdentifyFacesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C6F9C30187715A100B8DCDB /* IdentifyFacesVC.xib */; };
 		8C76B86718735B60001E6DDE /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B86118735B60001E6DDE /* icon120.png */; };
 		8C76B86818735B60001E6DDE /* Icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B86218735B60001E6DDE /* Icon29.png */; };
 		8C76B86918735B60001E6DDE /* Icon29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B86318735B60001E6DDE /* Icon29@2x.png */; };
@@ -123,11 +123,11 @@
 		8C233FD118762F1C00BBD67F /* OpenCVData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVData.mm; sourceTree = "<group>"; };
 		8C233FD918764A9F00BBD67F /* IdentifyFacesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IdentifyFacesVC.h; path = Terminator/Controllers/IdentifyFacesVC.h; sourceTree = SOURCE_ROOT; };
 		8C233FDA18764A9F00BBD67F /* IdentifyFacesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IdentifyFacesVC.m; path = Terminator/Controllers/IdentifyFacesVC.m; sourceTree = SOURCE_ROOT; };
-		8C233FDB18764A9F00BBD67F /* IdentifyFacesVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IdentifyFacesVC.xib; path = Terminator/Controllers/IdentifyFacesVC.xib; sourceTree = SOURCE_ROOT; };
 		8C46894818761A9600220605 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		8C46894C18761AA300220605 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		8C46894E18761ABB00220605 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		8C468958187622DF00220605 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
+		8C6F9C30187715A100B8DCDB /* IdentifyFacesVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IdentifyFacesVC.xib; path = Terminator/Views/IdentifyFacesVC.xib; sourceTree = SOURCE_ROOT; };
 		8C76B86118735B60001E6DDE /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
 		8C76B86218735B60001E6DDE /* Icon29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon29.png; sourceTree = "<group>"; };
 		8C76B86318735B60001E6DDE /* Icon29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon29@2x.png"; sourceTree = "<group>"; };
@@ -291,7 +291,6 @@
 				8C76B87618735CF4001E6DDE /* TerminatorVC.m */,
 				8C233FD918764A9F00BBD67F /* IdentifyFacesVC.h */,
 				8C233FDA18764A9F00BBD67F /* IdentifyFacesVC.m */,
-				8C233FDB18764A9F00BBD67F /* IdentifyFacesVC.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -471,6 +470,7 @@
 		BAC28D13359F046162054153 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8C6F9C30187715A100B8DCDB /* IdentifyFacesVC.xib */,
 				BAC281CB1850C164A2E88BE4 /* NamelessMassesVC.xib */,
 				BAC28FDCCDCA5B1114659BA4 /* KnowledgeBaseVC.xib */,
 				BAC282A87F9254FEC1E7945C /* TerminatorVC.xib */,
@@ -585,7 +585,7 @@
 				8C468959187622DF00220605 /* Default-568h@2x.png in Resources */,
 				8C76B86B18735B60001E6DDE /* icon57@2x.png in Resources */,
 				8C76B86818735B60001E6DDE /* Icon29.png in Resources */,
-				8C233FDD18764A9F00BBD67F /* IdentifyFacesVC.xib in Resources */,
+				8C6F9C31187715A100B8DCDB /* IdentifyFacesVC.xib in Resources */,
 				8C76B86918735B60001E6DDE /* Icon29@2x.png in Resources */,
 				BAC288B7C4801698D28E78B5 /* NamelessMassesVC.xib in Resources */,
 				8C233FD418762F1C00BBD67F /* haarcascade_frontalface_alt2.xml in Resources */,

@@ -6,10 +6,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class Person;
 
 @interface Memory : NSObject
 
 -(void) startup;
-
 -(void) shutdown;
+
+-(void) addPersonNamed: (NSString*) name withImages: (NSArray*) images;
+-(void) addImages: (NSArray*) images toPerson: (Person*) person;
+
 @end

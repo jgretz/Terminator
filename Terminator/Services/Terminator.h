@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class Person;
+
 @interface Terminator : NSObject
 
 -(void) startup;
 -(void) shutdown;
+
+-(void) rememberPersonNamed: (NSString*) name withImages: (NSArray*) images;
+-(void) rememberAdditionalImages: (NSArray*) images forPerson: (Person*) person;
 
 @end
