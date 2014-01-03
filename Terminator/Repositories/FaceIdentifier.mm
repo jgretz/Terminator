@@ -61,28 +61,32 @@ const double searchInterval = 1;
         [self.facesToSearch removeAllObjects];
     }
 
-    for (FaceCapture* faceCapture in searchItems) {
-        if (self.canSearch) {
-            cv::Mat mat = faceCapture.faceImage.CVMat;
+    [self performBlockInBackground: ^{
+        for (FaceCapture* faceCapture in searchItems) {
+            if (self.canSearch) {
+                cv::Mat mat = faceCapture.faceImage.CVMat;
 
-            cv::Rect rect = cvRect(0, 0, (int) faceCapture.faceImage.size.width, (int) faceCapture.faceImage.size.height);
-            NSDictionary* rawMatch = [self.faceRecognizer recognizeFace: rect inImage: mat];
+                cv::Rect rect = cvRect(0, 0, (int) faceCapture.faceImage.size.width, (int) faceCapture.faceImage.size.height);
+                NSDictionary* rawMatch = [self.faceRecognizer recognizeFace: rect inImage: mat];
 
-            FaceMatchResult* matchResult = [[Cerealizer object] create: [FaceMatchResult class] fromDictionary: rawMatch];
+                FaceMatchResult* matchResult = [[Cerealizer object] create: [FaceMatchResult class] fromDictionary: rawMatch];
 
-            if (!matchResult.personID || [matchResult.personID isEqual: @-1]) {
-                [self addToTheNamelessMasses: faceCapture];
-                continue;
+                if (!matchResult.personID || [matchResult.personID isEqual: @-1]) {
+                    [self addToTheNamelessMasses: faceCapture];
+                    continue;
+                }
+
+                NSLog(@"Match Found");
             }
-
-            NSLog(@"Match Found");
+            else {
+                [self addToTheNamelessMasses: faceCapture];
+            }
         }
-        else {
-            [self addToTheNamelessMasses: faceCapture];
-        }
-    }
 
-    [self performSelector: @selector(performSearch) withObject: nil afterDelay: searchInterval];
+        [self performBlockInMainThread: ^{
+            [self performSelector: @selector(performSearch) withObject: nil afterDelay: searchInterval];
+        }];
+    }];
 }
 
 -(void) addToTheNamelessMasses: (FaceCapture*) faceCapture {

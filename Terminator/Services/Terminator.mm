@@ -41,14 +41,18 @@ const double faceDetectionInterval = .5;
 -(void) detectFaces {
     NSArray* images = [[CameraRoll object] pop];
 
-    for (ImageCapture* capture in images) {
-        if ([[NSDate date] timeIntervalSinceDate: capture.captured] > ageFilter)
-            continue;
+    [self performBlockInBackground: ^{
+        for (ImageCapture* capture in images) {
+            if ([[NSDate date] timeIntervalSinceDate: capture.captured] > ageFilter)
+                continue;
 
-        [self.faceDetection detectFaces: capture];
-    };
+            [self.faceDetection detectFaces: capture];
+        };
 
-    [self performSelector: @selector(detectFaces) withObject: nil afterDelay: faceDetectionInterval];
+        [self performBlockInMainThread: ^{
+            [self performSelector: @selector(detectFaces) withObject: nil afterDelay: faceDetectionInterval];
+        }];
+    }];
 }
 
 @end
