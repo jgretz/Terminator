@@ -8,4 +8,11 @@
 
 
 @implementation Person
+
+-(Class) classTypeForKey: (NSString*) key {
+    if ([key isEqual: SELF_KEYPATH(images)])
+        return [UIImage class];
+    return nil;
+}
+
 @end

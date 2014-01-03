@@ -16,6 +16,7 @@
 #import "Memory.h"
 #import "Brain.h"
 #import "Eyes.h"
+#import "AzureInterface.h"
 
 @implementation ContainerConfiguration
 
@@ -34,7 +35,7 @@
     [Eyes registerClass];
 
     [FaceDetection registerClass];
-
+    [AzureInterface registerClass];
     [JsonCerealizer registerClass];
 }
 

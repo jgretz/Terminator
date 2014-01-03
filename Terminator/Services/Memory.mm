@@ -8,12 +8,14 @@
 #import "KnownPeople.h"
 #import "OpenCVFaceRecognition.h"
 #import "Person.h"
-#import "PersonImage.h"
+#import "AzureInterface.h"
 
 @interface Memory()
 
 @property (strong) KnownPeople* knownPeople;
+
 @property (strong) OpenCVFaceRecognition* openCVFaceRecognition;
+@property (strong) AzureInterface* azureInterface;
 
 @end
 
@@ -23,7 +25,6 @@
     [self loadFromDisk];
     [self loadFromAzure];
 
-    [self trainUntrainedImages];
     [self trainOpenCV];
 }
 
@@ -33,11 +34,53 @@
 
 #pragma mark - Load
 -(void) loadFromDisk {
-    [self.knownPeople loadAll];
+    [self.knownPeople loadFromDisk];
 }
 
 -(void) loadFromAzure {
+    [self.azureInterface downloadPeopleFromAzure: ^(NSArray* array) {
+        NSArray* known = self.knownPeople.allPeople;
 
+        BOOL changed = NO;
+        for (Person* azurePerson in array) {
+            Person* local = [known firstWhere: ^BOOL(Person* evaluatedObject) {return [evaluatedObject.azureId isEqual: azurePerson.azureId];}];
+            if (!local) {
+                // train
+                azurePerson.id = [self.openCVFaceRecognition creatNewPersonNamed: azurePerson.name];
+
+                if (azurePerson.images) {
+                    for (UIImage* image in azurePerson.images)
+                        [self.openCVFaceRecognition learnFace: image forPerson: azurePerson];
+                }
+                else {
+                    azurePerson.images = [NSMutableArray array];
+                }
+
+                // save
+                [self.knownPeople addPerson: azurePerson];
+
+                changed = YES;
+            }
+            else {
+                for (int i = local.images.count; i < azurePerson.images.count; i++) {
+                    UIImage* image = azurePerson.images[i];
+
+                    // train
+                    [self.openCVFaceRecognition learnFace: image forPerson: local];
+
+                    // update
+                    [local.images addObject: image];
+
+                    changed = YES;
+                }
+            }
+        }
+
+        if (changed) {
+            [self.knownPeople save];
+            [self trainOpenCV];
+        }
+    }];
 }
 
 #pragma mark - Train
@@ -45,6 +88,7 @@
     Person* person = [Person object];
     person.id = [self.openCVFaceRecognition creatNewPersonNamed: name];
     person.name = name;
+    person.images = [NSMutableArray array];
 
     [self.knownPeople addPerson: person];
 
@@ -55,32 +99,19 @@
     for (UIImage* image in images) {
         [self.openCVFaceRecognition learnFace: image forPerson: person];
 
-        PersonImage* personImage = [PersonImage object];
-        personImage.image = image;
-        personImage.trained = YES;
-
-        [person.images addObject: personImage];
+        [person.images addObject: image];
     }
 
     [self.knownPeople save];
     [self trainOpenCV];
-}
 
--(void) trainUntrainedImages {
-    for (Person* person in [[KnownPeople object] allPeople]) {
-        for (PersonImage* image in person.images) {
-            if (!image.trained) {
-                [self.openCVFaceRecognition learnFace: image.image forPerson: person];
-                image.trained = YES;
-            }
-        }
-    }
-
-    [self.knownPeople save];
+    [self.azureInterface writePersonToAzure: person];
 }
 
 -(void) trainOpenCV {
-    [self.openCVFaceRecognition train];
+    @synchronized (self) {
+        [self.openCVFaceRecognition train];
+    }
 }
 
 @end

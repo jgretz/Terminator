@@ -22,7 +22,7 @@
     return [Path subLibraryCachesDirectory: @"people.json"];
 }
 
--(void) loadAll {
+-(void) loadFromDisk {
     NSString* json = [NSString stringWithContentsOfFile: self.fileName encoding: NSUTF8StringEncoding error: nil];
     NSArray* stored = json ? [self.cerealizer createArrayOfType: [Person class] fromString: json] : @[ ];
 

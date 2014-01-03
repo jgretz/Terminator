@@ -18,6 +18,7 @@ typedef enum {
 
 @property (nonatomic) int id;
 @property (copy) NSString* name;
+@property (copy) NSString* azureId;
 
 @property (strong) NSMutableArray* images;
 

@@ -8,13 +8,13 @@
 
 @class Person;
 
-
 @interface KnownPeople : NSObject
 
--(void) loadAll;
+-(void) loadFromDisk;
 -(void) save;
 
 -(NSArray*) allPeople;
+
 -(void) addPerson: (Person*) person;
 -(Person*) getPerson: (int) id;
 
