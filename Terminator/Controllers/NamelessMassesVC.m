@@ -34,14 +34,18 @@ const int refreshRate = 10;
 -(void) viewDidLoad {
     [super viewDidLoad];
 
+    [self displayEditOption];
+
     [self performSelector: @selector(loadData) withObject: nil afterDelay: refreshRate];
 }
 
 -(void) loadData {
-    self.data = [[[NamelessMasses object] faces] sortedArrayUsingComparator: ^NSComparisonResult(FaceCapture* obj1, FaceCapture* obj2) {
-        return [obj2.captured compare: obj1.captured];
-    }];
-    [self.massesTable reloadData];
+    if (!self.massesTable.editing) {
+        self.data = [[[NamelessMasses object] faces] sortedArrayUsingComparator: ^NSComparisonResult(FaceCapture* obj1, FaceCapture* obj2) {
+            return [obj2.captured compare: obj1.captured];
+        }];
+        [self.massesTable reloadData];
+    }
 
     [self performSelector: @selector(loadData) withObject: nil afterDelay: refreshRate];
 }
@@ -62,6 +66,33 @@ const int refreshRate = 10;
     cell.textLabel.text = [NSString stringWithFormat: @"Captured on %@", [self.dateFormatter stringFromDate: capture.captured]];
 
     return cell;
+}
+
+#pragma mark - Edit
+-(void) displayEditOption {
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemEdit target: self action: @selector(enterEditMode)];
+}
+
+-(void) enterEditMode {
+    self.massesTable.allowsMultipleSelectionDuringEditing = YES;
+    self.massesTable.editing = YES;
+
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCancel target: self action: @selector(cancel)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemDone target: self action: @selector(next)];
+}
+
+-(void) cancel {
+    self.massesTable.editing = NO;
+    [self displayEditOption];
+}
+
+-(void) next {
+    NSMutableArray* selected = [NSMutableArray array];
+    for (NSIndexPath* path in [self.massesTable indexPathsForSelectedRows])
+        [selected addObject: self.data[path.row]];
+
+    self.massesTable.editing = NO;
+    [self displayEditOption];
 }
 
 
