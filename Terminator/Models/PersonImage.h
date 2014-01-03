@@ -6,10 +6,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class ImageCapture;
 
-@interface FaceDetection : NSObject
+@interface PersonImage : NSObject
 
--(void) detectFaces: (ImageCapture*) image;
+@property (strong) UIImage* image;
+@property (nonatomic) BOOL trained;
 
 @end

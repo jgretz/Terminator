@@ -7,52 +7,30 @@
 //
 
 #import "Terminator.h"
-#import "SquareCam.h"
-#import "FaceDetection.h"
-#import "CameraRoll.h"
-#import "ImageCapture.h"
-#import "FaceIdentifier.h"
+#import "Memory.h"
+#import "Brain.h"
+#import "Eyes.h"
 
 @interface Terminator()
 
-@property (strong) SquareCam* squareCam;
-@property (strong) FaceDetection* faceDetection;
+@property (strong) Memory* memory;
+@property (strong) Brain* brain;
+@property (strong) Eyes* eyes;
 
 @end
 
 @implementation Terminator
 
-const double ageFilter = 1;
-const double faceDetectionInterval = .5;
-
 -(void) startup {
-    [[FaceIdentifier object] train];
-
-    [self.squareCam startCapturing];
-    [self.squareCam useCameraPosition: AVCaptureDevicePositionFront];
-
-    [self performSelector: @selector(detectFaces) withObject: nil afterDelay: faceDetectionInterval];
+    [self.memory startup];
+    [self.brain startup];
+    [self.eyes startup];
 }
 
 -(void) shutdown {
-    [self.squareCam stopCapturing];
-}
-
--(void) detectFaces {
-    NSArray* images = [[CameraRoll object] pop];
-
-    [self performBlockInBackground: ^{
-        for (ImageCapture* capture in images) {
-            if ([[NSDate date] timeIntervalSinceDate: capture.captured] > ageFilter)
-                continue;
-
-            [self.faceDetection detectFaces: capture];
-        };
-
-        [self performBlockInMainThread: ^{
-            [self performSelector: @selector(detectFaces) withObject: nil afterDelay: faceDetectionInterval];
-        }];
-    }];
+    [self.eyes shutdown];
+    [self.brain shutdown];
+    [self.memory shutdown];
 }
 
 @end

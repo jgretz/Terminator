@@ -21,5 +21,6 @@
 #import <Foundation/Foundation.h>
 
 #import "CoreMeta.h"
+#import "Path.h"
 
 #endif

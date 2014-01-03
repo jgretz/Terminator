@@ -9,9 +9,13 @@
 #import "SquareCam.h"
 #import "CameraRoll.h"
 #import "FaceDetection.h"
-#import "FaceIdentifier.h"
+#import "OpenCVFaceRecognition.h"
 #import "JsonCerealizer.h"
 #import "NamelessMasses.h"
+#import "KnownPeople.h"
+#import "Memory.h"
+#import "Brain.h"
+#import "Eyes.h"
 
 @implementation ContainerConfiguration
 
@@ -19,11 +23,16 @@
     [CameraRoll registerClassAndCache: YES];
     [SquareCam registerClassAndCache: YES];
 
-    [FaceIdentifier registerClassAndCache: YES];
+    [OpenCVFaceRecognition registerClassAndCache: YES];
 
+    [KnownPeople registerClassAndCache: YES];
     [NamelessMasses registerClassAndCache: YES];
 
     [Terminator registerClass];
+    [Memory registerClass];
+    [Brain registerClass];
+    [Eyes registerClass];
+
     [FaceDetection registerClass];
 
     [JsonCerealizer registerClass];

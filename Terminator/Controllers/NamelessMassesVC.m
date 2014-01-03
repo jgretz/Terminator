@@ -9,6 +9,7 @@
 #import "NamelessMassesVC.h"
 #import "FaceCapture.h"
 #import "NamelessMasses.h"
+#import "IdentifyFacesVC.h"
 
 @interface NamelessMassesVC()
 
@@ -93,6 +94,10 @@ const int refreshRate = 10;
 
     self.massesTable.editing = NO;
     [self displayEditOption];
+
+    IdentifyFacesVC* vc = [IdentifyFacesVC object];
+    vc.facesToIdentify = selected;
+    [self.navigationController pushViewController: vc animated: YES];
 }
 
 

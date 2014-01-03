@@ -6,12 +6,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class FaceCapture;
+@class ImageCapture;
 
-@interface FaceIdentifier : NSObject
+@interface FaceDetection : NSObject
 
--(void) train;
-
--(void) identifyFace: (FaceCapture*) faceCapture;
+-(NSArray*) detectFaces: (ImageCapture*) image;
 
 @end
