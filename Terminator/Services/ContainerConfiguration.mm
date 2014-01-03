@@ -11,6 +11,7 @@
 #import "FaceDetection.h"
 #import "FaceIdentifier.h"
 #import "JsonCerealizer.h"
+#import "NamelessMasses.h"
 
 @implementation ContainerConfiguration
 
@@ -19,6 +20,8 @@
     [SquareCam registerClassAndCache: YES];
 
     [FaceIdentifier registerClassAndCache: YES];
+
+    [NamelessMasses registerClassAndCache: YES];
 
     [Terminator registerClass];
     [FaceDetection registerClass];

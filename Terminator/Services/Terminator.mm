@@ -11,6 +11,7 @@
 #import "FaceDetection.h"
 #import "CameraRoll.h"
 #import "ImageCapture.h"
+#import "FaceIdentifier.h"
 
 @interface Terminator()
 
@@ -25,6 +26,8 @@ const double ageFilter = 1;
 const double faceDetectionInterval = .5;
 
 -(void) startup {
+    [[FaceIdentifier object] train];
+
     [self.squareCam startCapturing];
     [self.squareCam useCameraPosition: AVCaptureDevicePositionFront];
 

@@ -12,11 +12,13 @@
 #import "UIImage+OpenCV.h"
 #import "FaceMatchResult.h"
 #import "Cerealizer.h"
+#import "NamelessMasses.h"
 
 @interface FaceIdentifier()
 
-@property (strong) NSMutableArray* facesToSearch;
+@property (nonatomic) BOOL canSearch;
 
+@property (strong) NSMutableArray* facesToSearch;
 @property (strong) CustomFaceRecognizer* faceRecognizer;
 
 @end
@@ -41,6 +43,10 @@ const double searchInterval = 1;
     self.faceRecognizer = [[CustomFaceRecognizer alloc] initWithFisherFaceRecognizer];
 }
 
+-(void) train {
+    self.canSearch = [self.faceRecognizer trainModel];
+}
+
 #pragma mark - Search
 -(void) identifyFace: (FaceCapture*) faceCapture {
     @synchronized (self) {
@@ -56,22 +62,31 @@ const double searchInterval = 1;
     }
 
     for (FaceCapture* faceCapture in searchItems) {
-        cv::Mat mat = faceCapture.faceImage.CVMat;
+        if (self.canSearch) {
+            cv::Mat mat = faceCapture.faceImage.CVMat;
 
-        cv::Rect rect = cvRect(0, 0, (int) faceCapture.faceImage.size.width, (int) faceCapture.faceImage.size.height);
-        NSDictionary* rawMatch = [self.faceRecognizer recognizeFace: rect inImage: mat];
+            cv::Rect rect = cvRect(0, 0, (int) faceCapture.faceImage.size.width, (int) faceCapture.faceImage.size.height);
+            NSDictionary* rawMatch = [self.faceRecognizer recognizeFace: rect inImage: mat];
 
-        FaceMatchResult* matchResult = [[Cerealizer object] create: [FaceMatchResult class] fromDictionary: rawMatch];
+            FaceMatchResult* matchResult = [[Cerealizer object] create: [FaceMatchResult class] fromDictionary: rawMatch];
 
-        if (!matchResult.personID || [matchResult.personID isEqual: @-1]) {
-            NSLog(@"No Match Found");
-            continue;
+            if (!matchResult.personID || [matchResult.personID isEqual: @-1]) {
+                [self addToTheNamelessMasses: faceCapture];
+                continue;
+            }
+
+            NSLog(@"Match Found");
         }
-
-        NSLog(@"Match Found");
+        else {
+            [self addToTheNamelessMasses: faceCapture];
+        }
     }
 
     [self performSelector: @selector(performSearch) withObject: nil afterDelay: searchInterval];
+}
+
+-(void) addToTheNamelessMasses: (FaceCapture*) faceCapture {
+    [[NamelessMasses object] addFace: faceCapture];
 }
 
 @end

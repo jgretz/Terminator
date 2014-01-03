@@ -8,10 +8,7 @@
 
 @interface FaceCapture : NSObject
 
+@property (strong) NSDate* captured;
 @property (strong) UIImage* faceImage;
-
-@property CGPoint leftEyePosition;
-@property CGPoint rightEyePosition;
-@property CGPoint mouthPosition;
 
 @end

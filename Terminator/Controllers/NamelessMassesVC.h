@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CaptureVC : UIViewController
+@interface NamelessMassesVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
-@property (strong) IBOutlet UIImageView* currentView;
+@property (strong) IBOutlet UITableView* massesTable;
 
 @end

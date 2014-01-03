@@ -8,10 +8,10 @@
 
 @class FaceCapture;
 
-@interface FaceIdentifier : NSObject
+@interface NamelessMasses : NSObject
 
--(void) train;
+@property (readonly) NSArray* faces;
 
--(void) identifyFace: (FaceCapture*) faceCapture;
+-(void) addFace: (FaceCapture*) face;
 
 @end
