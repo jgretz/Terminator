@@ -10,7 +10,7 @@
 
 @interface IdentifyFacesVC : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
-@property (strong) NSArray* selectedImagesToIdentify;
+@property (strong) NSArray* selectedFacesToIdentify;
 
 @property (strong) IBOutlet UITextField* nameTextField;
 @property (strong) IBOutlet UITableView* existingTableView;

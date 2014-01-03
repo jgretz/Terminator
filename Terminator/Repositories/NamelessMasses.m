@@ -37,4 +37,11 @@
     }
 }
 
+-(void) removeFaces: (NSArray*) facesToRemove {
+    @synchronized (self) {
+        [self.masses removeObjectsInArray: facesToRemove];
+    }
+}
+
+
 @end

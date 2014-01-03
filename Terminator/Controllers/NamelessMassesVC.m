@@ -20,7 +20,7 @@
 
 @implementation NamelessMassesVC
 
-const int refreshRate = 10;
+const int refreshRate = 5;
 
 -(id) init {
     if ((self = [super init])) {
@@ -91,13 +91,13 @@ const int refreshRate = 10;
 -(void) next {
     NSMutableArray* selected = [NSMutableArray array];
     for (NSIndexPath* path in [self.massesTable indexPathsForSelectedRows])
-        [selected addObject: [(FaceCapture*) self.data[path.row] faceImage]];
+        [selected addObject: self.data[path.row]];
 
     self.massesTable.editing = NO;
     [self displayEditOption];
 
     IdentifyFacesVC* vc = [IdentifyFacesVC object];
-    vc.selectedImagesToIdentify = selected;
+    vc.selectedFacesToIdentify = selected;
     [self.navigationController pushViewController: vc animated: YES];
 }
 

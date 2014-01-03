@@ -13,5 +13,6 @@
 @property (readonly) NSArray* faces;
 
 -(void) addFace: (FaceCapture*) face;
+-(void) removeFaces: (NSArray*) facesToRemove;
 
 @end
