@@ -6,7 +6,12 @@
 
 #import "FaceIdentifier.h"
 #import "FaceCapture.h"
+
+#import "FaceDetector.h"
 #import "CustomFaceRecognizer.h"
+#import "UIImage+OpenCV.h"
+#import "FaceMatchResult.h"
+#import "Cerealizer.h"
 
 @interface FaceIdentifier()
 
@@ -24,13 +29,15 @@ const double searchInterval = 1;
     if ((self = [super init])) {
         self.facesToSearch = [NSMutableArray array];
 
+        [self setupOpenCV];
+
         [self performSelector: @selector(performSearch) withObject: nil afterDelay: searchInterval];
     }
 
     return self;
 }
 
--(void) setupFaceRecognizer {
+-(void) setupOpenCV {
     self.faceRecognizer = [[CustomFaceRecognizer alloc] initWithFisherFaceRecognizer];
 }
 
@@ -49,8 +56,22 @@ const double searchInterval = 1;
     }
 
     for (FaceCapture* faceCapture in searchItems) {
+        cv::Mat mat = faceCapture.faceImage.CVMat;
 
+        cv::Rect rect = cvRect(0, 0, (int) faceCapture.faceImage.size.width, (int) faceCapture.faceImage.size.height);
+        NSDictionary* rawMatch = [self.faceRecognizer recognizeFace: rect inImage: mat];
+
+        FaceMatchResult* matchResult = [[Cerealizer object] create: [FaceMatchResult class] fromDictionary: rawMatch];
+
+        if (!matchResult.personID || [matchResult.personID isEqual: @-1]) {
+            NSLog(@"No Match Found");
+            continue;
+        }
+
+        NSLog(@"Match Found");
     }
+
+    [self performSelector: @selector(performSearch) withObject: nil afterDelay: searchInterval];
 }
 
 @end

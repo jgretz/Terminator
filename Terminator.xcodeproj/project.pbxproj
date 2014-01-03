@@ -48,6 +48,7 @@
 		BAC28A09377A2C03EC0956DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC28AE629E00426B3AAFEDB /* CoreGraphics.framework */; };
 		BAC28A121D4037E585CEDF7C /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = BAC288BF46660FD832A45858 /* UIImage+OpenCV.mm */; };
 		BAC28A67B1F3A6DF5D28D53D /* CameraRoll.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28882C90389FAD50CC5F0 /* CameraRoll.m */; };
+		BAC28B4A551C0B1D9CDC448B /* FaceMatchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC2881BE9AF7D261498D4C6 /* FaceMatchResult.m */; };
 		BAC28DDF2799719EBF21F1EF /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28529D763D455CE0BE1EB /* Constants.m */; };
 		BAC28E31A8A69F47F5308161 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC28FC707253467176BEC1B /* AVFoundation.framework */; };
 		BAC28E69388029E87016656A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC2847CCA8811EF87EBC2A6 /* Foundation.framework */; };
@@ -139,6 +140,7 @@
 		BAC2827B330879D80615E4F9 /* FaceCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FaceCapture.m; path = Terminator/Models/FaceCapture.m; sourceTree = SOURCE_ROOT; };
 		BAC2829DF04FC8429EDD42D0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = "<group>"; };
 		BAC282A87F9254FEC1E7945C /* TerminatorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TerminatorVC.xib; path = Terminator/Views/TerminatorVC.xib; sourceTree = SOURCE_ROOT; };
+		BAC283EE16CA517BC71DA379 /* FaceMatchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaceMatchResult.h; path = Terminator/Models/FaceMatchResult.h; sourceTree = SOURCE_ROOT; };
 		BAC284442A02975A6CBDCB7B /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+OpenCV.h"; path = "Terminator/Categories/UIImage+OpenCV.h"; sourceTree = SOURCE_ROOT; };
 		BAC2845BB1D44C83CE1C2C44 /* FaceDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FaceDetection.mm; path = Terminator/Services/FaceDetection.mm; sourceTree = SOURCE_ROOT; };
 		BAC2847CCA8811EF87EBC2A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		BAC286597355AA6226B3008E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Terminator/Constants.h; sourceTree = SOURCE_ROOT; };
 		BAC2879942B50CA8E1363A13 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = "<group>"; };
 		BAC287FE96CE8A7E5D3C70AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = "<group>"; };
+		BAC2881BE9AF7D261498D4C6 /* FaceMatchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FaceMatchResult.m; path = Terminator/Models/FaceMatchResult.m; sourceTree = SOURCE_ROOT; };
 		BAC28882C90389FAD50CC5F0 /* CameraRoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraRoll.m; path = Terminator/Repositories/CameraRoll.m; sourceTree = SOURCE_ROOT; };
 		BAC288970F3AB9FE1EE19979 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = "<group>"; };
 		BAC288BF46660FD832A45858 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "UIImage+OpenCV.mm"; path = "Terminator/Categories/UIImage+OpenCV.mm"; sourceTree = SOURCE_ROOT; };
@@ -362,6 +365,8 @@
 				BAC28CCDD561EDE24A673627 /* ImageCapture.h */,
 				BAC2827B330879D80615E4F9 /* FaceCapture.m */,
 				BAC28AD7236628BD9E5060A5 /* FaceCapture.h */,
+				BAC2881BE9AF7D261498D4C6 /* FaceMatchResult.m */,
+				BAC283EE16CA517BC71DA379 /* FaceMatchResult.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -560,6 +565,7 @@
 				BAC282D48DE6BCF1D05E5E66 /* FaceDetection.mm in Sources */,
 				BAC28F0409C168A180CED646 /* FaceIdentifier.mm in Sources */,
 				BAC28DDF2799719EBF21F1EF /* Constants.m in Sources */,
+				BAC28B4A551C0B1D9CDC448B /* FaceMatchResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,7 +683,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/** \"${PROJECT_DIR}/Cereal\"/** \"${PROJECT_DIR}/CoreMeta/CoreMeta\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -697,7 +703,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/** \"${PROJECT_DIR}/Cereal\"/** \"${PROJECT_DIR}/CoreMeta/CoreMeta\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
