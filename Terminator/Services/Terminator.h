@@ -12,6 +12,8 @@
 
 @interface Terminator : NSObject
 
++(NSString*) message;
+
 -(void) startup;
 -(void) shutdown;
 

@@ -31,7 +31,7 @@
 		8C76B86A18735B60001E6DDE /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B86418735B60001E6DDE /* icon57.png */; };
 		8C76B86B18735B60001E6DDE /* icon57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B86518735B60001E6DDE /* icon57@2x.png */; };
 		8C76B86C18735B60001E6DDE /* Icon80.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B86618735B60001E6DDE /* Icon80.png */; };
-		8C76B87318735CD1001E6DDE /* KnowledgeBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87118735CD1001E6DDE /* KnowledgeBaseVC.m */; };
+		8C76B87318735CD1001E6DDE /* KnownPeopleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87118735CD1001E6DDE /* KnownPeopleVC.m */; };
 		8C76B87818735CF4001E6DDE /* TerminatorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87618735CF4001E6DDE /* TerminatorVC.m */; };
 		8C76B88018736077001E6DDE /* Terminator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87F18736077001E6DDE /* Terminator.mm */; };
 		8C9FB9FF187602B20040FDBE /* libCereal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9FB9FD187602A70040FDBE /* libCereal.a */; };
@@ -52,7 +52,7 @@
 		BAC28551F0CBBAB9011F7C8F /* ImageCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC289C49CEC692E628A6EFC /* ImageCapture.m */; };
 		BAC2858EAE827CDD43B335B2 /* Memory.mm in Sources */ = {isa = PBXBuildFile; fileRef = BAC289BBC7E3B62EC490182A /* Memory.mm */; };
 		BAC28771297F9B18CB5A083D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC287FE96CE8A7E5D3C70AD /* QuartzCore.framework */; };
-		BAC2880E3CF84DEC4DBEF87E /* KnowledgeBaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC28FDCCDCA5B1114659BA4 /* KnowledgeBaseVC.xib */; };
+		BAC2880E3CF84DEC4DBEF87E /* KnownPeopleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC28FDCCDCA5B1114659BA4 /* KnownPeopleVC.xib */; };
 		BAC2884C8F50F11EF028EA1A /* Brain.mm in Sources */ = {isa = PBXBuildFile; fileRef = BAC28DF0EA301C1F7A73867C /* Brain.mm */; };
 		BAC2886A9880058413172E11 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC288970F3AB9FE1EE19979 /* ImageIO.framework */; };
 		BAC28893EF0E440ACC15DAF2 /* FaceCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC2827B330879D80615E4F9 /* FaceCapture.m */; };
@@ -143,8 +143,8 @@
 		8C76B86418735B60001E6DDE /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
 		8C76B86518735B60001E6DDE /* icon57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon57@2x.png"; sourceTree = "<group>"; };
 		8C76B86618735B60001E6DDE /* Icon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon80.png; sourceTree = "<group>"; };
-		8C76B87018735CD1001E6DDE /* KnowledgeBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KnowledgeBaseVC.h; path = Terminator/Controllers/KnowledgeBaseVC.h; sourceTree = SOURCE_ROOT; };
-		8C76B87118735CD1001E6DDE /* KnowledgeBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KnowledgeBaseVC.m; path = Terminator/Controllers/KnowledgeBaseVC.m; sourceTree = SOURCE_ROOT; };
+		8C76B87018735CD1001E6DDE /* KnownPeopleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KnownPeopleVC.h; path = Terminator/Controllers/KnownPeopleVC.h; sourceTree = SOURCE_ROOT; };
+		8C76B87118735CD1001E6DDE /* KnownPeopleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KnownPeopleVC.m; path = Terminator/Controllers/KnownPeopleVC.m; sourceTree = SOURCE_ROOT; };
 		8C76B87518735CF4001E6DDE /* TerminatorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TerminatorVC.h; path = Terminator/Controllers/TerminatorVC.h; sourceTree = SOURCE_ROOT; };
 		8C76B87618735CF4001E6DDE /* TerminatorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TerminatorVC.m; path = Terminator/Controllers/TerminatorVC.m; sourceTree = SOURCE_ROOT; };
 		8C76B87E18736077001E6DDE /* Terminator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Terminator.h; path = Terminator/Services/Terminator.h; sourceTree = SOURCE_ROOT; };
@@ -204,7 +204,7 @@
 		BAC28EB1CE0F41BDD0FBF852 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = "<group>"; };
 		BAC28F494E4B3B4E289EFAD5 /* SquareCam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SquareCam.h; path = Terminator/Services/Support/SquareCam.h; sourceTree = SOURCE_ROOT; };
 		BAC28FC707253467176BEC1B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = "<group>"; };
-		BAC28FDCCDCA5B1114659BA4 /* KnowledgeBaseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = KnowledgeBaseVC.xib; path = Terminator/Views/KnowledgeBaseVC.xib; sourceTree = SOURCE_ROOT; };
+		BAC28FDCCDCA5B1114659BA4 /* KnownPeopleVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = KnownPeopleVC.xib; path = Terminator/Views/KnownPeopleVC.xib; sourceTree = SOURCE_ROOT; };
 		BAC28FED4855A4730900AA09 /* AzureInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AzureInterface.m; path = Terminator/Services/Support/AzureInterface.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -260,8 +260,6 @@
 		8C083C59181DB30600250DB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8C6CBF911877657100F276EA /* ExternalAccessory.framework */,
-				8C6CBF8E1877656700F276EA /* CoreMotion.framework */,
 				8C6CBF88187764D700F276EA /* Romo */,
 				8C6CBF7F1877432700F276EA /* Azure */,
 				8C6CBF6E187741F900F276EA /* FaceRecognition */,
@@ -304,8 +302,8 @@
 				8C083C6A181DB30600250DB4 /* AppDelegate.mm */,
 				8CF169D91848EE4600AFBC56 /* NamelessMassesVC.h */,
 				8CF169DA1848EE4600AFBC56 /* NamelessMassesVC.m */,
-				8C76B87018735CD1001E6DDE /* KnowledgeBaseVC.h */,
-				8C76B87118735CD1001E6DDE /* KnowledgeBaseVC.m */,
+				8C76B87018735CD1001E6DDE /* KnownPeopleVC.h */,
+				8C76B87118735CD1001E6DDE /* KnownPeopleVC.m */,
 				8C76B87518735CF4001E6DDE /* TerminatorVC.h */,
 				8C76B87618735CF4001E6DDE /* TerminatorVC.m */,
 				8C233FD918764A9F00BBD67F /* IdentifyFacesVC.h */,
@@ -454,6 +452,8 @@
 		BAC28473199FF275D1C9F357 /* Apple */ = {
 			isa = PBXGroup;
 			children = (
+				8C6CBF911877657100F276EA /* ExternalAccessory.framework */,
+				8C6CBF8E1877656700F276EA /* CoreMotion.framework */,
 				8C46894818761A9600220605 /* libsqlite3.dylib */,
 				BAC28FC707253467176BEC1B /* AVFoundation.framework */,
 				8CF16A1718496D2E00AFBC56 /* CoreMedia.framework */,
@@ -504,7 +504,7 @@
 			children = (
 				8C6F9C30187715A100B8DCDB /* IdentifyFacesVC.xib */,
 				BAC281CB1850C164A2E88BE4 /* NamelessMassesVC.xib */,
-				BAC28FDCCDCA5B1114659BA4 /* KnowledgeBaseVC.xib */,
+				BAC28FDCCDCA5B1114659BA4 /* KnownPeopleVC.xib */,
 				BAC282A87F9254FEC1E7945C /* TerminatorVC.xib */,
 			);
 			path = Views;
@@ -626,7 +626,7 @@
 				8C76B86A18735B60001E6DDE /* icon57.png in Resources */,
 				8C76B86C18735B60001E6DDE /* Icon80.png in Resources */,
 				8C76B86718735B60001E6DDE /* icon120.png in Resources */,
-				BAC2880E3CF84DEC4DBEF87E /* KnowledgeBaseVC.xib in Resources */,
+				BAC2880E3CF84DEC4DBEF87E /* KnownPeopleVC.xib in Resources */,
 				BAC28E79F5DC13F1076E0A2B /* TerminatorVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,7 +646,7 @@
 				8CF169DC1848EE4600AFBC56 /* NamelessMassesVC.m in Sources */,
 				8C76B88018736077001E6DDE /* Terminator.mm in Sources */,
 				8C083C67181DB30600250DB4 /* main.m in Sources */,
-				8C76B87318735CD1001E6DDE /* KnowledgeBaseVC.m in Sources */,
+				8C76B87318735CD1001E6DDE /* KnownPeopleVC.m in Sources */,
 				BAC28551F0CBBAB9011F7C8F /* ImageCapture.m in Sources */,
 				BAC28893EF0E440ACC15DAF2 /* FaceCapture.m in Sources */,
 				BAC28A67B1F3A6DF5D28D53D /* CameraRoll.m in Sources */,

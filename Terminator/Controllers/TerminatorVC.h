@@ -10,4 +10,6 @@
 
 @interface TerminatorVC : UIViewController
 
+@property (strong) IBOutlet UITextView* textView;
+
 @end

@@ -24,7 +24,7 @@ const int refreshRate = 5;
 
 -(id) init {
     if ((self = [super init])) {
-        self.title = @"Masses";
+        self.title = @"Need ID";
 
         self.dateFormatter = [[NSDateFormatter alloc] init];
         [self.dateFormatter setDateFormat: @"hh:mm:ss a"];
@@ -37,7 +37,7 @@ const int refreshRate = 5;
 
     [self displayEditOption];
 
-    [self performSelector: @selector(loadData) withObject: nil afterDelay: refreshRate];
+    [self loadData];
 }
 
 -(void) loadData {

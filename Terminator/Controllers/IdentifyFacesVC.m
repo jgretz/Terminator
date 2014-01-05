@@ -82,7 +82,10 @@
     if (!cell)
         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: @"CELL"];
 
-    cell.textLabel.text = [self.people[indexPath.row] name];
+    Person* person = self.people[indexPath.row];
+
+    cell.textLabel.text = person.name;
+    cell.imageView.image = person.images.count > 0 ? person.images[0] : nil;
 
     return cell;
 }

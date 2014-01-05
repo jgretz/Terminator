@@ -24,11 +24,21 @@
 
 @implementation Terminator
 
++(NSString*) message {
+    return @"TERMINATOR_MESSAGE";
+}
+
 -(void) startup {
+    [self speak: @"Booting Memory ..."];
     [self.memory startup];
+
+    [self speak: @"Booting Brain ..."];
     [self.brain startup];
+
+    [self speak: @"Booting Eyes ..."];
     [self.eyes startup];
 
+    [self speak: @"Booting Body ..."];
     [self.body startup];
 }
 
@@ -46,6 +56,10 @@
 
 -(void) rememberAdditionalImages: (NSArray*) images forPerson: (Person*) person {
     [self.memory addImages: images toPerson: person];
+}
+
+-(void) speak: (NSString*) message {
+    [[NSNotificationCenter defaultCenter] postNotificationName: [Terminator message] object: message];
 }
 
 

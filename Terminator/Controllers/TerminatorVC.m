@@ -7,6 +7,7 @@
 //
 
 #import "TerminatorVC.h"
+#import "Terminator.h"
 
 @interface TerminatorVC ()
 
@@ -19,6 +20,16 @@
         self.title = @"Terminator";
     }
     return self;
+}
+
+-(void) viewDidLoad {
+    [super viewDidLoad];
+
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(displayMessage:) name: Terminator.message  object: nil];
+}
+
+-(void) displayMessage: (NSNotification*) notification {
+    self.textView.text = [(NSString*) notification.object stringByAppendingFormat: @"\n%@", self.textView.text];
 }
 
 @end

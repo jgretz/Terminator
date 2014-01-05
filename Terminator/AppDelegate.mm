@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ContainerConfiguration.h"
 #import "TerminatorVC.h"
-#import "KnowledgeBaseVC.h"
+#import "KnownPeopleVC.h"
 #import "NamelessMassesVC.h"
 #import "Terminator.h"
 
@@ -22,12 +22,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
 
     UITabBarController* tbc = [[UITabBarController alloc] init];
-    tbc.viewControllers = @[ [TerminatorVC object],
-                             [KnowledgeBaseVC object],
+    tbc.viewControllers = @[ [[UINavigationController alloc] initWithRootViewController: [TerminatorVC object]],
+                             [[UINavigationController alloc] initWithRootViewController: [KnownPeopleVC object]],
                              [[UINavigationController alloc] initWithRootViewController: [NamelessMassesVC object]]
     ];
-
-    tbc.selectedIndex = 2;
 
     self.window.rootViewController = tbc;
 
