@@ -24,10 +24,6 @@
 
 @implementation Terminator
 
-+(NSString*) message {
-    return @"TERMINATOR_MESSAGE";
-}
-
 -(void) startup {
     [self speak: @"Booting Memory ..."];
     [self.memory startup];
@@ -57,10 +53,5 @@
 -(void) rememberAdditionalImages: (NSArray*) images forPerson: (Person*) person {
     [self.memory addImages: images toPerson: person];
 }
-
--(void) speak: (NSString*) message {
-    [[NSNotificationCenter defaultCenter] postNotificationName: [Terminator message] object: message];
-}
-
 
 @end

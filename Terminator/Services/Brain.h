@@ -5,9 +5,11 @@
 
 
 #import <Foundation/Foundation.h>
+#import "TerminatorBase.h"
 
+@interface Brain : TerminatorBase
 
-@interface Brain : NSObject
 -(void) startup;
 -(void) shutdown;
+
 @end

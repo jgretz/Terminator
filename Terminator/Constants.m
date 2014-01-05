@@ -8,16 +8,9 @@
 
 
 @implementation Constants
-+(NSString*) ReKognitionApiKey {
-    return @"2hFxl6eOcKWBylNV";
-}
 
-+(NSString*) ReKognitionApiSecret {
-    return @"kfEpCedrIlLNFITj";
-}
-
-+(NSString*) ReKognitionNameSpace {
-    return @"SkyNet";
++(NSString*) TeminatorMessage {
+    return @"TerminatorMessage";
 }
 
 @end

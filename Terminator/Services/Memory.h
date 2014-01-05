@@ -5,10 +5,11 @@
 
 
 #import <Foundation/Foundation.h>
+#import "TerminatorBase.h"
 
 @class Person;
 
-@interface Memory : NSObject
+@interface Memory : TerminatorBase
 
 -(void) startup;
 -(void) shutdown;

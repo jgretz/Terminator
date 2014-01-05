@@ -46,6 +46,7 @@
 		BAC280C2D03A244413ECCE87 /* NamelessMasses.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC280C29C7D53DACB1889DA /* NamelessMasses.m */; };
 		BAC281B41BD7D2B3D3CDC1A3 /* OpenCVFaceRecognition.mm in Sources */ = {isa = PBXBuildFile; fileRef = BAC283E8C68957259AA73371 /* OpenCVFaceRecognition.mm */; };
 		BAC2823507D881C3B978C8C0 /* FaceDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28B3DFA6FC1724B14845B /* FaceDetection.m */; };
+		BAC28284BB461015ED535BE0 /* TerminatorBase.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC281DDA4FA81CD99514CC2 /* TerminatorBase.m */; };
 		BAC283457BB2F222FAF685A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC28527FDC86EF733AA7E8E /* UIKit.framework */; };
 		BAC283D1E86854AB90C47FCE /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC2879942B50CA8E1363A13 /* AssetsLibrary.framework */; };
 		BAC284A6E9617E5BEB31613B /* Body.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC282FFB3C42658FCBFCC6F /* Body.m */; };
@@ -160,6 +161,7 @@
 		BAC2819AA9A2AAAB4F6325AB /* FaceDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaceDetection.h; path = Terminator/Services/Support/FaceDetection.h; sourceTree = SOURCE_ROOT; };
 		BAC281AD77DE2B10B9E11746 /* Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Memory.h; path = Terminator/Services/Memory.h; sourceTree = SOURCE_ROOT; };
 		BAC281CB1850C164A2E88BE4 /* NamelessMassesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NamelessMassesVC.xib; path = Terminator/Views/NamelessMassesVC.xib; sourceTree = SOURCE_ROOT; };
+		BAC281DDA4FA81CD99514CC2 /* TerminatorBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TerminatorBase.m; path = Terminator/Services/TerminatorBase.m; sourceTree = SOURCE_ROOT; };
 		BAC2827B330879D80615E4F9 /* FaceCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FaceCapture.m; path = Terminator/Models/FaceCapture.m; sourceTree = SOURCE_ROOT; };
 		BAC2828B9ADDAEB5B330617A /* OpenCVFaceRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenCVFaceRecognition.h; path = Terminator/Services/Support/OpenCVFaceRecognition.h; sourceTree = SOURCE_ROOT; };
 		BAC2829DF04FC8429EDD42D0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 		BAC28DF0EA301C1F7A73867C /* Brain.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Brain.mm; path = Terminator/Services/Brain.mm; sourceTree = SOURCE_ROOT; };
 		BAC28E17160097F51D2373AC /* CameraRoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraRoll.h; path = Terminator/Repositories/CameraRoll.h; sourceTree = SOURCE_ROOT; };
 		BAC28EB1CE0F41BDD0FBF852 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = "<group>"; };
+		BAC28F3B56D2EF83E7AF5020 /* TerminatorBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TerminatorBase.h; path = Terminator/Services/TerminatorBase.h; sourceTree = SOURCE_ROOT; };
 		BAC28F494E4B3B4E289EFAD5 /* SquareCam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SquareCam.h; path = Terminator/Services/Support/SquareCam.h; sourceTree = SOURCE_ROOT; };
 		BAC28FC707253467176BEC1B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = "<group>"; };
 		BAC28FDCCDCA5B1114659BA4 /* KnownPeopleVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = KnownPeopleVC.xib; path = Terminator/Views/KnownPeopleVC.xib; sourceTree = SOURCE_ROOT; };
@@ -524,6 +527,8 @@
 				BAC28BD8547FA4DD9226013F /* Support */,
 				BAC282FFB3C42658FCBFCC6F /* Body.m */,
 				BAC2817E99CE15EE67C65F35 /* Body.h */,
+				BAC281DDA4FA81CD99514CC2 /* TerminatorBase.m */,
+				BAC28F3B56D2EF83E7AF5020 /* TerminatorBase.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -667,6 +672,7 @@
 				BAC281B41BD7D2B3D3CDC1A3 /* OpenCVFaceRecognition.mm in Sources */,
 				BAC28A759E27A10DFEF68FF2 /* AzureInterface.m in Sources */,
 				BAC284A6E9617E5BEB31613B /* Body.m in Sources */,
+				BAC28284BB461015ED535BE0 /* TerminatorBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

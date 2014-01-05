@@ -9,8 +9,6 @@
 
 @interface Constants : NSObject
 
-+(NSString*) ReKognitionApiKey;
-+(NSString*) ReKognitionApiSecret;
-+(NSString*) ReKognitionNameSpace;
++(NSString*) TeminatorMessage;
 
 @end

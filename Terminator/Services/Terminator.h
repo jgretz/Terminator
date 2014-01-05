@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TerminatorBase.h"
 
 @class Person;
 
-@interface Terminator : NSObject
-
-+(NSString*) message;
+@interface Terminator : TerminatorBase
 
 -(void) startup;
 -(void) shutdown;

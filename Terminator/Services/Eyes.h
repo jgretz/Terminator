@@ -5,9 +5,9 @@
 
 
 #import <Foundation/Foundation.h>
+#import "TerminatorBase.h"
 
-
-@interface Eyes : NSObject
+@interface Eyes : TerminatorBase
 
 -(void) startup;
 -(void) shutdown;

@@ -25,7 +25,7 @@
 -(void) viewDidLoad {
     [super viewDidLoad];
 
-    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(displayMessage:) name: Terminator.message  object: nil];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(displayMessage:) name: [Constants TeminatorMessage] object: nil];
 }
 
 -(void) displayMessage: (NSNotification*) notification {
