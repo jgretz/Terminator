@@ -5,9 +5,9 @@
 
 
 #import <Foundation/Foundation.h>
+#import "TerminatorBase.h"
 
-
-@interface Body : NSObject
+@interface Body : TerminatorBase
 
 -(void) startup;
 -(void) shutdown;

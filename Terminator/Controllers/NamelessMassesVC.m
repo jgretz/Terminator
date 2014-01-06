@@ -20,7 +20,7 @@
 
 @implementation NamelessMassesVC
 
-const int refreshRate = 5;
+const int nameslessMaessesRefreshRate = 5;
 
 -(id) init {
     if ((self = [super init])) {
@@ -48,7 +48,7 @@ const int refreshRate = 5;
         [self.massesTable reloadData];
     }
 
-    [self performSelector: @selector(loadData) withObject: nil afterDelay: refreshRate];
+    [self performSelector: @selector(loadData) withObject: nil afterDelay: nameslessMaessesRefreshRate];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource

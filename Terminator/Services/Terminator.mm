@@ -39,10 +39,16 @@
 }
 
 -(void) shutdown {
+    [self speak: @"Shutting Down Eyes ..."];
     [self.eyes shutdown];
+    
+    [self speak: @"Shutting Down Brain ..."];
     [self.brain shutdown];
+    
+    [self speak: @"Shutting Down Memory ..."];
     [self.memory shutdown];
-
+    
+    [self speak: @"Shutting Down Body ..."];
     [self.body shutdown];
 }
 

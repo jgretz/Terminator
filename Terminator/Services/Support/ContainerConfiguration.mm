@@ -16,6 +16,7 @@
 #import "Memory.h"
 #import "Brain.h"
 #import "Eyes.h"
+#import "Body.h"
 #import "AzureInterface.h"
 
 @implementation ContainerConfiguration
@@ -33,6 +34,7 @@
     [Memory registerClass];
     [Brain registerClass];
     [Eyes registerClass];
+    [Body registerClass];
 
     [FaceDetection registerClass];
     [AzureInterface registerClass];

@@ -19,7 +19,7 @@
 
 @implementation KnownPeopleVC
 
-const int refreshRate = 5;
+const int knowPeopleRefreshRate = 5;
 
 -(id) init {
     if ((self = [super init])) {
@@ -40,7 +40,7 @@ const int refreshRate = 5;
     }];
     [self.peopleTableView reloadData];
 
-    [self performSelector: @selector(loadData) withObject: nil afterDelay: refreshRate];
+    [self performSelector: @selector(loadData) withObject: nil afterDelay: knowPeopleRefreshRate];
 }
 
 -(NSInteger) tableView: (UITableView*) tableView numberOfRowsInSection: (NSInteger) section {
