@@ -11,6 +11,7 @@
 @interface CameraRoll : NSObject
 
 @property (strong) NSMutableArray* capturedImages;
+@property (readonly) float framesPerSecond;
 
 -(void) pushImage: (ImageCapture*) capture;
 -(NSArray*) pop;

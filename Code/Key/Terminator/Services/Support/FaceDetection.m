@@ -5,7 +5,6 @@
 #import "FaceDetection.h"
 #import "ImageCapture.h"
 #import "FaceCapture.h"
-#import "OpenCVFaceRecognition.h"
 
 @interface FaceDetection()
 
@@ -14,10 +13,9 @@
 @implementation FaceDetection
 
 -(NSArray*) detectFaces: (ImageCapture*) capture {
-    NSDictionary* options = @{ CIDetectorAccuracy : CIDetectorAccuracyLow };
-    CIDetector* detector = [CIDetector detectorOfType: CIDetectorTypeFace context: nil options: options];
+    CIDetector* detector = [CIDetector detectorOfType: CIDetectorTypeFace context: nil options: @{ CIDetectorAccuracy : CIDetectorAccuracyLow }];
 
-    NSArray* features = [detector featuresInImage: capture.image options: @{ CIDetectorImageOrientation : @6 }]; // 0th row is on the right, and 0th column is the top
+    NSArray* features = [detector featuresInImage: capture.image options: @{ CIDetectorImageOrientation : @1 }];
     if (features.count == 0)
         return @[];
 

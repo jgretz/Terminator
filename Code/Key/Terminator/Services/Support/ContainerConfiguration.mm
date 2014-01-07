@@ -18,6 +18,7 @@
 #import "Eyes.h"
 #import "Body.h"
 #import "AzureInterface.h"
+#import "OPSCounter.h"
 
 @implementation ContainerConfiguration
 
@@ -39,6 +40,8 @@
     [FaceDetection registerClass];
     [AzureInterface registerClass];
     [JsonCerealizer registerClass];
+
+    [OPSCounter registerClass];
 }
 
 @end

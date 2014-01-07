@@ -29,7 +29,9 @@
 }
 
 -(void) displayMessage: (NSNotification*) notification {
-    self.textView.text = [(NSString*) notification.object stringByAppendingFormat: @"\n%@", self.textView.text];
+    [self performBlockInMainThread: ^{
+        self.textView.text = [(NSString*) notification.object stringByAppendingFormat: @"\n%@", self.textView.text];
+    }];
 }
 
 @end

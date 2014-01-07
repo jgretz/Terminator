@@ -6,8 +6,11 @@
 
 #import "CameraRoll.h"
 #import "ImageCapture.h"
+#import "OPSCounter.h"
 
 @interface CameraRoll()
+
+@property (strong) OPSCounter* opsCounter;
 
 @end
 
@@ -21,12 +24,18 @@
     return self;
 }
 
+-(float) framesPerSecond {
+    return self.opsCounter.ops;
+}
+
 -(void) pushImage: (ImageCapture*) capture {
     @synchronized (self) {
         [self.capturedImages addObject: capture];
 
         [[NSNotificationCenter defaultCenter] postNotificationName: [Constants ImageAddedToCameraRoll] object: capture.uiImage];
     }
+
+    [self.opsCounter addOperationAt: [NSDate date]];
 }
 
 -(NSArray*) pop {

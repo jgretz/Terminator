@@ -7,12 +7,15 @@
 //
 
 #import "AdminVC.h"
+#import "CameraRoll.h"
 
 @interface AdminVC()
 
 @end
 
 @implementation AdminVC
+
+const NSTimeInterval statsRefreshRate = 1;
 
 -(id) init {
     if ((self = [super init])) {
@@ -27,7 +30,7 @@
 
     self.navigationController.navigationBar.translucent = NO;
 
-    UISegmentedControl* segmentedControl = [[UISegmentedControl alloc] initWithItems: @[ @"Images", @"Stats", @"Dance" ]];
+    UISegmentedControl* segmentedControl = [[UISegmentedControl alloc] initWithItems: @[ @"Camera", @"Faces", @"Dance", @"Stats" ]];
     segmentedControl.selectedSegmentIndex = 0;
     [segmentedControl addTarget: self action: @selector(setSelectedIndex:) forControlEvents: UIControlEventValueChanged];
     self.navigationItem.titleView = segmentedControl;
@@ -35,6 +38,8 @@
     [self setSelectedIndex: segmentedControl];
 
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(imageAddedToCameraRoll:) name: [Constants ImageAddedToCameraRoll] object: nil];
+
+    [self refreshData];
 }
 
 -(void) setSelectedIndex: (UISegmentedControl*) segmentedControl {
@@ -43,8 +48,34 @@
     [self.view.subviews[segmentedControl.selectedSegmentIndex] setHidden: NO];
 }
 
+-(void) refreshData {
+    [self.statsTableView reloadData];
+
+    [self performSelector: @selector(refreshData) withObject: nil afterDelay: statsRefreshRate];
+}
+
 -(void) imageAddedToCameraRoll: (NSNotification*) notification {
     [self.cameraImageView performSelectorOnMainThread: @selector(setImage:) withObject: notification.object waitUntilDone: NO];
 }
+
+#pragma mark - UITableViewDelegate, UITableViewDataSource
+-(NSInteger) tableView: (UITableView*) tableView numberOfRowsInSection: (NSInteger) section {
+    return 1;
+}
+
+-(UITableViewCell*) tableView: (UITableView*) tableView cellForRowAtIndexPath: (NSIndexPath*) indexPath {
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier: @"CELL"];
+    if (!cell)
+        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: @"CELL"];
+
+    switch (indexPath.row) {
+        case 0:
+            cell.textLabel.text = [NSString stringWithFormat: @"Camera FPS: %.2f", [[CameraRoll object] framesPerSecond]];
+            break;
+    }
+
+    return cell;
+}
+
 
 @end

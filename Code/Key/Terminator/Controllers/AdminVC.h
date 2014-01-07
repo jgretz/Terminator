@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AdminVC : UIViewController
+@interface AdminVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong) IBOutlet UIView* cameraView;
 @property (strong) IBOutlet UIImageView* cameraImageView;
 
-@property (strong) IBOutlet UIView* statsView;
+@property (strong) IBOutlet UIView* faceView;
+@property (strong) IBOutlet UIImageView* faceImageView;
+
 @property (strong) IBOutlet UIView* danceView;
+
+@property (strong) IBOutlet UIView* statsView;
+@property (strong) IBOutlet UITableView* statsTableView;
 
 @end
