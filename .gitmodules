@@ -1,6 +1,12 @@
-[submodule "Code/Cereal"]
-	path = Code/Cereal
+[submodule "Code/Key/Cereal"]
+	path = Code/Key/Cereal
 	url = https://github.com/jgretz/Cereal.git
-[submodule "Code/CoreMeta"]
-	path = Code/CoreMeta
+[submodule "Code/Starter/Cereal"]
+	path = Code/Starter/Cereal
+	url = https://github.com/jgretz/Cereal.git
+[submodule "Code/Key/CoreMeta"]
+	path = Code/Key/CoreMeta
+	url = https://github.com/jgretz/CoreMeta.git
+[submodule "Code/Starter/CoreMeta"]
+	path = Code/Starter/CoreMeta
 	url = https://github.com/jgretz/CoreMeta.git
