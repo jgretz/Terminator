@@ -91,7 +91,7 @@ const double searchForPeopleInterval = 1;
             }
 
             Person* person = [[KnownPeople object] getPerson: result.personID.intValue];
-            NSLog(@"Person Found - %@", person.name);
+            [self speak: [NSString stringWithFormat: @"Person Identified - %@", person.name]];
         }
 
         [self performBlockInMainThread: ^{
