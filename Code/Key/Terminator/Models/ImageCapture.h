@@ -9,8 +9,6 @@
 @interface ImageCapture : NSObject
 
 @property (strong) CIImage* image;
-@property (nonatomic) UIDeviceOrientation deviceOrientation;
-@property (nonatomic) AVCaptureDevicePosition cameraPosition;
 @property (strong) NSDate* captured;
 
 @property (readonly) UIImage* uiImage;

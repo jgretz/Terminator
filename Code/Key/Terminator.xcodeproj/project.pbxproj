@@ -34,6 +34,7 @@
 		8C76B87318735CD1001E6DDE /* KnownPeopleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87118735CD1001E6DDE /* KnownPeopleVC.m */; };
 		8C76B87818735CF4001E6DDE /* TerminatorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87618735CF4001E6DDE /* TerminatorVC.m */; };
 		8C76B88018736077001E6DDE /* Terminator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87F18736077001E6DDE /* Terminator.mm */; };
+		8CD71B6A187C927B00899AE6 /* AdminVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD71B68187C927B00899AE6 /* AdminVC.m */; };
 		8CE33941187C42CE000CE21E /* libCereal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE33933187C42B4000CE21E /* libCereal.a */; };
 		8CE33942187C42CE000CE21E /* libCoreMeta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE3393A187C42BA000CE21E /* libCoreMeta.a */; };
 		8CF169DC1848EE4600AFBC56 /* NamelessMassesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF169DA1848EE4600AFBC56 /* NamelessMassesVC.m */; };
@@ -52,6 +53,7 @@
 		BAC284A6E9617E5BEB31613B /* Body.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC282FFB3C42658FCBFCC6F /* Body.m */; };
 		BAC28551F0CBBAB9011F7C8F /* ImageCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC289C49CEC692E628A6EFC /* ImageCapture.m */; };
 		BAC2858EAE827CDD43B335B2 /* Memory.mm in Sources */ = {isa = PBXBuildFile; fileRef = BAC289BBC7E3B62EC490182A /* Memory.mm */; };
+		BAC28693ED13495F24188E8D /* AdminVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC28E2247956839B49ABA81 /* AdminVC.xib */; };
 		BAC28771297F9B18CB5A083D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC287FE96CE8A7E5D3C70AD /* QuartzCore.framework */; };
 		BAC2880E3CF84DEC4DBEF87E /* KnownPeopleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC28FDCCDCA5B1114659BA4 /* KnownPeopleVC.xib */; };
 		BAC2884C8F50F11EF028EA1A /* Brain.mm in Sources */ = {isa = PBXBuildFile; fileRef = BAC28DF0EA301C1F7A73867C /* Brain.mm */; };
@@ -150,6 +152,8 @@
 		8C76B87618735CF4001E6DDE /* TerminatorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TerminatorVC.m; path = Terminator/Controllers/TerminatorVC.m; sourceTree = SOURCE_ROOT; };
 		8C76B87E18736077001E6DDE /* Terminator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Terminator.h; path = Terminator/Services/Terminator.h; sourceTree = SOURCE_ROOT; };
 		8C76B87F18736077001E6DDE /* Terminator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Terminator.mm; path = Terminator/Services/Terminator.mm; sourceTree = SOURCE_ROOT; };
+		8CD71B67187C927B00899AE6 /* AdminVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdminVC.h; path = Terminator/Controllers/AdminVC.h; sourceTree = SOURCE_ROOT; };
+		8CD71B68187C927B00899AE6 /* AdminVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdminVC.m; path = Terminator/Controllers/AdminVC.m; sourceTree = SOURCE_ROOT; };
 		8CE3392E187C42B4000CE21E /* Cereal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cereal.xcodeproj; path = Cereal/Cereal.xcodeproj; sourceTree = "<group>"; };
 		8CE33934187C42B9000CE21E /* CoreMeta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreMeta.xcodeproj; path = CoreMeta/CoreMeta/CoreMeta.xcodeproj; sourceTree = "<group>"; };
 		8CF169D91848EE4600AFBC56 /* NamelessMassesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NamelessMassesVC.h; path = Terminator/Controllers/NamelessMassesVC.h; sourceTree = SOURCE_ROOT; };
@@ -203,6 +207,7 @@
 		BAC28DA35626B6F602175C98 /* ContainerConfiguration.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ContainerConfiguration.mm; path = Terminator/Services/Support/ContainerConfiguration.mm; sourceTree = SOURCE_ROOT; };
 		BAC28DF0EA301C1F7A73867C /* Brain.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Brain.mm; path = Terminator/Services/Brain.mm; sourceTree = SOURCE_ROOT; };
 		BAC28E17160097F51D2373AC /* CameraRoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraRoll.h; path = Terminator/Repositories/CameraRoll.h; sourceTree = SOURCE_ROOT; };
+		BAC28E2247956839B49ABA81 /* AdminVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AdminVC.xib; path = Terminator/Views/AdminVC.xib; sourceTree = SOURCE_ROOT; };
 		BAC28EB1CE0F41BDD0FBF852 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = "<group>"; };
 		BAC28F3B56D2EF83E7AF5020 /* TerminatorBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TerminatorBase.h; path = Terminator/Services/TerminatorBase.h; sourceTree = SOURCE_ROOT; };
 		BAC28F494E4B3B4E289EFAD5 /* SquareCam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SquareCam.h; path = Terminator/Services/Support/SquareCam.h; sourceTree = SOURCE_ROOT; };
@@ -311,6 +316,8 @@
 				8C76B87618735CF4001E6DDE /* TerminatorVC.m */,
 				8C233FD918764A9F00BBD67F /* IdentifyFacesVC.h */,
 				8C233FDA18764A9F00BBD67F /* IdentifyFacesVC.m */,
+				8CD71B67187C927B00899AE6 /* AdminVC.h */,
+				8CD71B68187C927B00899AE6 /* AdminVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -509,6 +516,7 @@
 				BAC281CB1850C164A2E88BE4 /* NamelessMassesVC.xib */,
 				BAC28FDCCDCA5B1114659BA4 /* KnownPeopleVC.xib */,
 				BAC282A87F9254FEC1E7945C /* TerminatorVC.xib */,
+				BAC28E2247956839B49ABA81 /* AdminVC.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -633,6 +641,7 @@
 				8C76B86718735B60001E6DDE /* icon120.png in Resources */,
 				BAC2880E3CF84DEC4DBEF87E /* KnownPeopleVC.xib in Resources */,
 				BAC28E79F5DC13F1076E0A2B /* TerminatorVC.xib in Resources */,
+				BAC28693ED13495F24188E8D /* AdminVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +654,7 @@
 			files = (
 				8C6CBF7A187741F900F276EA /* FaceDetector.mm in Sources */,
 				8C233FDC18764A9F00BBD67F /* IdentifyFacesVC.m in Sources */,
+				8CD71B6A187C927B00899AE6 /* AdminVC.m in Sources */,
 				BAC28A121D4037E585CEDF7C /* UIImage+OpenCV.mm in Sources */,
 				8C76B87818735CF4001E6DDE /* TerminatorVC.m in Sources */,
 				8C083C6B181DB30600250DB4 /* AppDelegate.mm in Sources */,

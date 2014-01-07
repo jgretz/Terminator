@@ -104,14 +104,12 @@
     // got an image
     CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     CFDictionaryRef attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, kCMAttachmentMode_ShouldPropagate);
-    CIImage* ciImage = [[CIImage alloc] initWithCVPixelBuffer: pixelBuffer options: (__bridge NSDictionary*) attachments];
+    CIImage* ciImage = [[[CIImage alloc] initWithCVPixelBuffer: pixelBuffer options: (__bridge NSDictionary*) attachments] imageByApplyingTransform: CGAffineTransformMakeRotation((CGFloat) (-90 * M_PI/ 180))];
     if (attachments)
         CFRelease(attachments);
 
     ImageCapture* captured = [ImageCapture object];
     captured.image = ciImage;
-    captured.deviceOrientation = [[UIDevice currentDevice] orientation];
-    captured.cameraPosition = self.currentCameraPosition;
     captured.captured = [NSDate date];
 
     [[CameraRoll object] pushImage: captured];

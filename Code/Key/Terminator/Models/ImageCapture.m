@@ -16,7 +16,7 @@
 -(UIImage*) uiImage {
     @synchronized (self) {
         if (!resolvedUIImage)
-            resolvedUIImage = [UIImage imageWithCIImage: self.image scale: 1 orientation: (UIImageOrientation) self.deviceOrientation];
+            resolvedUIImage = [UIImage imageWithCIImage: self.image scale: 1 orientation: UIImageOrientationUp];
     }
     return resolvedUIImage;
 }

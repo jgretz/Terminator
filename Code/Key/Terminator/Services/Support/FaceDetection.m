@@ -24,8 +24,8 @@
     // capture the faces in the image
     NSMutableArray* faces = [NSMutableArray array];
     for (CIFaceFeature* face in features) {
-        // crop and rotate
-        CIImage* workingImage = [[capture.image imageByCroppingToRect: face.bounds] imageByApplyingTransform: CGAffineTransformMakeRotation((CGFloat) (-90 * M_PI/ 180))];
+        // crop
+        CIImage* workingImage = [capture.image imageByCroppingToRect: face.bounds];
 
         // save
         CIContext* context = [CIContext contextWithOptions: nil];

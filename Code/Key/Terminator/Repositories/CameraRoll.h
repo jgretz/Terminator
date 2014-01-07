@@ -12,7 +12,7 @@
 
 @property (strong) NSMutableArray* capturedImages;
 
--(void) pushImage: (ImageCapture*) image;
+-(void) pushImage: (ImageCapture*) capture;
 -(NSArray*) pop;
 
 @end

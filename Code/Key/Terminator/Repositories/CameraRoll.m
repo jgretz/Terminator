@@ -21,9 +21,11 @@
     return self;
 }
 
--(void) pushImage: (ImageCapture*) image {
+-(void) pushImage: (ImageCapture*) capture {
     @synchronized (self) {
-        [self.capturedImages addObject: image];
+        [self.capturedImages addObject: capture];
+
+        [[NSNotificationCenter defaultCenter] postNotificationName: [Constants ImageAddedToCameraRoll] object: capture.uiImage];
     }
 }
 

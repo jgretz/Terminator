@@ -9,6 +9,10 @@
 
 @implementation Constants
 
++(NSString*) ImageAddedToCameraRoll {
+    return @"ImageAddedToCameraRoll";
+}
+
 +(NSString*) TeminatorMessage {
     return @"TerminatorMessage";
 }

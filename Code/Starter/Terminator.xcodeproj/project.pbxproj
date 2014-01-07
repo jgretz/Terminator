@@ -39,6 +39,8 @@
 		8CF169DC1848EE4600AFBC56 /* NamelessMassesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF169DA1848EE4600AFBC56 /* NamelessMassesVC.m */; };
 		8CF16A0D1848F1C700AFBC56 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF16A0C1848F1C700AFBC56 /* libxml2.dylib */; };
 		8CF16A1818496D2E00AFBC56 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF16A1718496D2E00AFBC56 /* CoreMedia.framework */; };
+		8CF75F8E187C91E20004CD95 /* AdminVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF75F8C187C91E20004CD95 /* AdminVC.m */; };
+		8CF75F8F187C91E20004CD95 /* AdminVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CF75F8D187C91E20004CD95 /* AdminVC.xib */; };
 		BAC2803F8AA56B380F5EEBE9 /* Path.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC287F705BAA1FFC320ED45 /* Path.m */; };
 		BAC28053E63925CBB874E684 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC2829DF04FC8429EDD42D0 /* MobileCoreServices.framework */; };
 		BAC2805B88C155D6F3F4CD1F /* SquareCam.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28A904B5932154AEB0364 /* SquareCam.m */; };
@@ -156,6 +158,9 @@
 		8CF169DA1848EE4600AFBC56 /* NamelessMassesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NamelessMassesVC.m; path = Terminator/Controllers/NamelessMassesVC.m; sourceTree = SOURCE_ROOT; };
 		8CF16A0C1848F1C700AFBC56 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		8CF16A1718496D2E00AFBC56 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		8CF75F8B187C91E20004CD95 /* AdminVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdminVC.h; path = Terminator/Controllers/AdminVC.h; sourceTree = SOURCE_ROOT; };
+		8CF75F8C187C91E20004CD95 /* AdminVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdminVC.m; path = Terminator/Controllers/AdminVC.m; sourceTree = SOURCE_ROOT; };
+		8CF75F8D187C91E20004CD95 /* AdminVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AdminVC.xib; path = Terminator/Controllers/AdminVC.xib; sourceTree = SOURCE_ROOT; };
 		BAC280C29C7D53DACB1889DA /* NamelessMasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NamelessMasses.m; path = Terminator/Repositories/NamelessMasses.m; sourceTree = SOURCE_ROOT; };
 		BAC2817E99CE15EE67C65F35 /* Body.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Body.h; path = Terminator/Services/Body.h; sourceTree = SOURCE_ROOT; };
 		BAC2819AA9A2AAAB4F6325AB /* FaceDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaceDetection.h; path = Terminator/Services/Support/FaceDetection.h; sourceTree = SOURCE_ROOT; };
@@ -311,6 +316,9 @@
 				8C76B87618735CF4001E6DDE /* TerminatorVC.m */,
 				8C233FD918764A9F00BBD67F /* IdentifyFacesVC.h */,
 				8C233FDA18764A9F00BBD67F /* IdentifyFacesVC.m */,
+				8CF75F8B187C91E20004CD95 /* AdminVC.h */,
+				8CF75F8C187C91E20004CD95 /* AdminVC.m */,
+				8CF75F8D187C91E20004CD95 /* AdminVC.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -630,6 +638,7 @@
 				BAC288B7C4801698D28E78B5 /* NamelessMassesVC.xib in Resources */,
 				8C76B86A18735B60001E6DDE /* icon57.png in Resources */,
 				8C76B86C18735B60001E6DDE /* Icon80.png in Resources */,
+				8CF75F8F187C91E20004CD95 /* AdminVC.xib in Resources */,
 				8C76B86718735B60001E6DDE /* icon120.png in Resources */,
 				BAC2880E3CF84DEC4DBEF87E /* KnownPeopleVC.xib in Resources */,
 				BAC28E79F5DC13F1076E0A2B /* TerminatorVC.xib in Resources */,
@@ -645,6 +654,7 @@
 			files = (
 				8C6CBF7A187741F900F276EA /* FaceDetector.mm in Sources */,
 				8C233FDC18764A9F00BBD67F /* IdentifyFacesVC.m in Sources */,
+				8CF75F8E187C91E20004CD95 /* AdminVC.m in Sources */,
 				BAC28A121D4037E585CEDF7C /* UIImage+OpenCV.mm in Sources */,
 				8C76B87818735CF4001E6DDE /* TerminatorVC.m in Sources */,
 				8C083C6B181DB30600250DB4 /* AppDelegate.mm in Sources */,

@@ -12,6 +12,7 @@
 #import "KnownPeopleVC.h"
 #import "NamelessMassesVC.h"
 #import "Terminator.h"
+#import "AdminVC.h"
 
 @implementation AppDelegate
 
@@ -24,7 +25,8 @@
     UITabBarController* tbc = [[UITabBarController alloc] init];
     tbc.viewControllers = @[ [[UINavigationController alloc] initWithRootViewController: [TerminatorVC object]],
                              [[UINavigationController alloc] initWithRootViewController: [KnownPeopleVC object]],
-                             [[UINavigationController alloc] initWithRootViewController: [NamelessMassesVC object]]
+                             [[UINavigationController alloc] initWithRootViewController: [NamelessMassesVC object]],
+                             [[UINavigationController alloc] initWithRootViewController: [AdminVC object]]
     ];
 
     self.window.rootViewController = tbc;
