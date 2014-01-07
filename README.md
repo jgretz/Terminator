@@ -1,4 +1,6 @@
 Terminator
 ==========
 
-The iOS app portion of my CodeMash talk - Lets Build Skynet in an Hour
+Presentation adn Code for "Lets Build Skynet in an Hour"
+
+Have Fun with it
