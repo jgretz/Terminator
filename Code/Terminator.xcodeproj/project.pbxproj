@@ -34,9 +34,9 @@
 		8C76B87318735CD1001E6DDE /* KnownPeopleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87118735CD1001E6DDE /* KnownPeopleVC.m */; };
 		8C76B87818735CF4001E6DDE /* TerminatorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87618735CF4001E6DDE /* TerminatorVC.m */; };
 		8C76B88018736077001E6DDE /* Terminator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B87F18736077001E6DDE /* Terminator.mm */; };
-		8C9FB9FF187602B20040FDBE /* libCereal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9FB9FD187602A70040FDBE /* libCereal.a */; };
+		8CE33941187C42CE000CE21E /* libCereal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE33933187C42B4000CE21E /* libCereal.a */; };
+		8CE33942187C42CE000CE21E /* libCoreMeta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE3393A187C42BA000CE21E /* libCoreMeta.a */; };
 		8CF169DC1848EE4600AFBC56 /* NamelessMassesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF169DA1848EE4600AFBC56 /* NamelessMassesVC.m */; };
-		8CF16A0B1848F19400AFBC56 /* libCoreMeta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF169FC1848F0DF00AFBC56 /* libCoreMeta.a */; };
 		8CF16A0D1848F1C700AFBC56 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF16A0C1848F1C700AFBC56 /* libxml2.dylib */; };
 		8CF16A1818496D2E00AFBC56 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF16A1718496D2E00AFBC56 /* CoreMedia.framework */; };
 		BAC2803F8AA56B380F5EEBE9 /* Path.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC287F705BAA1FFC320ED45 /* Path.m */; };
@@ -74,40 +74,40 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8C9FB9FC187602A70040FDBE /* PBXContainerItemProxy */ = {
+		8CE33932187C42B4000CE21E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8C9FB9F8187602A70040FDBE /* Cereal.xcodeproj */;
+			containerPortal = 8CE3392E187C42B4000CE21E /* Cereal.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8C6B4CF81747CB080023ADCF;
 			remoteInfo = Cereal;
 		};
-		8C9FBA00187602FF0040FDBE /* PBXContainerItemProxy */ = {
+		8CE33939187C42BA000CE21E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8C9FB9F8187602A70040FDBE /* Cereal.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C6B4CF71747CB080023ADCF;
-			remoteInfo = Cereal;
-		};
-		8CF169FB1848F0DF00AFBC56 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */;
+			containerPortal = 8CE33934187C42B9000CE21E /* CoreMeta.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8C14303615B4A04500A9C1B9;
 			remoteInfo = CoreMeta;
 		};
-		8CF169FD1848F0DF00AFBC56 /* PBXContainerItemProxy */ = {
+		8CE3393B187C42BA000CE21E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */;
+			containerPortal = 8CE33934187C42B9000CE21E /* CoreMeta.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8C14304615B4A04500A9C1B9;
 			remoteInfo = CoreMetaTests;
 		};
-		8CF169FF1848F12600AFBC56 /* PBXContainerItemProxy */ = {
+		8CE3393D187C42C4000CE21E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */;
+			containerPortal = 8CE33934187C42B9000CE21E /* CoreMeta.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 8C14303515B4A04500A9C1B9;
 			remoteInfo = CoreMeta;
+		};
+		8CE3393F187C42C4000CE21E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CE3392E187C42B4000CE21E /* Cereal.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C6B4CF71747CB080023ADCF;
+			remoteInfo = Cereal;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -150,10 +150,10 @@
 		8C76B87618735CF4001E6DDE /* TerminatorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TerminatorVC.m; path = Terminator/Controllers/TerminatorVC.m; sourceTree = SOURCE_ROOT; };
 		8C76B87E18736077001E6DDE /* Terminator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Terminator.h; path = Terminator/Services/Terminator.h; sourceTree = SOURCE_ROOT; };
 		8C76B87F18736077001E6DDE /* Terminator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Terminator.mm; path = Terminator/Services/Terminator.mm; sourceTree = SOURCE_ROOT; };
-		8C9FB9F8187602A70040FDBE /* Cereal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cereal.xcodeproj; path = Cereal/Cereal.xcodeproj; sourceTree = "<group>"; };
+		8CE3392E187C42B4000CE21E /* Cereal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cereal.xcodeproj; path = Cereal/Cereal.xcodeproj; sourceTree = "<group>"; };
+		8CE33934187C42B9000CE21E /* CoreMeta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreMeta.xcodeproj; path = CoreMeta/CoreMeta/CoreMeta.xcodeproj; sourceTree = "<group>"; };
 		8CF169D91848EE4600AFBC56 /* NamelessMassesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NamelessMassesVC.h; path = Terminator/Controllers/NamelessMassesVC.h; sourceTree = SOURCE_ROOT; };
 		8CF169DA1848EE4600AFBC56 /* NamelessMassesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NamelessMassesVC.m; path = Terminator/Controllers/NamelessMassesVC.m; sourceTree = SOURCE_ROOT; };
-		8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreMeta.xcodeproj; path = CoreMeta/CoreMeta/CoreMeta.xcodeproj; sourceTree = "<group>"; };
 		8CF16A0C1848F1C700AFBC56 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		8CF16A1718496D2E00AFBC56 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		BAC280C29C7D53DACB1889DA /* NamelessMasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NamelessMasses.m; path = Terminator/Repositories/NamelessMasses.m; sourceTree = SOURCE_ROOT; };
@@ -216,6 +216,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CE33941187C42CE000CE21E /* libCereal.a in Frameworks */,
+				8CE33942187C42CE000CE21E /* libCoreMeta.a in Frameworks */,
 				8C6CBF921877657100F276EA /* ExternalAccessory.framework in Frameworks */,
 				8C6CBF8F1877656700F276EA /* CoreMotion.framework in Frameworks */,
 				8C6CBF8A187764D700F276EA /* RMCore.framework in Frameworks */,
@@ -230,8 +232,6 @@
 				BAC2886A9880058413172E11 /* ImageIO.framework in Frameworks */,
 				BAC28771297F9B18CB5A083D /* QuartzCore.framework in Frameworks */,
 				8C6CBF811877432F00F276EA /* WindowsAzureMobileServices.framework in Frameworks */,
-				8CF16A0B1848F19400AFBC56 /* libCoreMeta.a in Frameworks */,
-				8C9FB9FF187602B20040FDBE /* libCereal.a in Frameworks */,
 				8CF16A0D1848F1C700AFBC56 /* libxml2.dylib in Frameworks */,
 				BAC28A09377A2C03EC0956DA /* CoreGraphics.framework in Frameworks */,
 				BAC28E69388029E87016656A /* Foundation.framework in Frameworks */,
@@ -385,10 +385,19 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
-		8C9FB9F9187602A70040FDBE /* Products */ = {
+		8CE3392F187C42B4000CE21E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C9FB9FD187602A70040FDBE /* libCereal.a */,
+				8CE33933187C42B4000CE21E /* libCereal.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CE33935187C42B9000CE21E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CE3393A187C42BA000CE21E /* libCoreMeta.a */,
+				8CE3393C187C42BA000CE21E /* CoreMetaTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -396,8 +405,8 @@
 		8CF169D51848EC6200AFBC56 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
-				8C9FB9F8187602A70040FDBE /* Cereal.xcodeproj */,
-				8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */,
+				8CE33934187C42B9000CE21E /* CoreMeta.xcodeproj */,
+				8CE3392E187C42B4000CE21E /* Cereal.xcodeproj */,
 			);
 			name = Submodules;
 			sourceTree = "<group>";
@@ -413,15 +422,6 @@
 				BAC28DA35626B6F602175C98 /* ContainerConfiguration.mm */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		8CF169F71848F0DF00AFBC56 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8CF169FC1848F0DF00AFBC56 /* libCoreMeta.a */,
-				8CF169FE1848F0DF00AFBC56 /* CoreMetaTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		BAC2829F060D81A93755AEF2 /* Models */ = {
@@ -547,8 +547,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				8C9FBA01187602FF0040FDBE /* PBXTargetDependency */,
-				8CF16A001848F12600AFBC56 /* PBXTargetDependency */,
+				8CE3393E187C42C4000CE21E /* PBXTargetDependency */,
+				8CE33940187C42C4000CE21E /* PBXTargetDependency */,
 			);
 			name = Terminator;
 			productName = terminator;
@@ -576,12 +576,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 8C9FB9F9187602A70040FDBE /* Products */;
-					ProjectRef = 8C9FB9F8187602A70040FDBE /* Cereal.xcodeproj */;
+					ProductGroup = 8CE3392F187C42B4000CE21E /* Products */;
+					ProjectRef = 8CE3392E187C42B4000CE21E /* Cereal.xcodeproj */;
 				},
 				{
-					ProductGroup = 8CF169F71848F0DF00AFBC56 /* Products */;
-					ProjectRef = 8CF169F61848F0DF00AFBC56 /* CoreMeta.xcodeproj */;
+					ProductGroup = 8CE33935187C42B9000CE21E /* Products */;
+					ProjectRef = 8CE33934187C42B9000CE21E /* CoreMeta.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -592,25 +592,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		8C9FB9FD187602A70040FDBE /* libCereal.a */ = {
+		8CE33933187C42B4000CE21E /* libCereal.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libCereal.a;
-			remoteRef = 8C9FB9FC187602A70040FDBE /* PBXContainerItemProxy */;
+			remoteRef = 8CE33932187C42B4000CE21E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8CF169FC1848F0DF00AFBC56 /* libCoreMeta.a */ = {
+		8CE3393A187C42BA000CE21E /* libCoreMeta.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libCoreMeta.a;
-			remoteRef = 8CF169FB1848F0DF00AFBC56 /* PBXContainerItemProxy */;
+			remoteRef = 8CE33939187C42BA000CE21E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8CF169FE1848F0DF00AFBC56 /* CoreMetaTests.octest */ = {
+		8CE3393C187C42BA000CE21E /* CoreMetaTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = CoreMetaTests.octest;
-			remoteRef = 8CF169FD1848F0DF00AFBC56 /* PBXContainerItemProxy */;
+			remoteRef = 8CE3393B187C42BA000CE21E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -679,15 +679,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8C9FBA01187602FF0040FDBE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Cereal;
-			targetProxy = 8C9FBA00187602FF0040FDBE /* PBXContainerItemProxy */;
-		};
-		8CF16A001848F12600AFBC56 /* PBXTargetDependency */ = {
+		8CE3393E187C42C4000CE21E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CoreMeta;
-			targetProxy = 8CF169FF1848F12600AFBC56 /* PBXContainerItemProxy */;
+			targetProxy = 8CE3393D187C42C4000CE21E /* PBXContainerItemProxy */;
+		};
+		8CE33940187C42C4000CE21E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cereal;
+			targetProxy = 8CE3393F187C42C4000CE21E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -781,9 +781,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
-					"/Users/jgretz/Development/Talks/Building\\ Skynet\\ in\\ an\\ Hour/Terminator/FaceRecognition/Frameworks",
-					"/Users/jgretz/Development/Talks/Building\\ Skynet\\ in\\ an\\ Hour/Terminator/azuresdk-iOS-v1.1.1",
-					"/Users/jgretz/Development/Talks/Building\\ Skynet\\ in\\ an\\ Hour/Terminator/Romo",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "terminator/terminator-Prefix.pch";
@@ -804,9 +801,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
-					"/Users/jgretz/Development/Talks/Building\\ Skynet\\ in\\ an\\ Hour/Terminator/FaceRecognition/Frameworks",
-					"/Users/jgretz/Development/Talks/Building\\ Skynet\\ in\\ an\\ Hour/Terminator/azuresdk-iOS-v1.1.1",
-					"/Users/jgretz/Development/Talks/Building\\ Skynet\\ in\\ an\\ Hour/Terminator/Romo",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "terminator/terminator-Prefix.pch";
