@@ -10,8 +10,8 @@
 #import "Person.h"
 #import "Terminator.h"
 #import "KnownPeople.h"
-#import "FaceCapture.h"
 #import "NamelessMasses.h"
+#import "NamelessPerson.h"
 
 @interface IdentifyFacesVC()
 
@@ -34,8 +34,8 @@
 
 -(NSArray*) selectedImagesToIdentify {
     NSMutableArray* array = [NSMutableArray array];
-    for (FaceCapture* face in self.selectedFacesToIdentify)
-        [array addObject: face.faceImage];
+    for (NamelessPerson* person in self.selectedPeopleToIdentify)
+        [array addObject: person.image];
     return array;
 }
 
@@ -46,7 +46,7 @@
 
     [self.terminator rememberPersonNamed: self.nameTextField.text withImages: self.selectedImagesToIdentify];
 
-    [self removeFacesAndPop];
+    [self removePeopleAndPop];
 }
 
 -(IBAction) addToExisting {
@@ -57,11 +57,11 @@
     Person* person = self.people[path.row];
     [self.terminator rememberAdditionalImages: self.selectedImagesToIdentify forPerson: person];
 
-    [self removeFacesAndPop];
+    [self removePeopleAndPop];
 }
 
--(void) removeFacesAndPop {
-    [[NamelessMasses object] removeFaces: self.selectedFacesToIdentify];
+-(void) removePeopleAndPop {
+    [[NamelessMasses object] removePeople: self.selectedPeopleToIdentify];
     [self.navigationController popViewControllerAnimated: YES];
 }
 

@@ -7,14 +7,15 @@
 //
 
 #import "NamelessMassesVC.h"
-#import "FaceCapture.h"
 #import "NamelessMasses.h"
 #import "IdentifyFacesVC.h"
+#import "NamelessPerson.h"
 
 @interface NamelessMassesVC()
 
 @property (strong) NSArray* data;
 @property (strong) NSDateFormatter* dateFormatter;
+@property (strong) NamelessMasses* namelessMasses;
 
 @end
 
@@ -42,7 +43,7 @@ const int nameslessMaessesRefreshRate = 5;
 
 -(void) loadData {
     if (!self.massesTable.editing) {
-        self.data = [[[NamelessMasses object] faces] sortedArrayUsingComparator: ^NSComparisonResult(FaceCapture* obj1, FaceCapture* obj2) {
+        self.data = [self.namelessMasses.people sortedArrayUsingComparator: ^NSComparisonResult(NamelessPerson* obj1, NamelessPerson* obj2) {
             return [obj2.captured compare: obj1.captured];
         }];
         [self.massesTable reloadData];
@@ -61,10 +62,10 @@ const int nameslessMaessesRefreshRate = 5;
     if (!cell)
         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: @"CELL"];
 
-    FaceCapture* capture = self.data[indexPath.row];
+    NamelessPerson* person = self.data[indexPath.row];
 
-    cell.imageView.image = capture.faceImage;
-    cell.textLabel.text = [NSString stringWithFormat: @"Captured on %@", [self.dateFormatter stringFromDate: capture.captured]];
+    cell.imageView.image = person.image;
+    cell.textLabel.text = [NSString stringWithFormat: @"Captured on %@", [self.dateFormatter stringFromDate: person.captured]];
 
     return cell;
 }
@@ -97,7 +98,7 @@ const int nameslessMaessesRefreshRate = 5;
     [self displayEditOption];
 
     IdentifyFacesVC* vc = [IdentifyFacesVC object];
-    vc.selectedFacesToIdentify = selected;
+    vc.selectedPeopleToIdentify = selected;
     [self.navigationController pushViewController: vc animated: YES];
 }
 

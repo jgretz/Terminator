@@ -9,7 +9,6 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "SquareCam.h"
-#import "ImageCapture.h"
 #import "CameraRoll.h"
 
 @interface SquareCam()<AVCaptureVideoDataOutputSampleBufferDelegate>
@@ -108,11 +107,7 @@
     if (attachments)
         CFRelease(attachments);
 
-    ImageCapture* captured = [ImageCapture object];
-    captured.image = ciImage;
-    captured.captured = [NSDate date];
-
-    [[CameraRoll object] pushImage: captured];
+    [[CameraRoll object] pushImage: ciImage];
 }
 
 @end

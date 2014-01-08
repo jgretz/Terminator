@@ -8,6 +8,8 @@
 
 #import "AdminVC.h"
 #import "CameraRoll.h"
+#import "CIImage+UIImage.h"
+#import "FaceDetection.h"
 
 @interface AdminVC()
 
@@ -30,6 +32,7 @@ const NSTimeInterval statsRefreshRate = 1;
 
     self.navigationController.navigationBar.translucent = NO;
 
+    // segmented control
     UISegmentedControl* segmentedControl = [[UISegmentedControl alloc] initWithItems: @[ @"Camera", @"Faces", @"Dance", @"Stats" ]];
     segmentedControl.selectedSegmentIndex = 0;
     [segmentedControl addTarget: self action: @selector(setSelectedIndex:) forControlEvents: UIControlEventValueChanged];
@@ -37,9 +40,12 @@ const NSTimeInterval statsRefreshRate = 1;
 
     [self setSelectedIndex: segmentedControl];
 
+    // Subscribe to notifications
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(imageAddedToCameraRoll:) name: [Constants ImageAddedToCameraRoll] object: nil];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(facesFoundInImage:) name: [Constants FacesFoundInImage] object: nil];
 
-    [self refreshData];
+    // stats
+    [self refreshStatsData];
 }
 
 -(void) setSelectedIndex: (UISegmentedControl*) segmentedControl {
@@ -48,19 +54,24 @@ const NSTimeInterval statsRefreshRate = 1;
     [self.view.subviews[segmentedControl.selectedSegmentIndex] setHidden: NO];
 }
 
--(void) refreshData {
+-(void) refreshStatsData {
     [self.statsTableView reloadData];
 
-    [self performSelector: @selector(refreshData) withObject: nil afterDelay: statsRefreshRate];
+    [self performSelector: @selector(refreshStatsData) withObject: nil afterDelay: statsRefreshRate];
 }
 
+// Notifications
 -(void) imageAddedToCameraRoll: (NSNotification*) notification {
-    [self.cameraImageView performSelectorOnMainThread: @selector(setImage:) withObject: notification.object waitUntilDone: NO];
+    [self.cameraImageView performSelectorOnMainThread: @selector(setImage:) withObject: [(CIImage*) notification.object uiImage] waitUntilDone: NO];
+}
+
+-(void) facesFoundInImage: (NSNotification*) notification {
+    [self.faceImageView performSelectorOnMainThread: @selector(setImage:) withObject: notification.object waitUntilDone: NO];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
 -(NSInteger) tableView: (UITableView*) tableView numberOfRowsInSection: (NSInteger) section {
-    return 1;
+    return 2;
 }
 
 -(UITableViewCell*) tableView: (UITableView*) tableView cellForRowAtIndexPath: (NSIndexPath*) indexPath {
@@ -71,6 +82,10 @@ const NSTimeInterval statsRefreshRate = 1;
     switch (indexPath.row) {
         case 0:
             cell.textLabel.text = [NSString stringWithFormat: @"Camera FPS: %.2f", [[CameraRoll object] framesPerSecond]];
+            break;
+
+        case 1:
+            cell.textLabel.text = [NSString stringWithFormat: @"Face IPS: %.2f", [[FaceDetection object] imagesProcessedPerSecond]];
             break;
     }
 

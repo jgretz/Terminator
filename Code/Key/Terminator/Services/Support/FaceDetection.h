@@ -10,6 +10,8 @@
 
 @interface FaceDetection : NSObject
 
--(NSArray*) detectFaces: (ImageCapture*) image;
+@property (readonly) float imagesProcessedPerSecond;
+
+-(void) detectFaces: (CIImage*) image;
 
 @end

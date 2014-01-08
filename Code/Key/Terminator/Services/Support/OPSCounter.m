@@ -6,10 +6,8 @@
 
 #import "OPSCounter.h"
 
-
 @implementation OPSCounter {
     NSDate* compSecond;
-    int currentCount;
     int opsTotal;
     int secondCount;
 }
@@ -17,22 +15,25 @@
 -(void) addOperationAt: (NSDate*) time {
     if (!compSecond) {
         compSecond = time;
-        currentCount = 1;
+        opsTotal = 1;
         return;
     }
 
-    if ([time timeIntervalSinceDate: compSecond] < 1) {
-        currentCount++;
+    opsTotal++;
+    if ([time timeIntervalSinceDate: compSecond] <= 1)
         return;
-    }
 
-    opsTotal += currentCount + 1;
     secondCount++;
 
-    self.ops =  opsTotal / secondCount;
+    self.ops = (float) opsTotal / (float) secondCount;
 
     compSecond = time;
-    currentCount = 0;
+
+    // reset at 5K
+    if (opsTotal > 5000) {
+        opsTotal = (int) self.ops;
+        secondCount = 1;
+    }
 }
 
 @end

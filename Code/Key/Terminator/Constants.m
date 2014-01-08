@@ -13,6 +13,10 @@
     return @"ImageAddedToCameraRoll";
 }
 
++(NSString*) FacesFoundInImage {
+    return @"FacesFoundInImage";
+}
+
 +(NSString*) TeminatorMessage {
     return @"TerminatorMessage";
 }

@@ -10,6 +10,7 @@
 @interface Constants : NSObject
 
 +(NSString*) ImageAddedToCameraRoll;
++(NSString*) FacesFoundInImage;
 +(NSString*) TeminatorMessage;
 
 @end

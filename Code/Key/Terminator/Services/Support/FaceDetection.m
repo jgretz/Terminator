@@ -3,40 +3,43 @@
 // Copyright (c) 2014 gretz. All rights reserved.
 
 #import "FaceDetection.h"
-#import "ImageCapture.h"
-#import "FaceCapture.h"
+#import "OPSCounter.h"
 
 @interface FaceDetection()
+
+@property (strong) OPSCounter* ipsCounter;
 
 @end
 
 @implementation FaceDetection
 
--(NSArray*) detectFaces: (ImageCapture*) capture {
+-(float) imagesProcessedPerSecond {
+    return self.ipsCounter.ops;
+}
+
+-(void) detectFaces: (CIImage*) image {
     CIDetector* detector = [CIDetector detectorOfType: CIDetectorTypeFace context: nil options: @{ CIDetectorAccuracy : CIDetectorAccuracyLow }];
 
-    NSArray* features = [detector featuresInImage: capture.image options: @{ CIDetectorImageOrientation : @1 }];
-    if (features.count == 0)
-        return @[];
+    NSArray* features = [detector featuresInImage: image options: @{ CIDetectorImageOrientation : @1 }];
+    if (features.count == 0) {
+        [self.ipsCounter addOperationAt: [NSDate date]];
+        return;
+    }
 
-    // capture the faces in the image
-    NSMutableArray* faces = [NSMutableArray array];
+    // capture the people in the image
     for (CIFaceFeature* face in features) {
         // crop
-        CIImage* workingImage = [capture.image imageByCroppingToRect: face.bounds];
+        CIImage* workingImage = [image imageByCroppingToRect: face.bounds];
 
         // save
         CIContext* context = [CIContext contextWithOptions: nil];
         CGImageRef passThrough = [context createCGImage: workingImage fromRect: workingImage.extent];
 
-        FaceCapture* faceCapture = [FaceCapture object];
-        faceCapture.faceImage = [UIImage imageWithCGImage: passThrough];
-        faceCapture.captured = capture.captured;
-
-        [faces addObject: faceCapture];
+        [[NSNotificationCenter defaultCenter] postNotificationName: [Constants FacesFoundInImage] object: [UIImage imageWithCGImage: passThrough]];
     }
 
-    return faces;
+    [self.ipsCounter addOperationAt: [NSDate date]];
+
 }
 
 @end

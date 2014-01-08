@@ -30,6 +30,7 @@
 
     [KnownPeople registerClassAndCache: YES];
     [NamelessMasses registerClassAndCache: YES];
+    [FaceDetection registerClassAndCache: YES];
 
     [Terminator registerClass];
     [Memory registerClass];
@@ -37,7 +38,6 @@
     [Eyes registerClass];
     [Body registerClass];
 
-    [FaceDetection registerClass];
     [AzureInterface registerClass];
     [JsonCerealizer registerClass];
 

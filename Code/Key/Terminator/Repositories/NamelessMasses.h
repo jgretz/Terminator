@@ -6,13 +6,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class FaceCapture;
+@class NamelessPerson;
 
 @interface NamelessMasses : NSObject
 
-@property (readonly) NSArray* faces;
+@property (readonly) NSArray* people;
 
--(void) addFace: (FaceCapture*) face;
--(void) removeFaces: (NSArray*) facesToRemove;
+-(void) addPerson: (NamelessPerson*) person;
+-(void) removePeople: (NSArray*) peopleToRemove;
 
 @end
