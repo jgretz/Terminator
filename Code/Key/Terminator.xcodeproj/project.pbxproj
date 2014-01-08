@@ -67,6 +67,7 @@
 		BAC28A759E27A10DFEF68FF2 /* AzureInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28FED4855A4730900AA09 /* AzureInterface.m */; };
 		BAC28B4A551C0B1D9CDC448B /* FaceMatchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC2881BE9AF7D261498D4C6 /* FaceMatchResult.m */; };
 		BAC28C0C4DF850B3ABC26256 /* Eyes.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28C2A099FAEF2A400EC79 /* Eyes.m */; };
+		BAC28C9F21D13B2CACDDEC1E /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC288AD3A2885E5B377DB01 /* BaseVC.m */; };
 		BAC28DC867AB8430374FED0F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28688BEC80C586A15C64D /* Person.m */; };
 		BAC28DD108CCD5DCB1F24A3F /* OPSCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC289B405EA8DFA6DF187D6 /* OPSCounter.m */; };
 		BAC28DDF2799719EBF21F1EF /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC28529D763D455CE0BE1EB /* Constants.m */; };
@@ -162,6 +163,7 @@
 		8CF16A0C1848F1C700AFBC56 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		8CF16A1718496D2E00AFBC56 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		BAC28047D5DB57F43A93D5B0 /* OPSCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OPSCounter.h; path = Terminator/Services/Support/OPSCounter.h; sourceTree = SOURCE_ROOT; };
+		BAC2809B3E25C4BE6A4CBAB0 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseVC.h; path = Terminator/BaseVC.h; sourceTree = SOURCE_ROOT; };
 		BAC280C29C7D53DACB1889DA /* NamelessMasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NamelessMasses.m; path = Terminator/Repositories/NamelessMasses.m; sourceTree = SOURCE_ROOT; };
 		BAC2812DFCB21FB3CF8355EF /* CIImage+UIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CIImage+UIImage.h"; path = "Terminator/Categories/CIImage+UIImage.h"; sourceTree = SOURCE_ROOT; };
 		BAC2817B5350E582BCC2B293 /* NamelessPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NamelessPerson.m; path = Terminator/Models/NamelessPerson.m; sourceTree = SOURCE_ROOT; };
@@ -196,6 +198,7 @@
 		BAC2881BE9AF7D261498D4C6 /* FaceMatchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FaceMatchResult.m; path = Terminator/Models/FaceMatchResult.m; sourceTree = SOURCE_ROOT; };
 		BAC28882C90389FAD50CC5F0 /* CameraRoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraRoll.m; path = Terminator/Repositories/CameraRoll.m; sourceTree = SOURCE_ROOT; };
 		BAC288970F3AB9FE1EE19979 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = "<group>"; };
+		BAC288AD3A2885E5B377DB01 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseVC.m; path = Terminator/BaseVC.m; sourceTree = SOURCE_ROOT; };
 		BAC288BF46660FD832A45858 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "UIImage+OpenCV.mm"; path = "Terminator/Categories/UIImage+OpenCV.mm"; sourceTree = SOURCE_ROOT; };
 		BAC288E1C3A9FD5DE6E1A397 /* Eyes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Eyes.h; path = Terminator/Services/Eyes.h; sourceTree = SOURCE_ROOT; };
 		BAC288E85B8DADA2C1542EB1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Library/Frameworks/XCTest.framework; sourceTree = "<group>"; };
@@ -321,6 +324,8 @@
 				8C233FDA18764A9F00BBD67F /* IdentifyFacesVC.m */,
 				8CD71B67187C927B00899AE6 /* AdminVC.h */,
 				8CD71B68187C927B00899AE6 /* AdminVC.m */,
+				BAC288AD3A2885E5B377DB01 /* BaseVC.m */,
+				BAC2809B3E25C4BE6A4CBAB0 /* BaseVC.h */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -689,6 +694,7 @@
 				BAC28DD108CCD5DCB1F24A3F /* OPSCounter.m in Sources */,
 				BAC281AB1812BFD090BF927F /* CIImage+UIImage.m in Sources */,
 				BAC2892D68CC049C3C3C502E /* NamelessPerson.m in Sources */,
+				BAC28C9F21D13B2CACDDEC1E /* BaseVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

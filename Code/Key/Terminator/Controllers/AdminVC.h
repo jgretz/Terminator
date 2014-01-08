@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseVC.h"
 
-@interface AdminVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface AdminVC : BaseVC<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong) IBOutlet UIView* cameraView;
 @property (strong) IBOutlet UIImageView* cameraImageView;

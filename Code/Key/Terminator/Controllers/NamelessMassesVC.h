@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseVC.h"
 
-@interface NamelessMassesVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface NamelessMassesVC : BaseVC<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong) IBOutlet UITableView* massesTable;
 

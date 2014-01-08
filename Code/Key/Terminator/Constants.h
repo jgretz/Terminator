@@ -13,4 +13,6 @@
 +(NSString*) FacesFoundInImage;
 +(NSString*) TeminatorMessage;
 
++(NSString*) Timestamp;
+
 @end

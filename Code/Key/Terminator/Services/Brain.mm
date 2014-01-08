@@ -48,6 +48,10 @@
     if (!self.running)
         return;
 
+    NSDate* timestamp = notification.userInfo[[Constants Timestamp]];
+    if ([[NSDate date] timeIntervalSinceDate: timestamp] > 3)
+        return;
+
     [self.detectFacesQueue addOperationWithBlock: ^{
         [self.faceDetection detectFaces: notification.object];
     }];

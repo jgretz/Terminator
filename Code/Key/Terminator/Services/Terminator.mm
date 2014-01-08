@@ -52,6 +52,7 @@
     [self.body shutdown];
 }
 
+#pragma mark - Memory Control
 -(void) rememberPersonNamed: (NSString*) name withImages: (NSArray*) images {
     [self.memory addPersonNamed: name withImages: images];
 }
@@ -59,5 +60,7 @@
 -(void) rememberAdditionalImages: (NSArray*) images forPerson: (Person*) person {
     [self.memory addImages: images toPerson: person];
 }
+
+#pragma mark - Movement Control
 
 @end

@@ -20,11 +20,9 @@
 }
 
 -(void) pushImage: (CIImage*) image {
-    @synchronized (self) {
-        [self.opsCounter addOperationAt: [NSDate date]];
+    [self.opsCounter addOperationAt: [NSDate date]];
 
-        [[NSNotificationCenter defaultCenter] postNotificationName: [Constants ImageAddedToCameraRoll] object: image];
-    }
+    [[NSNotificationCenter defaultCenter] postNotificationName: [Constants ImageAddedToCameraRoll] object: image userInfo: @{ [Constants Timestamp] : [NSDate date] }];
 }
 
 @end

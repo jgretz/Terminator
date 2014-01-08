@@ -21,4 +21,9 @@
     return @"TerminatorMessage";
 }
 
++(NSString*) Timestamp {
+    return @"Timestamp";
+}
+
+
 @end

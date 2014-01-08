@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseVC.h"
 
-@interface IdentifyFacesVC : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface IdentifyFacesVC : BaseVC<UITableViewDataSource, UITableViewDelegate>
 
 @property (strong) NSArray* selectedPeopleToIdentify;
 
