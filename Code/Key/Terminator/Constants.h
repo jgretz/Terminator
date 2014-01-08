@@ -11,6 +11,7 @@
 
 +(NSString*) ImageAddedToCameraRoll;
 +(NSString*) FacesFoundInImage;
++(NSString*) NamelessPersonFound;
 +(NSString*) TeminatorMessage;
 
 +(NSString*) Timestamp;

@@ -31,11 +31,11 @@
     self.running = YES;
 
     self.detectFacesQueue = [[NSOperationQueue alloc] init];
-    self.detectFacesQueue.maxConcurrentOperationCount = 2;
+    self.detectFacesQueue.maxConcurrentOperationCount = 1;
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(imageAddedToCameraRoll:) name: [Constants ImageAddedToCameraRoll] object: nil];
 
     self.searchForPeopleQueue = [[NSOperationQueue alloc] init];
-    self.searchForPeopleQueue.maxConcurrentOperationCount = 2;
+    self.searchForPeopleQueue.maxConcurrentOperationCount = 1;
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(facesFoundInImage:) name: [Constants FacesFoundInImage] object: nil];
 }
 
@@ -49,7 +49,7 @@
         return;
 
     NSDate* timestamp = notification.userInfo[[Constants Timestamp]];
-    if ([[NSDate date] timeIntervalSinceDate: timestamp] > 3)
+    if ([[NSDate date] timeIntervalSinceDate: timestamp] > 1.1)
         return;
 
     [self.detectFacesQueue addOperationWithBlock: ^{
@@ -75,8 +75,7 @@
             return;
         }
 
-        Person* person = [[KnownPeople object] getPerson: result.personID.intValue];
-        [self speak: [NSString stringWithFormat: @"Person Found: %@", person.name]];
+        [self speak: [NSString stringWithFormat: @"Person Found: %@", result.personName]];
     }];
 }
 

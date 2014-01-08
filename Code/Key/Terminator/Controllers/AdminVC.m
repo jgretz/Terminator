@@ -10,8 +10,11 @@
 #import "CameraRoll.h"
 #import "CIImage+UIImage.h"
 #import "FaceDetection.h"
+#import "Terminator.h"
 
 @interface AdminVC()
+
+@property (strong) Terminator* terminator;
 
 @end
 
@@ -58,7 +61,7 @@ const NSTimeInterval statsRefreshRate = 1;
     [self performSelector: @selector(refreshStatsData) withObject: nil afterDelay: statsRefreshRate];
 }
 
-// Notifications
+#pragma mark - Notifications
 -(void) imageAddedToCameraRoll: (NSNotification*) notification {
     [self.cameraImageView performSelectorOnMainThread: @selector(setImage:) withObject: [(CIImage*) notification.object uiImage] waitUntilDone: NO];
 }
@@ -88,6 +91,39 @@ const NSTimeInterval statsRefreshRate = 1;
     }
 
     return cell;
+}
+
+#pragma mark - Dance
+-(IBAction) turnRight {
+    [self.terminator turnRight];
+}
+
+-(IBAction) turnLeft {
+    [self.terminator turnLeft];
+}
+
+-(IBAction) goForward {
+    [self.terminator goForward];
+}
+
+-(IBAction) goBackward {
+    [self.terminator goBackward];
+}
+
+-(IBAction) tiltForward {
+    [self.terminator tiltForward];
+}
+
+-(IBAction) tiltBackward {
+    [self.terminator tiltBackward];
+}
+
+-(IBAction) stopTilt {
+    [self.terminator stopTilt];
+}
+
+-(IBAction) toggleLED {
+    [self.terminator toggleLED];
 }
 
 

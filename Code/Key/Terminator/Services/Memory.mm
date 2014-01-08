@@ -39,47 +39,49 @@
 
 -(void) loadFromAzure {
     [self.azureInterface downloadPeopleFromAzure: ^(NSArray* array) {
-        NSArray* known = self.knownPeople.allPeople;
+        [self performBlockInBackground: ^{
+            NSArray* known = self.knownPeople.allPeople;
 
-        BOOL changed = NO;
-        for (Person* azurePerson in array) {
-            Person* local = [known firstWhere: ^BOOL(Person* evaluatedObject) {return [evaluatedObject.azureId isEqual: azurePerson.azureId];}];
-            if (!local) {
-                // train
-                azurePerson.id = [self.openCVFaceRecognition creatNewPersonNamed: azurePerson.name];
-
-                if (azurePerson.images) {
-                    for (UIImage* image in azurePerson.images)
-                        [self.openCVFaceRecognition learnFace: image forPerson: azurePerson];
-                }
-                else {
-                    azurePerson.images = [NSMutableArray array];
-                }
-
-                // save
-                [self.knownPeople addPerson: azurePerson];
-
-                changed = YES;
-            }
-            else {
-                for (int i = local.images.count; i < azurePerson.images.count; i++) {
-                    UIImage* image = azurePerson.images[i];
-
+            BOOL changed = NO;
+            for (Person* azurePerson in array) {
+                Person* local = [known firstWhere: ^BOOL(Person* evaluatedObject) {return [evaluatedObject.azureId isEqual: azurePerson.azureId];}];
+                if (!local) {
                     // train
-                    [self.openCVFaceRecognition learnFace: image forPerson: local];
+                    azurePerson.id = [self.openCVFaceRecognition creatNewPersonNamed: azurePerson.name];
 
-                    // update
-                    [local.images addObject: image];
+                    if (azurePerson.images) {
+                        for (UIImage* image in azurePerson.images)
+                            [self.openCVFaceRecognition learnFace: image forPerson: azurePerson];
+                    }
+                    else {
+                        azurePerson.images = [NSMutableArray array];
+                    }
+
+                    // save
+                    [self.knownPeople addPerson: azurePerson];
 
                     changed = YES;
                 }
-            }
-        }
+                else {
+                    for (int i = local.images.count; i < azurePerson.images.count; i++) {
+                        UIImage* image = azurePerson.images[i];
 
-        if (changed) {
-            [self.knownPeople save];
-            [self trainOpenCV];
-        }
+                        // train
+                        [self.openCVFaceRecognition learnFace: image forPerson: local];
+
+                        // update
+                        [local.images addObject: image];
+
+                        changed = YES;
+                    }
+                }
+            }
+
+            if (changed) {
+                [self.knownPeople save];
+                [self trainOpenCV];
+            }
+        }];
     }];
 }
 

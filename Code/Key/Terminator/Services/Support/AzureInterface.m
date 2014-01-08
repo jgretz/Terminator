@@ -19,6 +19,7 @@
 
 @implementation AzureInterface
 
+const NSString* ID = @"id";
 const NSString* JSON = @"json";
 
 -(id) init {
@@ -41,8 +42,12 @@ const NSString* JSON = @"json";
         }
 
         NSMutableArray* people = [NSMutableArray array];
-        for (NSDictionary* dict in items)
-            [people addObject: [self.cerealizer create: [Person class] fromString: dict[JSON]]];
+        for (NSDictionary* dict in items) {
+            Person* person = [self.cerealizer create: [Person class] fromString: dict[JSON]];
+            if (!person.azureId)
+                person.azureId = dict[ID];
+            [people addObject: person];
+        }
 
         parsePeople(people);
     }];
@@ -65,13 +70,13 @@ const NSString* JSON = @"json";
             }];
         }
         else {
-            [self.peopleTable insert: @{ @"json" : json } completion: ^(NSDictionary* insertedItem, NSError* error) {
+            [self.peopleTable insert: @{ JSON : json } completion: ^(NSDictionary* insertedItem, NSError* error) {
                 if (error) {
                     [self handleError: error];
                     return;
                 }
 
-                person.azureId = insertedItem[@"id"];
+                person.azureId = insertedItem[ID];
             }];
 
         }

@@ -16,8 +16,7 @@
 @implementation Body
 
 -(void) startup {
-        [self speak: @"Romo Delegate Set"];
-        [RMCore setDelegate: self];
+    [RMCore setDelegate: self];
 }
 
 -(void) shutdown {
@@ -25,10 +24,10 @@
 
 #pragma mark - RMCoreDelegate
 -(void) robotDidConnect: (RMCoreRobot*) robot {
-    [self speak: @"Romo Base Connected"];
     self.robot = (RMCoreRobot<HeadTiltProtocol, DriveProtocol, LEDProtocol>*) robot;
 
-    [self turnToTheRight];
+    [self speak: @"Romo Base Connected"];
+    [self.robot.LEDs turnOff];
 }
 
 -(void) robotDidDisconnect: (RMCoreRobot*) robot {
@@ -37,13 +36,83 @@
         self.robot = nil;
 }
 
+-(void) tryToFindRobot {
+    for (RMCoreRobot* robot in [RMCore connectedRobots])
+        self.robot = (RMCoreRobot<HeadTiltProtocol, DriveProtocol, LEDProtocol>*) robot;
+    [self.robot.LEDs turnOff];
+
+    if (!self.robot)
+        [self speak: @"No Robot Could Be Found"];
+}
+
 #pragma mark - Romo Control
--(void) turnToTheRight {
-    [self.robot turnByAngle: 90.0
+-(void) turnRight {
+    if (!self.robot)
+        [self tryToFindRobot];
+
+    [self.robot turnByAngle: -45.0
                  withRadius: RM_DRIVE_RADIUS_TURN_IN_PLACE
                  completion: ^(float heading) {
-                     NSLog(@"Finished! Ended up at heading: %f", heading);
+                     [self speak: @"Right Turn Completed"];
                  }];
+}
+
+-(void) turnLeft {
+    if (!self.robot)
+        [self tryToFindRobot];
+
+    [self.robot turnByAngle: 45.0
+                 withRadius: RM_DRIVE_RADIUS_TURN_IN_PLACE
+                 completion: ^(float heading) {
+                     [self speak: @"Left Turn Completed"];
+                 }];
+}
+
+-(void) goForward {
+    if (!self.robot)
+        [self tryToFindRobot];
+
+    [self.robot driveForwardWithSpeed: 2];
+    [self performBlock: ^{
+        [self.robot stopDriving];
+
+        [self speak: @"Drvie Forward Completed"];
+    }       afterDelay: .5];
+}
+
+-(void) goBackward {
+    if (!self.robot)
+        [self tryToFindRobot];
+
+    [self.robot driveBackwardWithSpeed: 2];
+    [self performBlock: ^{
+        [self.robot stopDriving];
+
+        [self speak: @"Drvie Backward Completed"];
+    }       afterDelay: .5];
+}
+
+-(void) tiltForward {
+    [self.robot tiltWithMotorPower: 1];
+}
+
+-(void) tiltBackward {
+    [self.robot tiltWithMotorPower: -1];
+}
+
+-(void) stopTilt {
+    [self.robot stopTilting];
+}
+
+-(void) toggleLED {
+    if (!self.robot)
+        [self tryToFindRobot];
+
+    if (self.robot.LEDs.mode == RMCoreLEDModeSolid)
+        [self.robot.LEDs turnOff];
+    else
+        [self.robot.LEDs setSolidWithBrightness: 1];
+
 }
 
 @end

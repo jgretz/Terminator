@@ -22,4 +22,13 @@
 @property (strong) IBOutlet UIView* statsView;
 @property (strong) IBOutlet UITableView* statsTableView;
 
+-(IBAction) turnRight;
+-(IBAction) turnLeft;
+-(IBAction) goForward;
+-(IBAction) goBackward;
+-(IBAction) tiltForward;
+-(IBAction) tiltBackward;
+-(IBAction) stopTilt;
+-(IBAction) toggleLED;
+
 @end

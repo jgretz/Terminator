@@ -34,6 +34,8 @@
 -(void) addPerson: (NamelessPerson*) person {
     @synchronized (self) {
         [self.masses addObject: person];
+
+        [[NSNotificationCenter defaultCenter] postNotificationName: [Constants NamelessPersonFound] object: person];
     }
 }
 
@@ -44,4 +46,10 @@
 }
 
 
+-(void) clear {
+    @synchronized (self) {
+        [self.masses removeAllObjects];
+    }
+
+}
 @end

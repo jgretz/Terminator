@@ -107,6 +107,9 @@
     if (attachments)
         CFRelease(attachments);
 
+    if (!ciImage)
+        return;
+
     [[CameraRoll object] pushImage: ciImage];
 }
 

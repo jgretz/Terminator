@@ -63,4 +63,37 @@
 
 #pragma mark - Movement Control
 
+-(void) turnRight {
+    [self.body turnRight];
+}
+
+-(void) turnLeft {
+    [self.body turnLeft];
+}
+
+-(void) goForward {
+    [self.body goForward];
+}
+
+-(void) goBackward {
+    [self.body goBackward];
+}
+
+-(void) tiltForward {
+    [self.body tiltForward];
+}
+
+-(void) tiltBackward {
+    [self.body tiltBackward];
+}
+
+-(void) stopTilt {
+    [self.body stopTilt];
+}
+
+-(void) toggleLED {
+    [self.body toggleLED];
+}
+
+
 @end

@@ -30,17 +30,11 @@
     ];
 
     self.window.rootViewController = tbc;
-
     [self.window makeKeyAndVisible];
-    return YES;
-}
 
--(void) applicationDidBecomeActive: (UIApplication*) application {
     [[Terminator object] startup];
-}
 
--(void) applicationWillResignActive: (UIApplication*) application {
-    [[Terminator object] shutdown];
+    return YES;
 }
 
 @end

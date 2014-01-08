@@ -12,4 +12,13 @@
 -(void) startup;
 -(void) shutdown;
 
+-(void) turnRight;
+-(void) turnLeft;
+-(void) goForward;
+-(void) goBackward;
+-(void) tiltForward;
+-(void) tiltBackward;
+-(void) stopTilt;
+-(void) toggleLED;
+
 @end

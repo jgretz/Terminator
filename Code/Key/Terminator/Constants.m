@@ -17,6 +17,10 @@
     return @"FacesFoundInImage";
 }
 
++(NSString*) NamelessPersonFound {
+    return @"NamelessPersonFound";
+}
+
 +(NSString*) TeminatorMessage {
     return @"TerminatorMessage";
 }

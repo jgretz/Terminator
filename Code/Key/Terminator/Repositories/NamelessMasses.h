@@ -15,4 +15,5 @@
 -(void) addPerson: (NamelessPerson*) person;
 -(void) removePeople: (NSArray*) peopleToRemove;
 
+-(void) clear;
 @end

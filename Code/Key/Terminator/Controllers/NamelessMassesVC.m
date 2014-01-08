@@ -21,8 +21,6 @@
 
 @implementation NamelessMassesVC
 
-const int nameslessMaessesRefreshRate = 5;
-
 -(id) init {
     if ((self = [super init])) {
         self.title = @"Need ID";
@@ -39,17 +37,20 @@ const int nameslessMaessesRefreshRate = 5;
     [self displayEditOption];
 
     [self loadData];
+
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(loadData) name: [Constants NamelessPersonFound] object: nil];
+
 }
 
 -(void) loadData {
-    if (!self.massesTable.editing) {
-        self.data = [self.namelessMasses.people sortedArrayUsingComparator: ^NSComparisonResult(NamelessPerson* obj1, NamelessPerson* obj2) {
-            return [obj2.captured compare: obj1.captured];
-        }];
-        [self.massesTable reloadData];
-    }
-
-    [self performSelector: @selector(loadData) withObject: nil afterDelay: nameslessMaessesRefreshRate];
+    [self performBlockInMainThread: ^{
+        if (!self.massesTable.editing) {
+            self.data = [self.namelessMasses.people sortedArrayUsingComparator: ^NSComparisonResult(NamelessPerson* obj1, NamelessPerson* obj2) {
+                return [obj2.captured compare: obj1.captured];
+            }];
+            [self.massesTable reloadData];
+        }
+    }];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
@@ -72,7 +73,7 @@ const int nameslessMaessesRefreshRate = 5;
 
 #pragma mark - Edit
 -(void) displayEditOption {
-    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle: @"Clear" style: UIBarButtonItemStyleDone target: self action: @selector(clear)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemEdit target: self action: @selector(enterEditMode)];
 }
 
@@ -87,6 +88,11 @@ const int nameslessMaessesRefreshRate = 5;
 -(void) cancel {
     self.massesTable.editing = NO;
     [self displayEditOption];
+}
+
+-(void) clear {
+    [self.namelessMasses clear];
+    [self loadData];
 }
 
 -(void) next {
