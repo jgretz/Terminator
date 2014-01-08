@@ -19,7 +19,11 @@
 @end
 
 
-@implementation SquareCam
+@implementation SquareCam {
+    NSDate* lastTaken;
+}
+
+const float throttle = .5;
 
 #pragma mark - Start / Stop
 -(void) startCapturing {
@@ -100,6 +104,10 @@
 
 #pragma mark - Events
 -(void) captureOutput: (AVCaptureOutput*) captureOutput didOutputSampleBuffer: (CMSampleBufferRef) sampleBuffer fromConnection: (AVCaptureConnection*) connection {
+    if (lastTaken && [[NSDate date] timeIntervalSinceDate: lastTaken] < throttle)
+        return;
+    lastTaken = [NSDate date];
+
     // got an image
     CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     CFDictionaryRef attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, kCMAttachmentMode_ShouldPropagate);

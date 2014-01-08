@@ -22,6 +22,10 @@
 -(void) shutdown {
 }
 
+-(BOOL) hasBase {
+    return self.robot != nil;
+}
+
 #pragma mark - RMCoreDelegate
 -(void) robotDidConnect: (RMCoreRobot*) robot {
     self.robot = (RMCoreRobot<HeadTiltProtocol, DriveProtocol, LEDProtocol>*) robot;
@@ -72,24 +76,24 @@
     if (!self.robot)
         [self tryToFindRobot];
 
-    [self.robot driveForwardWithSpeed: 2];
+    [self.robot driveForwardWithSpeed: 1];
     [self performBlock: ^{
         [self.robot stopDriving];
 
         [self speak: @"Drvie Forward Completed"];
-    }       afterDelay: .5];
+    }       afterDelay: .2];
 }
 
 -(void) goBackward {
     if (!self.robot)
         [self tryToFindRobot];
 
-    [self.robot driveBackwardWithSpeed: 2];
+    [self.robot driveBackwardWithSpeed: 1];
     [self performBlock: ^{
         [self.robot stopDriving];
 
         [self speak: @"Drvie Backward Completed"];
-    }       afterDelay: .5];
+    }       afterDelay: .2];
 }
 
 -(void) tiltForward {

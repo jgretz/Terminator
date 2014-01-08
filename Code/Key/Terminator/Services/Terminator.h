@@ -13,6 +13,8 @@
 
 @interface Terminator : TerminatorBase
 
+@property (nonatomic, readonly) BOOL hasBase;
+
 -(void) startup;
 -(void) shutdown;
 

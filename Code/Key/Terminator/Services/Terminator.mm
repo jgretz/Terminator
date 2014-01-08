@@ -63,6 +63,10 @@
 
 #pragma mark - Movement Control
 
+-(BOOL) hasBase {
+    return self.body.hasBase;
+}
+
 -(void) turnRight {
     [self.body turnRight];
 }

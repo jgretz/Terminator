@@ -17,12 +17,12 @@
 @implementation Eyes
 
 -(void) startup {
-//    [self.squareCam startCapturing];
-//    [self.squareCam useCameraPosition: AVCaptureDevicePositionFront];
+    [self.squareCam startCapturing];
+    [self.squareCam useCameraPosition: AVCaptureDevicePositionFront];
 }
 
 -(void) shutdown {
-//    [self.squareCam stopCapturing];
+    [self.squareCam stopCapturing];
 }
 
 @end

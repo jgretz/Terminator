@@ -20,7 +20,7 @@
 
 @implementation AdminVC
 
-const NSTimeInterval statsRefreshRate = 1;
+const NSTimeInterval statsRefreshRate = 2;
 
 -(id) init {
     if ((self = [super init])) {

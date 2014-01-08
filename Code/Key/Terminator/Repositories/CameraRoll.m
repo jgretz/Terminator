@@ -20,6 +20,9 @@
 }
 
 -(void) pushImage: (CIImage*) image {
+    if (!image)
+        return;
+
     [self.opsCounter addOperationAt: [NSDate date]];
 
     [[NSNotificationCenter defaultCenter] postNotificationName: [Constants ImageAddedToCameraRoll] object: image userInfo: @{ [Constants Timestamp] : [NSDate date] }];
