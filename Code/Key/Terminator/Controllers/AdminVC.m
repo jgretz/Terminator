@@ -30,8 +30,6 @@ const NSTimeInterval statsRefreshRate = 1;
 -(void) viewDidLoad {
     [super viewDidLoad];
 
-    self.navigationController.navigationBar.translucent = NO;
-
     // segmented control
     UISegmentedControl* segmentedControl = [[UISegmentedControl alloc] initWithItems: @[ @"Camera", @"Faces", @"Dance", @"Stats" ]];
     segmentedControl.selectedSegmentIndex = 0;
