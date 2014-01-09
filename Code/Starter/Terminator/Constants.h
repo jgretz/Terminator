@@ -9,6 +9,12 @@
 
 @interface Constants : NSObject
 
-+(NSString*) TeminatorMessage;
++(NSString*) ImageAddedToCameraRoll;
++(NSString*) FacesFoundInImage;
++(NSString*) NamelessPersonFound;
++(NSString*) TerminatorMessage;
+
++(NSString*) Image;
++(NSString*) Timestamp;
 
 @end

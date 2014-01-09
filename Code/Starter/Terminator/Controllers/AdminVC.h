@@ -7,7 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseVC.h"
 
-@interface AdminVC : UIViewController
+@interface AdminVC : BaseVC<UITableViewDelegate, UITableViewDataSource>
+
+@property (strong) IBOutlet UIView* cameraView;
+@property (strong) IBOutlet UIImageView* cameraImageView;
+
+@property (strong) IBOutlet UIView* faceView;
+@property (strong) IBOutlet UIImageView* faceImageView;
+
+@property (strong) IBOutlet UIView* danceView;
+
+@property (strong) IBOutlet UIView* statsView;
+@property (strong) IBOutlet UITableView* statsTableView;
+
+-(IBAction) turnRight;
+-(IBAction) turnLeft;
+-(IBAction) goForward;
+-(IBAction) goBackward;
+-(IBAction) tiltForward;
+-(IBAction) tiltBackward;
+-(IBAction) stopTilt;
+-(IBAction) toggleLED;
 
 @end

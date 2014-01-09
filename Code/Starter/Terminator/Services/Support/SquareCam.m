@@ -9,7 +9,6 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "SquareCam.h"
-#import "ImageCapture.h"
 #import "CameraRoll.h"
 
 @interface SquareCam()<AVCaptureVideoDataOutputSampleBufferDelegate>
@@ -20,7 +19,11 @@
 @end
 
 
-@implementation SquareCam
+@implementation SquareCam {
+    NSDate* lastTaken;
+}
+
+const float throttle = .3;
 
 #pragma mark - Start / Stop
 -(void) startCapturing {

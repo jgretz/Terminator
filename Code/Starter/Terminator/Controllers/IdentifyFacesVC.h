@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseVC.h"
 
-@interface IdentifyFacesVC : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface IdentifyFacesVC : BaseVC<UITableViewDataSource, UITableViewDelegate>
 
-@property (strong) NSArray* selectedFacesToIdentify;
+@property (strong) NSArray* selectedPeopleToIdentify;
 
 @property (strong) IBOutlet UITextField* nameTextField;
 @property (strong) IBOutlet UITableView* existingTableView;

@@ -13,10 +13,21 @@
 
 @interface Terminator : TerminatorBase
 
+@property (nonatomic, readonly) BOOL hasBase;
+
 -(void) startup;
 -(void) shutdown;
 
 -(void) rememberPersonNamed: (NSString*) name withImages: (NSArray*) images;
 -(void) rememberAdditionalImages: (NSArray*) images forPerson: (Person*) person;
+
+-(void) turnRight;
+-(void) turnLeft;
+-(void) goForward;
+-(void) goBackward;
+-(void) tiltForward;
+-(void) tiltBackward;
+-(void) stopTilt;
+-(void) toggleLED;
 
 @end

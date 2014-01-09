@@ -43,11 +43,15 @@
     cv::Mat mat = image.CVMat;
     cv::Rect rect = cvRect(0, 0, (int) image.size.width, (int) image.size.height);
 
-    [self.faceRecognizer learnFace: rect ofPersonID: person.id fromImage: mat];
+    @synchronized (self) {
+        [self.faceRecognizer learnFace: rect ofPersonID: person.id fromImage: mat];
+    }
 }
 
 -(void) train {
-    self.canSearch = [self.faceRecognizer trainModel];
+    @synchronized (self) {
+        self.canSearch = [self.faceRecognizer trainModel];
+    }
 }
 
 #pragma mark - Search
@@ -58,7 +62,11 @@
     cv::Mat mat = image.CVMat;
     cv::Rect rect = cvRect(0, 0, (int) image.size.width, (int) image.size.height);
 
-    NSDictionary* rawMatch = [self.faceRecognizer recognizeFace: rect inImage: mat];
+    NSDictionary* rawMatch = nil;
+    @synchronized (self) {
+        rawMatch = [self.faceRecognizer recognizeFace: rect inImage: mat];
+    }
+
     return [[Cerealizer object] create: [FaceMatchResult class] fromDictionary: rawMatch];
 }
 

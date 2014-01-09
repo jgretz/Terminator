@@ -10,7 +10,7 @@
 
 
 @interface Path : NSObject {
-    
+
 }
 
 +(NSString*) bundle;

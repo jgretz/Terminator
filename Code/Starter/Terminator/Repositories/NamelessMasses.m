@@ -5,11 +5,13 @@
 
 
 #import "NamelessMasses.h"
-#import "FaceCapture.h"
+#import "NamelessPerson.h"
+#import "PostOffice.h"
 
 @interface NamelessMasses()
 
 @property (strong) NSMutableArray* masses;
+@property (strong) PostOffice* postOffice;
 
 @end
 
@@ -24,24 +26,32 @@
     return self;
 }
 
--(NSArray*) faces {
+-(NSArray*) people {
     @synchronized (self) {
         return [NSArray arrayWithArray: self.masses];
     }
 }
 
 
--(void) addFace: (FaceCapture*) face {
+-(void) addPerson: (NamelessPerson*) person {
     @synchronized (self) {
-        [self.masses addObject: face];
+        [self.masses addObject: person];
+
+        [self.postOffice postMessage: [Constants NamelessPersonFound] paylod: person];
     }
 }
 
--(void) removeFaces: (NSArray*) facesToRemove {
+-(void) removePeople: (NSArray*) peopleToRemove {
     @synchronized (self) {
-        [self.masses removeObjectsInArray: facesToRemove];
+        [self.masses removeObjectsInArray: peopleToRemove];
     }
 }
 
 
+-(void) clear {
+    @synchronized (self) {
+        [self.masses removeAllObjects];
+    }
+
+}
 @end

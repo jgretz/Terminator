@@ -3,20 +3,24 @@
 // Copyright (c) 2014 gretz. All rights reserved.
 
 #import "FaceDetection.h"
-#import "ImageCapture.h"
-#import "FaceCapture.h"
-#import <ImageIO/ImageIO.h>
+#import "OPSCounter.h"
+#import "PostOffice.h"
 
 @interface FaceDetection()
+
+@property (strong) OPSCounter* ipsCounter;
+@property (strong) PostOffice* postOffice;
 
 @end
 
 @implementation FaceDetection
 
--(NSArray*) detectFaces: (ImageCapture*) capture {
-    // DetectFaces
+-(float) imagesProcessedPerSecond {
+    return self.ipsCounter.ops;
+}
 
-    return @[];
+-(void) detectFaces: (CIImage*) image {
+    // DetectFaces
 }
 
 @end

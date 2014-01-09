@@ -7,20 +7,21 @@
 //
 
 #import "NamelessMassesVC.h"
-#import "FaceCapture.h"
 #import "NamelessMasses.h"
 #import "IdentifyFacesVC.h"
+#import "NamelessPerson.h"
+#import "PostOffice.h"
 
 @interface NamelessMassesVC()
 
 @property (strong) NSArray* data;
 @property (strong) NSDateFormatter* dateFormatter;
+@property (strong) NamelessMasses* namelessMasses;
+@property (strong) PostOffice* postOffice;
 
 @end
 
 @implementation NamelessMassesVC
-
-const int nameslessMaessesRefreshRate = 5;
 
 -(id) init {
     if ((self = [super init])) {
@@ -36,19 +37,20 @@ const int nameslessMaessesRefreshRate = 5;
     [super viewDidLoad];
 
     [self displayEditOption];
-
     [self loadData];
+
+    [self.postOffice listenForMessage: [Constants NamelessPersonFound] onReceipt: ^(id payload) {[self loadData];}];
 }
 
 -(void) loadData {
-    if (!self.massesTable.editing) {
-        self.data = [[[NamelessMasses object] faces] sortedArrayUsingComparator: ^NSComparisonResult(FaceCapture* obj1, FaceCapture* obj2) {
-            return [obj2.captured compare: obj1.captured];
-        }];
-        [self.massesTable reloadData];
-    }
-
-    [self performSelector: @selector(loadData) withObject: nil afterDelay: nameslessMaessesRefreshRate];
+    [self performBlockInMainThread: ^{
+        if (!self.massesTable.editing) {
+            self.data = [self.namelessMasses.people sortedArrayUsingComparator: ^NSComparisonResult(NamelessPerson* obj1, NamelessPerson* obj2) {
+                return [obj2.captured compare: obj1.captured];
+            }];
+            [self.massesTable reloadData];
+        }
+    }];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
@@ -61,17 +63,17 @@ const int nameslessMaessesRefreshRate = 5;
     if (!cell)
         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: @"CELL"];
 
-    FaceCapture* capture = self.data[indexPath.row];
+    NamelessPerson* person = self.data[indexPath.row];
 
-    cell.imageView.image = capture.faceImage;
-    cell.textLabel.text = [NSString stringWithFormat: @"Captured on %@", [self.dateFormatter stringFromDate: capture.captured]];
+    cell.imageView.image = person.image;
+    cell.textLabel.text = [NSString stringWithFormat: @"Captured on %@", [self.dateFormatter stringFromDate: person.captured]];
 
     return cell;
 }
 
 #pragma mark - Edit
 -(void) displayEditOption {
-    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle: @"Clear" style: UIBarButtonItemStyleDone target: self action: @selector(clear)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemEdit target: self action: @selector(enterEditMode)];
 }
 
@@ -88,6 +90,11 @@ const int nameslessMaessesRefreshRate = 5;
     [self displayEditOption];
 }
 
+-(void) clear {
+    [self.namelessMasses clear];
+    [self loadData];
+}
+
 -(void) next {
     NSMutableArray* selected = [NSMutableArray array];
     for (NSIndexPath* path in [self.massesTable indexPathsForSelectedRows])
@@ -97,7 +104,7 @@ const int nameslessMaessesRefreshRate = 5;
     [self displayEditOption];
 
     IdentifyFacesVC* vc = [IdentifyFacesVC object];
-    vc.selectedFacesToIdentify = selected;
+    vc.selectedPeopleToIdentify = selected;
     [self.navigationController pushViewController: vc animated: YES];
 }
 

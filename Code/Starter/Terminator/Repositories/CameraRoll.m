@@ -5,35 +5,27 @@
 
 
 #import "CameraRoll.h"
-#import "ImageCapture.h"
+#import "OPSCounter.h"
+#import "PostOffice.h"
 
 @interface CameraRoll()
+
+@property (strong) OPSCounter* opsCounter;
+@property (strong) PostOffice* postOffice;
 
 @end
 
 @implementation CameraRoll
 
--(id) init {
-    if ((self = [super init])) {
-        self.capturedImages = [NSMutableArray array];
-    }
-
-    return self;
+-(float) framesPerSecond {
+    return self.opsCounter.ops;
 }
 
--(void) pushImage: (ImageCapture*) image {
-    @synchronized (self) {
-        [self.capturedImages addObject: image];
-    }
-}
+-(void) pushImage: (CIImage*) image {
+    NSDate* date = [NSDate date];
 
--(NSArray*) pop {
-    @synchronized (self) {
-        NSArray* images = [NSArray arrayWithArray: self.capturedImages];
-        [self.capturedImages removeAllObjects];
-
-        return images;
-    }
+    [self.postOffice postMessage: [Constants ImageAddedToCameraRoll] paylod: @{ [Constants Image] : image, [Constants Timestamp] : [NSDate date] }];
+    [self.opsCounter addOperationAt: date];
 }
 
 @end

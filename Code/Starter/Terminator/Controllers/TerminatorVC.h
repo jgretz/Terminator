@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseVC.h"
 
-@interface TerminatorVC : UIViewController
+@interface TerminatorVC : BaseVC
 
 @property (strong) IBOutlet UITextView* textView;
 

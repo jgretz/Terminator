@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseVC.h"
 
-@interface KnownPeopleVC : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface KnownPeopleVC : BaseVC<UITableViewDataSource, UITableViewDelegate>
 
 @property (strong) IBOutlet UITableView* peopleTableView;
 

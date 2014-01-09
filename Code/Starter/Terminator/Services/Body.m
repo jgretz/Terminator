@@ -15,6 +15,14 @@
 
 @implementation Body
 
+-(BOOL) hasBase {
+    return self.robot != nil;
+}
+
 // RomoSetup
+
+#pragma mark - Romo Control
+
+// RomoMoves
 
 @end

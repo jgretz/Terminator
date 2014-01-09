@@ -19,7 +19,9 @@
 
 @implementation AzureInterface
 
+const NSString* ID = @"id";
 const NSString* JSON = @"json";
+
 
 // AzureSetup
 
