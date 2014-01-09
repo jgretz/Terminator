@@ -4,10 +4,12 @@
 
 #import "FaceDetection.h"
 #import "OPSCounter.h"
+#import "PostOffice.h"
 
 @interface FaceDetection()
 
 @property (strong) OPSCounter* ipsCounter;
+@property (strong) PostOffice* postOffice;
 
 @end
 
@@ -35,7 +37,7 @@
         CIContext* context = [CIContext contextWithOptions: nil];
         CGImageRef passThrough = [context createCGImage: workingImage fromRect: workingImage.extent];
 
-        [[NSNotificationCenter defaultCenter] postNotificationName: [Constants FacesFoundInImage] object: [UIImage imageWithCGImage: passThrough]];
+        [self.postOffice postMessage: [Constants FacesFoundInImage] paylod: [UIImage imageWithCGImage: passThrough]];
     }
 
     [self.ipsCounter addOperationAt: [NSDate date]];

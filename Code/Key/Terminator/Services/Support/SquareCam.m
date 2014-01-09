@@ -23,7 +23,7 @@
     NSDate* lastTaken;
 }
 
-const float throttle = .5;
+const float throttle = .1;
 
 #pragma mark - Start / Stop
 -(void) startCapturing {

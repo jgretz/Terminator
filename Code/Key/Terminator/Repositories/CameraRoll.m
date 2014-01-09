@@ -6,10 +6,12 @@
 
 #import "CameraRoll.h"
 #import "OPSCounter.h"
+#import "PostOffice.h"
 
 @interface CameraRoll()
 
 @property (strong) OPSCounter* opsCounter;
+@property (strong) PostOffice* postOffice;
 
 @end
 
@@ -20,12 +22,10 @@
 }
 
 -(void) pushImage: (CIImage*) image {
-    if (!image)
-        return;
+    NSDate* date = [NSDate date];
 
-    [self.opsCounter addOperationAt: [NSDate date]];
-
-    [[NSNotificationCenter defaultCenter] postNotificationName: [Constants ImageAddedToCameraRoll] object: image userInfo: @{ [Constants Timestamp] : [NSDate date] }];
+    [self.postOffice postMessage: [Constants ImageAddedToCameraRoll] paylod: @{ [Constants Image] : image, [Constants Timestamp] : [NSDate date] }];
+    [self.opsCounter addOperationAt: date];
 }
 
 @end

@@ -10,12 +10,14 @@
 #import "NamelessMasses.h"
 #import "IdentifyFacesVC.h"
 #import "NamelessPerson.h"
+#import "PostOffice.h"
 
 @interface NamelessMassesVC()
 
 @property (strong) NSArray* data;
 @property (strong) NSDateFormatter* dateFormatter;
 @property (strong) NamelessMasses* namelessMasses;
+@property (strong) PostOffice* postOffice;
 
 @end
 
@@ -35,11 +37,9 @@
     [super viewDidLoad];
 
     [self displayEditOption];
-
     [self loadData];
 
-    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(loadData) name: [Constants NamelessPersonFound] object: nil];
-
+    [self.postOffice listenForMessage: [Constants NamelessPersonFound] onReceipt: ^(id payload) {[self loadData];}];
 }
 
 -(void) loadData {

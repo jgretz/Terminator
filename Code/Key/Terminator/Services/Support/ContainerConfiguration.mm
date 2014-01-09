@@ -19,6 +19,7 @@
 #import "Body.h"
 #import "AzureInterface.h"
 #import "OPSCounter.h"
+#import "PostOffice.h"
 
 @implementation ContainerConfiguration
 
@@ -31,6 +32,7 @@
     [KnownPeople registerClassAndCache: YES];
     [NamelessMasses registerClassAndCache: YES];
     [FaceDetection registerClassAndCache: YES];
+    [PostOffice registerClassAndCache: YES];
 
     [Terminator registerClass];
     [Memory registerClass];

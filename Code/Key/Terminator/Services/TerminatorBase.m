@@ -10,7 +10,7 @@
 @implementation TerminatorBase
 
 -(void) speak: (NSString*) message {
-    [[NSNotificationCenter defaultCenter] postNotificationName: [Constants TeminatorMessage] object: message];
+    [[NSNotificationCenter defaultCenter] postNotificationName: [Constants TerminatorMessage] object: message];
 }
 
 @end

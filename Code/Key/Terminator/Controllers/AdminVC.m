@@ -11,10 +11,12 @@
 #import "CIImage+UIImage.h"
 #import "FaceDetection.h"
 #import "Terminator.h"
+#import "PostOffice.h"
 
 @interface AdminVC()
 
 @property (strong) Terminator* terminator;
+@property (strong) PostOffice* postOffice;
 
 @end
 
@@ -42,8 +44,8 @@ const NSTimeInterval statsRefreshRate = 2;
     [self setSelectedIndex: segmentedControl];
 
     // Subscribe to notifications
-    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(imageAddedToCameraRoll:) name: [Constants ImageAddedToCameraRoll] object: nil];
-    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(facesFoundInImage:) name: [Constants FacesFoundInImage] object: nil];
+    [self.postOffice listenForMessage: [Constants ImageAddedToCameraRoll] onReceipt: ^(NSDictionary* payload) {[self imageAddedToCameraRoll: payload];}];
+    [self.postOffice listenForMessage: [Constants FacesFoundInImage] onReceipt: ^(UIImage* payload) {[self facesFoundInImage: payload];}];
 
     // stats
     [self refreshStatsData];
@@ -62,12 +64,12 @@ const NSTimeInterval statsRefreshRate = 2;
 }
 
 #pragma mark - Notifications
--(void) imageAddedToCameraRoll: (NSNotification*) notification {
-    [self.cameraImageView performSelectorOnMainThread: @selector(setImage:) withObject: [(CIImage*) notification.object uiImage] waitUntilDone: NO];
+-(void) imageAddedToCameraRoll: (NSDictionary*) payload {
+    [self.cameraImageView performSelectorOnMainThread: @selector(setImage:) withObject: [(CIImage*) payload[[Constants Image]] uiImage] waitUntilDone: NO];
 }
 
--(void) facesFoundInImage: (NSNotification*) notification {
-    [self.faceImageView performSelectorOnMainThread: @selector(setImage:) withObject: notification.object waitUntilDone: NO];
+-(void) facesFoundInImage: (UIImage*) image {
+    [self.faceImageView performSelectorOnMainThread: @selector(setImage:) withObject: image waitUntilDone: NO];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource

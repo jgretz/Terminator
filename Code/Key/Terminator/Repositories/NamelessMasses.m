@@ -6,10 +6,12 @@
 
 #import "NamelessMasses.h"
 #import "NamelessPerson.h"
+#import "PostOffice.h"
 
 @interface NamelessMasses()
 
 @property (strong) NSMutableArray* masses;
+@property (strong) PostOffice* postOffice;
 
 @end
 
@@ -35,7 +37,7 @@
     @synchronized (self) {
         [self.masses addObject: person];
 
-        [[NSNotificationCenter defaultCenter] postNotificationName: [Constants NamelessPersonFound] object: person];
+        [self.postOffice postMessage: [Constants NamelessPersonFound] paylod: person];
     }
 }
 

@@ -12,11 +12,14 @@
 #import "KnownPeople.h"
 #import "Person.h"
 #import "NamelessPerson.h"
+#import "PostOffice.h"
 
 @interface Brain()
 
 @property (strong) FaceDetection* faceDetection;
 @property (strong) OpenCVFaceRecognition* faceRecognition;
+
+@property (strong) PostOffice* postOffice;
 
 @property (strong) NSOperationQueue* detectFacesQueue;
 @property (strong) NSOperationQueue* searchForPeopleQueue;
@@ -32,11 +35,12 @@
 
     self.detectFacesQueue = [[NSOperationQueue alloc] init];
     self.detectFacesQueue.maxConcurrentOperationCount = 1;
-    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(imageAddedToCameraRoll:) name: [Constants ImageAddedToCameraRoll] object: nil];
+    [self.postOffice listenForMessage: [Constants ImageAddedToCameraRoll] onReceipt: ^(NSDictionary* payload) { [self imageAddedToCameraRoll: payload]; }];
 
     self.searchForPeopleQueue = [[NSOperationQueue alloc] init];
     self.searchForPeopleQueue.maxConcurrentOperationCount = 1;
-    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(facesFoundInImage:) name: [Constants FacesFoundInImage] object: nil];
+    [self.postOffice listenForMessage: [Constants FacesFoundInImage] onReceipt: ^(UIImage* payload) { [self facesFoundInImage: payload]; }];
+
 }
 
 -(void) shutdown {
@@ -44,31 +48,31 @@
 }
 
 #pragma mark - Detect Faces From Images Seen
--(void) imageAddedToCameraRoll: (NSNotification*) notification {
+-(void) imageAddedToCameraRoll: (NSDictionary*) payload {
     if (!self.running)
         return;
 
-    NSDate* timestamp = notification.userInfo[[Constants Timestamp]];
+    NSDate* timestamp = payload[[Constants Timestamp]];
     if ([[NSDate date] timeIntervalSinceDate: timestamp] > 1.1)
         return;
 
     [self.detectFacesQueue addOperationWithBlock: ^{
-        [self.faceDetection detectFaces: notification.object];
+        [self.faceDetection detectFaces: payload[[Constants Image]]];
     }];
 }
 
 #pragma mark - Search Faces For Known People
--(void) facesFoundInImage: (NSNotification*) notification {
+-(void) facesFoundInImage: (UIImage*) image {
     if (!self.running)
         return;
 
     [self.searchForPeopleQueue addOperationWithBlock: ^{
-        FaceMatchResult* result = [self.faceRecognition searchForFace: notification.object];
+        FaceMatchResult* result = [self.faceRecognition searchForFace: image];
 
         // No face found
         if (!result.personID || [result.personID isEqual: @-1]) {
             NamelessPerson* person = [NamelessPerson object];
-            person.image = notification.object;
+            person.image = image;
             person.captured = [NSDate date];
 
             [[NamelessMasses object] addPerson: person];
