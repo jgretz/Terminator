@@ -112,6 +112,11 @@ const NSTimeInterval statsRefreshRate = 2;
     [self.terminator goBackward];
 }
 
+-(IBAction) stopDriving {
+    [self.terminator stopDriving];
+}
+
+
 -(IBAction) tiltForward {
     [self.terminator tiltForward];
 }

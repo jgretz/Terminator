@@ -30,4 +30,5 @@
 -(void) stopTilt;
 -(void) toggleLED;
 
+-(void) stopDriving;
 @end

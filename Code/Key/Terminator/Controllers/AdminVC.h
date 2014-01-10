@@ -26,6 +26,7 @@
 -(IBAction) turnLeft;
 -(IBAction) goForward;
 -(IBAction) goBackward;
+-(IBAction) stopDriving;
 -(IBAction) tiltForward;
 -(IBAction) tiltBackward;
 -(IBAction) stopTilt;

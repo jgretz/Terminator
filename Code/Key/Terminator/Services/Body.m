@@ -77,11 +77,6 @@
         [self tryToFindRobot];
 
     [self.robot driveForwardWithSpeed: 1];
-    [self performBlock: ^{
-        [self.robot stopDriving];
-
-        [self speak: @"Drvie Forward Completed"];
-    }       afterDelay: .2];
 }
 
 -(void) goBackward {
@@ -89,11 +84,11 @@
         [self tryToFindRobot];
 
     [self.robot driveBackwardWithSpeed: 1];
-    [self performBlock: ^{
-        [self.robot stopDriving];
+}
 
-        [self speak: @"Drvie Backward Completed"];
-    }       afterDelay: .2];
+-(void) stopDriving {
+    [self.robot stopDriving];
+
 }
 
 -(void) tiltForward {
@@ -116,7 +111,6 @@
         [self.robot.LEDs turnOff];
     else
         [self.robot.LEDs setSolidWithBrightness: 1];
-
 }
 
 @end

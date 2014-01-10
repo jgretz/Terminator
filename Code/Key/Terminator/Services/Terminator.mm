@@ -83,6 +83,10 @@
     [self.body goBackward];
 }
 
+-(void) stopDriving {
+    [self.body stopDriving];
+}
+
 -(void) tiltForward {
     [self.body tiltForward];
 }
@@ -98,6 +102,5 @@
 -(void) toggleLED {
     [self.body toggleLED];
 }
-
 
 @end

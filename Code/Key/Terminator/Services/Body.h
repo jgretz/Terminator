@@ -18,6 +18,7 @@
 -(void) turnLeft;
 -(void) goForward;
 -(void) goBackward;
+-(void) stopDriving;
 -(void) tiltForward;
 -(void) tiltBackward;
 -(void) stopTilt;
