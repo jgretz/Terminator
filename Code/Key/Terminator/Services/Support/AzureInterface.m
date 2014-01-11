@@ -24,7 +24,7 @@ const NSString* JSON = @"json";
 
 -(id) init {
     if ((self = [super init])) {
-        self.client = [MSClient clientWithApplicationURLString: @"https://terminator.azure-mobile.net/" applicationKey: @"zBUQxxKAdkcKyfXSMkABHfrSKtBHFU51"];
+        self.client = [MSClient clientWithApplicationURLString: @"<Insert App Url>" applicationKey: @"<Insert App Key>"];
     }
     return self;
 }
