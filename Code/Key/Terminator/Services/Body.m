@@ -53,11 +53,11 @@
 -(void) turnRight {
     if (!self.robot)
         [self tryToFindRobot];
-
+    
     [self.robot turnByAngle: -45.0
                  withRadius: RM_DRIVE_RADIUS_TURN_IN_PLACE
-                 completion: ^(float heading) {
-                     [self speak: @"Right Turn Completed"];
+            finishingAction: RMCoreTurnFinishingActionStopDriving
+                 completion:^(BOOL success, float heading) {
                  }];
 }
 
@@ -67,8 +67,8 @@
 
     [self.robot turnByAngle: 45.0
                  withRadius: RM_DRIVE_RADIUS_TURN_IN_PLACE
-                 completion: ^(float heading) {
-                     [self speak: @"Left Turn Completed"];
+            finishingAction: RMCoreTurnFinishingActionStopDriving
+                 completion:^(BOOL success, float heading) {
                  }];
 }
 

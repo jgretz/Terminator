@@ -63,7 +63,7 @@
                     changed = YES;
                 }
                 else {
-                    for (int i = local.images.count; i < azurePerson.images.count; i++) {
+                    for (int i = (int) local.images.count; i < azurePerson.images.count; i++) {
                         UIImage* image = azurePerson.images[i];
 
                         // train
