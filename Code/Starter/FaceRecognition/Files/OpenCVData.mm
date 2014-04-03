@@ -17,7 +17,7 @@
 
 + (cv::Mat)dataToMat:(NSData *)data width:(NSNumber *)width height:(NSNumber *)height
 {
-    cv::Mat output = cv::Mat([width integerValue], [height integerValue], CV_8UC1);
+    cv::Mat output = cv::Mat((int) [width integerValue], (int) [height integerValue], CV_8UC1);
     output.data = (unsigned char*)data.bytes;
     
     return output;

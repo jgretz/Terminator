@@ -15,14 +15,42 @@
 
 @implementation Body
 
+-(void) startup {
+    [RMCore setDelegate: self];
+}
+
+-(void) shutdown {
+}
+
 -(BOOL) hasBase {
     return self.robot != nil;
 }
 
 // RomoSetup
 
-#pragma mark - Romo Control
-
 // RomoMoves
 
+#pragma mark - To Remove - here to cut down warnings
+-(void) robotDidConnect: (RMCoreRobot*) robot {
+}
+-(void) robotDidDisconnect: (RMCoreRobot*) robot {
+}
+-(void) turnRight {
+}
+-(void) turnLeft {
+}
+-(void) goForward {
+}
+-(void) goBackward {
+}
+-(void) stopDriving {
+}
+-(void) tiltForward {
+}
+-(void) tiltBackward {
+}
+-(void) stopTilt {
+}
+-(void) toggleLED {
+}
 @end

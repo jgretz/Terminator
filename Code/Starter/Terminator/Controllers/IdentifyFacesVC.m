@@ -71,7 +71,7 @@
     [self.existingTableView reloadData];
 }
 
--(int) tableView: (UITableView*) tableView numberOfRowsInSection: (NSInteger) section {
+-(NSInteger) tableView: (UITableView*) tableView numberOfRowsInSection: (NSInteger) section {
     return self.people.count;
 }
 

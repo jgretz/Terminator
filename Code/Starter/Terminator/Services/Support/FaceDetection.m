@@ -20,7 +20,7 @@
 }
 
 -(void) detectFaces: (CIImage*) image {
-    // DetectFaces
+
 }
 
 @end

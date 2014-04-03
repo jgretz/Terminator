@@ -22,7 +22,6 @@
 const NSString* ID = @"id";
 const NSString* JSON = @"json";
 
-
 // AzureSetup
 
 -(void) downloadPeopleFromAzure: (void (^)(NSArray*)) parsePeople {
