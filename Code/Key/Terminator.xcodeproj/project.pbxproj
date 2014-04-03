@@ -531,6 +531,7 @@
 		BAC28E7DFD35CB31E7F998F4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BAC28BD8547FA4DD9226013F /* Support */,
 				8C76B87E18736077001E6DDE /* Terminator.h */,
 				8C76B87F18736077001E6DDE /* Terminator.mm */,
 				BAC289BBC7E3B62EC490182A /* Memory.mm */,
@@ -539,7 +540,6 @@
 				BAC289071EAF29F191916C3C /* Brain.h */,
 				BAC28C2A099FAEF2A400EC79 /* Eyes.m */,
 				BAC288E1C3A9FD5DE6E1A397 /* Eyes.h */,
-				BAC28BD8547FA4DD9226013F /* Support */,
 				BAC282FFB3C42658FCBFCC6F /* Body.m */,
 				BAC2817E99CE15EE67C65F35 /* Body.h */,
 				BAC281DDA4FA81CD99514CC2 /* TerminatorBase.m */,
@@ -578,6 +578,11 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = gretz;
+				TargetAttributes = {
+					8C083C56181DB30600250DB4 = {
+						DevelopmentTeam = KRMPKJVS2P;
+					};
+				};
 			};
 			buildConfigurationList = 8C083C52181DB30600250DB4 /* Build configuration list for PBXProject "Terminator" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -791,6 +796,8 @@
 		8C083C84181DB30600250DB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -798,10 +805,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "terminator/terminator-Prefix.pch";
 				INFOPLIST_FILE = "terminator/terminator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/** \"${PROJECT_DIR}/Cereal\"/** \"${PROJECT_DIR}/CoreMeta/CoreMeta\"/**";
 				VALID_ARCHS = "armv7 armv7s";
@@ -812,6 +820,8 @@
 		8C083C85181DB30600250DB4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -819,10 +829,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "terminator/terminator-Prefix.pch";
 				INFOPLIST_FILE = "terminator/terminator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/** \"${PROJECT_DIR}/Cereal\"/** \"${PROJECT_DIR}/CoreMeta/CoreMeta\"/**";
 				VALID_ARCHS = "armv7 armv7s";
